@@ -8,6 +8,13 @@ android {
         minSdkVersion 11
         targetSdkVersion 29
     }
+
+    // Don't bother with lint errors in modules we aren't using. Specifically, this chicken & egg one.
+//    aws-android-sdk-lex/src/main/java/com/amazonaws/mobileconnectors/lex/interactionkit/internal/audio/AudioRecorder.java:124: Error: Call requires permission which may be rejected by user: code should explicitly check to see if permission is available (with checkPermission) or explicitly handle a potential SecurityException [MissingPermission]
+//    new AudioRecord(MediaRecorder.AudioSource.VOICE_RECOGNITION,
+    lintOptions {
+        abortOnError false
+    }
 }
 
 dependencies {

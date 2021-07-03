@@ -160,8 +160,7 @@ public class AudioRecorder implements AudioSource {
      */
     protected AudioRecorder(final Context context, final MediaType mediaType,
         final int numSamplesPerRead, final int recorderPositionNotificationPeriod,
-        final AudioRecord audioRecord, final boolean audioRecordIsPassedIn)
-                throws Exception {
+        final AudioRecord audioRecord, final boolean audioRecordIsPassedIn) throws Exception {
         mContentType = Preconditions.checkNotNull(mediaType, "mMediaType cannot be null");
         mContext = Preconditions.checkNotNull(context, "Context cannot be null");
         mRecord = Preconditions.checkNotNull(audioRecord, "AudioRecord cannot be null");
@@ -177,7 +176,7 @@ public class AudioRecorder implements AudioSource {
         mRecord.setRecordPositionUpdateListener(new RecordPositionChangeListener());
         mAudioRecordIsPassedIn = audioRecordIsPassedIn;
 
-        //Check permission.
+        // Check permission.
         checkRecordingPermission(context);
     }
 
@@ -185,7 +184,7 @@ public class AudioRecorder implements AudioSource {
      * Check for recording permissions.
      * @param context the Context used to check for permissions.
      */
-    private void checkRecordingPermission(final Context context) {
+    private void checkRecordingPermission(final Context context) throws SecurityException {
         final int permissionResult = context.checkCallingOrSelfPermission(
                 ANDROID_PERMISSION_RECORD_AUDIO);
         if (permissionResult == PackageManager.PERMISSION_DENIED) {
