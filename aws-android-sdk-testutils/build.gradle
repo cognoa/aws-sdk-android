@@ -7,6 +7,13 @@ android {
         minSdkVersion 14 // junit ext
         targetSdkVersion 29
     }
+
+    // Don't bother with lint errors in modules we aren't using.
+//    aws-android-sdk-testutils/src/main/java/com/amazonaws/testutils/util/AirplaneMode.java:58: Error: Missing permissions required by intent Intent.ACTION_CLOSE_SYSTEM_DIALOGS: android.permission.BROADCAST_CLOSE_SYSTEM_DIALOGS [MissingPermission]
+//            .sendBroadcast(new Intent(Intent.ACTION_CLOSE_SYSTEM_DIALOGS));
+    lintOptions {
+        abortOnError false
+    }
 }
 
 dependencies {
