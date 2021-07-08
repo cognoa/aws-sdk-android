@@ -569,9 +569,10 @@ public class TransferUtility {
         }
         int recordId;
         if (shouldUploadInMultipart(file)) {
+            LOGGER.info("File will use multi-part upload: " + file);
             recordId = createMultipartUploadRecords(bucket, key, file, metadata, cannedAcl);
         } else {
-
+            LOGGER.info("File will use single-part upload: " + file);
             final Uri uri = dbUtil.insertSingleTransferRecord(TransferType.UPLOAD, bucket, key, file, metadata,
                     cannedAcl, transferUtilityOptions);
             recordId = Integer.parseInt(uri.getLastPathSegment());
@@ -1003,6 +1004,10 @@ public class TransferUtility {
 
     TransferDBUtil getDbUtil() {
         return dbUtil;
+    }
+
+    public synchronized TransferRecord getTransferRecord(int id) {
+        return updater.getTransfer(id);
     }
 
 }

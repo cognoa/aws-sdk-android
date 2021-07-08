@@ -39,8 +39,7 @@ import java.util.concurrent.TimeoutException;
  * TransferRecord is used to store all the information of a transfer and
  * start/stop the a thread for the transfer task.
  */
-@SuppressWarnings("checkstyle:visibilitymodifier")
-class TransferRecord {
+public class TransferRecord {
     private static final Log LOGGER = LogFactory.getLog(TransferRecord.class);
 
     public int id;
@@ -325,27 +324,27 @@ class TransferRecord {
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder();
-        sb.append("[")
-                .append("id:").append(id).append(",")
-                .append("bucketName:").append(bucketName).append(",")
-                .append("key:").append(key).append(",")
-                .append("file:").append(file).append(",")
-                .append("type:").append(type).append(",")
-                .append("bytesTotal:").append(bytesTotal).append(",")
-                .append("bytesCurrent:").append(bytesCurrent).append(",")
-                .append("fileOffset:").append(fileOffset).append(",")
-                .append("state:").append(state).append(",")
-                .append("cannedAcl:").append(cannedAcl).append(",")
-                .append("mainUploadId:").append(mainUploadId).append(",")
-                .append("isMultipart:").append(isMultipart).append(",")
-                .append("isLastPart:").append(isLastPart).append(",")
-                .append("partNumber:").append(partNumber).append(",")
-                .append("multipartId:").append(multipartId).append(",")
-                .append("eTag:").append(eTag).append(",")
-                .append("storageClass:").append(headerStorageClass).append(",")
-                .append("userMetadata:").append(userMetadata.toString()).append(",")
-                .append("transferUtilityOptions:").append(gson.toJson(transferUtilityOptions))
-                .append("]");
+        sb.append("[\n")
+                .append("\tid: ").append(id).append(",\n")
+                .append("\tbucketName: ").append(bucketName).append(",\n")
+                .append("\tkey: ").append(key).append(",\n")
+                .append("\tfile: ").append(file).append(",\n")
+                .append("\ttype: ").append(type).append(",\n")
+                .append("\tbytesTotal: ").append(bytesTotal).append(",\n")
+                .append("\tbytesCurrent: ").append(bytesCurrent).append(",\n")
+                .append("\tfileOffset: ").append(fileOffset).append(",\n")
+                .append("\tstate: ").append(state).append(",\n")
+                .append("\tcannedAcl: ").append(cannedAcl).append(",\n")
+                .append("\tmainUploadId: ").append(mainUploadId).append(",\n")
+                .append("\tisMultipart: ").append(isMultipart).append(",\n")
+                .append("\tisLastPart: ").append(isLastPart).append(",\n")
+                .append("\tpartNumber: ").append(partNumber).append(",\n")
+                .append("\tmultipartId: ").append(multipartId).append(",\n")
+                .append("\teTag: ").append(eTag).append(",\n")
+                .append("\tstorageClass: ").append(headerStorageClass).append(",\n")
+                .append("\tuserMetadata: ").append(userMetadata.toString()).append(",\n")
+                .append("\ttransferUtilityOptions: ").append(gson.toJson(transferUtilityOptions))
+                .append("\n]");
         return sb.toString();
     }
 
