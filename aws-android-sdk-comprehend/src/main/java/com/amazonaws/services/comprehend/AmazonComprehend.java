@@ -929,6 +929,31 @@ public interface AmazonComprehend {
 
     /**
      * <p>
+     * Gets a list of summaries of the document classifiers that you have
+     * created
+     * </p>
+     * 
+     * @param listDocumentClassifierSummariesRequest
+     * @return listDocumentClassifierSummariesResult The response from the
+     *         ListDocumentClassifierSummaries service method, as returned by
+     *         Amazon Comprehend.
+     * @throws InvalidRequestException
+     * @throws TooManyRequestsException
+     * @throws InternalServerException
+     * @throws AmazonClientException If any internal errors are encountered
+     *             inside the client while attempting to make the request or
+     *             handle the response. For example if a network connection is
+     *             not available.
+     * @throws AmazonServiceException If an error response is returned by Amazon
+     *             Comprehend indicating either a problem with the data in the
+     *             request, or a server side issue.
+     */
+    ListDocumentClassifierSummariesResult listDocumentClassifierSummaries(
+            ListDocumentClassifierSummariesRequest listDocumentClassifierSummariesRequest)
+            throws AmazonClientException, AmazonServiceException;
+
+    /**
+     * <p>
      * Gets a list of the document classifiers that you have created.
      * </p>
      * 
@@ -1023,6 +1048,31 @@ public interface AmazonComprehend {
      */
     ListEntitiesDetectionJobsResult listEntitiesDetectionJobs(
             ListEntitiesDetectionJobsRequest listEntitiesDetectionJobsRequest)
+            throws AmazonClientException, AmazonServiceException;
+
+    /**
+     * <p>
+     * Gets a list of summaries for the entity recognizers that you have
+     * created.
+     * </p>
+     * 
+     * @param listEntityRecognizerSummariesRequest
+     * @return listEntityRecognizerSummariesResult The response from the
+     *         ListEntityRecognizerSummaries service method, as returned by
+     *         Amazon Comprehend.
+     * @throws InvalidRequestException
+     * @throws TooManyRequestsException
+     * @throws InternalServerException
+     * @throws AmazonClientException If any internal errors are encountered
+     *             inside the client while attempting to make the request or
+     *             handle the response. For example if a network connection is
+     *             not available.
+     * @throws AmazonServiceException If an error response is returned by Amazon
+     *             Comprehend indicating either a problem with the data in the
+     *             request, or a server side issue.
+     */
+    ListEntityRecognizerSummariesResult listEntityRecognizerSummaries(
+            ListEntityRecognizerSummariesRequest listEntityRecognizerSummariesRequest)
             throws AmazonClientException, AmazonServiceException;
 
     /**
@@ -1222,6 +1272,7 @@ public interface AmazonComprehend {
      * @throws ResourceNotFoundException
      * @throws ResourceUnavailableException
      * @throws KmsKeyValidationException
+     * @throws TooManyTagsException
      * @throws InternalServerException
      * @throws AmazonClientException If any internal errors are encountered
      *             inside the client while attempting to make the request or
@@ -1248,6 +1299,7 @@ public interface AmazonComprehend {
      * @throws InvalidRequestException
      * @throws TooManyRequestsException
      * @throws KmsKeyValidationException
+     * @throws TooManyTagsException
      * @throws InternalServerException
      * @throws AmazonClientException If any internal errors are encountered
      *             inside the client while attempting to make the request or
@@ -1282,6 +1334,7 @@ public interface AmazonComprehend {
      * @throws ResourceNotFoundException
      * @throws ResourceUnavailableException
      * @throws KmsKeyValidationException
+     * @throws TooManyTagsException
      * @throws InternalServerException
      * @throws AmazonClientException If any internal errors are encountered
      *             inside the client while attempting to make the request or
@@ -1307,6 +1360,7 @@ public interface AmazonComprehend {
      * @throws InvalidRequestException
      * @throws TooManyRequestsException
      * @throws KmsKeyValidationException
+     * @throws TooManyTagsException
      * @throws InternalServerException
      * @throws AmazonClientException If any internal errors are encountered
      *             inside the client while attempting to make the request or
@@ -1333,6 +1387,7 @@ public interface AmazonComprehend {
      * @throws InvalidRequestException
      * @throws TooManyRequestsException
      * @throws KmsKeyValidationException
+     * @throws TooManyTagsException
      * @throws InternalServerException
      * @throws AmazonClientException If any internal errors are encountered
      *             inside the client while attempting to make the request or
@@ -1359,6 +1414,7 @@ public interface AmazonComprehend {
      * @throws InvalidRequestException
      * @throws TooManyRequestsException
      * @throws KmsKeyValidationException
+     * @throws TooManyTagsException
      * @throws InternalServerException
      * @throws AmazonClientException If any internal errors are encountered
      *             inside the client while attempting to make the request or
@@ -1385,6 +1441,7 @@ public interface AmazonComprehend {
      * @throws InvalidRequestException
      * @throws TooManyRequestsException
      * @throws KmsKeyValidationException
+     * @throws TooManyTagsException
      * @throws InternalServerException
      * @throws AmazonClientException If any internal errors are encountered
      *             inside the client while attempting to make the request or
@@ -1412,6 +1469,7 @@ public interface AmazonComprehend {
      * @throws InvalidRequestException
      * @throws TooManyRequestsException
      * @throws KmsKeyValidationException
+     * @throws TooManyTagsException
      * @throws InternalServerException
      * @throws AmazonClientException If any internal errors are encountered
      *             inside the client while attempting to make the request or

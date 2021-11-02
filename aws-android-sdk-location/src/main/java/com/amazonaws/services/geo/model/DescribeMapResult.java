@@ -53,8 +53,8 @@ public class DescribeMapResult implements Serializable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the map resource. Used when you need
-     * to specify a resource across all AWS.
+     * The Amazon Resource Name (ARN) for the map resource. Used to specify a
+     * resource across all AWS.
      * </p>
      * <ul>
      * <li>
@@ -90,7 +90,7 @@ public class DescribeMapResult implements Serializable {
      * </p>
      * 
      * <pre>
-     * <code> &lt;p&gt;For additional details and restrictions on each pricing plan option, see the &lt;a href=&quot;https://aws.amazon.com/location/pricing/&quot;&gt;Amazon Location Service pricing page&lt;/a&gt;.&lt;/p&gt; </code>
+     * <code> &lt;p&gt;For additional details and restrictions on each pricing plan option, see &lt;a href=&quot;https://aws.amazon.com/location/pricing/&quot;&gt;Amazon Location Service pricing&lt;/a&gt;.&lt;/p&gt; </code>
      * </pre>
      * <p>
      * <b>Constraints:</b><br/>
@@ -323,8 +323,8 @@ public class DescribeMapResult implements Serializable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the map resource. Used when you need
-     * to specify a resource across all AWS.
+     * The Amazon Resource Name (ARN) for the map resource. Used to specify a
+     * resource across all AWS.
      * </p>
      * <ul>
      * <li>
@@ -342,8 +342,8 @@ public class DescribeMapResult implements Serializable {
      * 9]+)*)?){2}:([^/].*)?$<br/>
      *
      * @return <p>
-     *         The Amazon Resource Name (ARN) for the map resource. Used when
-     *         you need to specify a resource across all AWS.
+     *         The Amazon Resource Name (ARN) for the map resource. Used to
+     *         specify a resource across all AWS.
      *         </p>
      *         <ul>
      *         <li>
@@ -360,8 +360,8 @@ public class DescribeMapResult implements Serializable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the map resource. Used when you need
-     * to specify a resource across all AWS.
+     * The Amazon Resource Name (ARN) for the map resource. Used to specify a
+     * resource across all AWS.
      * </p>
      * <ul>
      * <li>
@@ -379,8 +379,8 @@ public class DescribeMapResult implements Serializable {
      * 9]+)*)?){2}:([^/].*)?$<br/>
      *
      * @param mapArn <p>
-     *            The Amazon Resource Name (ARN) for the map resource. Used when
-     *            you need to specify a resource across all AWS.
+     *            The Amazon Resource Name (ARN) for the map resource. Used to
+     *            specify a resource across all AWS.
      *            </p>
      *            <ul>
      *            <li>
@@ -397,8 +397,8 @@ public class DescribeMapResult implements Serializable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the map resource. Used when you need
-     * to specify a resource across all AWS.
+     * The Amazon Resource Name (ARN) for the map resource. Used to specify a
+     * resource across all AWS.
      * </p>
      * <ul>
      * <li>
@@ -419,8 +419,8 @@ public class DescribeMapResult implements Serializable {
      * 9]+)*)?){2}:([^/].*)?$<br/>
      *
      * @param mapArn <p>
-     *            The Amazon Resource Name (ARN) for the map resource. Used when
-     *            you need to specify a resource across all AWS.
+     *            The Amazon Resource Name (ARN) for the map resource. Used to
+     *            specify a resource across all AWS.
      *            </p>
      *            <ul>
      *            <li>
@@ -501,7 +501,7 @@ public class DescribeMapResult implements Serializable {
      * </p>
      * 
      * <pre>
-     * <code> &lt;p&gt;For additional details and restrictions on each pricing plan option, see the &lt;a href=&quot;https://aws.amazon.com/location/pricing/&quot;&gt;Amazon Location Service pricing page&lt;/a&gt;.&lt;/p&gt; </code>
+     * <code> &lt;p&gt;For additional details and restrictions on each pricing plan option, see &lt;a href=&quot;https://aws.amazon.com/location/pricing/&quot;&gt;Amazon Location Service pricing&lt;/a&gt;.&lt;/p&gt; </code>
      * </pre>
      * <p>
      * <b>Constraints:</b><br/>
@@ -513,7 +513,7 @@ public class DescribeMapResult implements Serializable {
      *         </p>
      * 
      *         <pre>
-     * <code> &lt;p&gt;For additional details and restrictions on each pricing plan option, see the &lt;a href=&quot;https://aws.amazon.com/location/pricing/&quot;&gt;Amazon Location Service pricing page&lt;/a&gt;.&lt;/p&gt; </code>
+     * <code> &lt;p&gt;For additional details and restrictions on each pricing plan option, see &lt;a href=&quot;https://aws.amazon.com/location/pricing/&quot;&gt;Amazon Location Service pricing&lt;/a&gt;.&lt;/p&gt; </code>
      * </pre>
      * @see PricingPlan
      */
@@ -527,7 +527,7 @@ public class DescribeMapResult implements Serializable {
      * </p>
      * 
      * <pre>
-     * <code> &lt;p&gt;For additional details and restrictions on each pricing plan option, see the &lt;a href=&quot;https://aws.amazon.com/location/pricing/&quot;&gt;Amazon Location Service pricing page&lt;/a&gt;.&lt;/p&gt; </code>
+     * <code> &lt;p&gt;For additional details and restrictions on each pricing plan option, see &lt;a href=&quot;https://aws.amazon.com/location/pricing/&quot;&gt;Amazon Location Service pricing&lt;/a&gt;.&lt;/p&gt; </code>
      * </pre>
      * <p>
      * <b>Constraints:</b><br/>
@@ -539,7 +539,7 @@ public class DescribeMapResult implements Serializable {
      *            </p>
      * 
      *            <pre>
-     * <code> &lt;p&gt;For additional details and restrictions on each pricing plan option, see the &lt;a href=&quot;https://aws.amazon.com/location/pricing/&quot;&gt;Amazon Location Service pricing page&lt;/a&gt;.&lt;/p&gt; </code>
+     * <code> &lt;p&gt;For additional details and restrictions on each pricing plan option, see &lt;a href=&quot;https://aws.amazon.com/location/pricing/&quot;&gt;Amazon Location Service pricing&lt;/a&gt;.&lt;/p&gt; </code>
      * </pre>
      * @see PricingPlan
      */
@@ -553,7 +553,7 @@ public class DescribeMapResult implements Serializable {
      * </p>
      * 
      * <pre>
-     * <code> &lt;p&gt;For additional details and restrictions on each pricing plan option, see the &lt;a href=&quot;https://aws.amazon.com/location/pricing/&quot;&gt;Amazon Location Service pricing page&lt;/a&gt;.&lt;/p&gt; </code>
+     * <code> &lt;p&gt;For additional details and restrictions on each pricing plan option, see &lt;a href=&quot;https://aws.amazon.com/location/pricing/&quot;&gt;Amazon Location Service pricing&lt;/a&gt;.&lt;/p&gt; </code>
      * </pre>
      * <p>
      * Returns a reference to this object so that method calls can be chained
@@ -568,7 +568,7 @@ public class DescribeMapResult implements Serializable {
      *            </p>
      * 
      *            <pre>
-     * <code> &lt;p&gt;For additional details and restrictions on each pricing plan option, see the &lt;a href=&quot;https://aws.amazon.com/location/pricing/&quot;&gt;Amazon Location Service pricing page&lt;/a&gt;.&lt;/p&gt; </code>
+     * <code> &lt;p&gt;For additional details and restrictions on each pricing plan option, see &lt;a href=&quot;https://aws.amazon.com/location/pricing/&quot;&gt;Amazon Location Service pricing&lt;/a&gt;.&lt;/p&gt; </code>
      * </pre>
      * @return A reference to this updated object so that method calls can be
      *         chained together.
@@ -585,7 +585,7 @@ public class DescribeMapResult implements Serializable {
      * </p>
      * 
      * <pre>
-     * <code> &lt;p&gt;For additional details and restrictions on each pricing plan option, see the &lt;a href=&quot;https://aws.amazon.com/location/pricing/&quot;&gt;Amazon Location Service pricing page&lt;/a&gt;.&lt;/p&gt; </code>
+     * <code> &lt;p&gt;For additional details and restrictions on each pricing plan option, see &lt;a href=&quot;https://aws.amazon.com/location/pricing/&quot;&gt;Amazon Location Service pricing&lt;/a&gt;.&lt;/p&gt; </code>
      * </pre>
      * <p>
      * <b>Constraints:</b><br/>
@@ -597,7 +597,7 @@ public class DescribeMapResult implements Serializable {
      *            </p>
      * 
      *            <pre>
-     * <code> &lt;p&gt;For additional details and restrictions on each pricing plan option, see the &lt;a href=&quot;https://aws.amazon.com/location/pricing/&quot;&gt;Amazon Location Service pricing page&lt;/a&gt;.&lt;/p&gt; </code>
+     * <code> &lt;p&gt;For additional details and restrictions on each pricing plan option, see &lt;a href=&quot;https://aws.amazon.com/location/pricing/&quot;&gt;Amazon Location Service pricing&lt;/a&gt;.&lt;/p&gt; </code>
      * </pre>
      * @see PricingPlan
      */
@@ -611,7 +611,7 @@ public class DescribeMapResult implements Serializable {
      * </p>
      * 
      * <pre>
-     * <code> &lt;p&gt;For additional details and restrictions on each pricing plan option, see the &lt;a href=&quot;https://aws.amazon.com/location/pricing/&quot;&gt;Amazon Location Service pricing page&lt;/a&gt;.&lt;/p&gt; </code>
+     * <code> &lt;p&gt;For additional details and restrictions on each pricing plan option, see &lt;a href=&quot;https://aws.amazon.com/location/pricing/&quot;&gt;Amazon Location Service pricing&lt;/a&gt;.&lt;/p&gt; </code>
      * </pre>
      * <p>
      * Returns a reference to this object so that method calls can be chained
@@ -626,7 +626,7 @@ public class DescribeMapResult implements Serializable {
      *            </p>
      * 
      *            <pre>
-     * <code> &lt;p&gt;For additional details and restrictions on each pricing plan option, see the &lt;a href=&quot;https://aws.amazon.com/location/pricing/&quot;&gt;Amazon Location Service pricing page&lt;/a&gt;.&lt;/p&gt; </code>
+     * <code> &lt;p&gt;For additional details and restrictions on each pricing plan option, see &lt;a href=&quot;https://aws.amazon.com/location/pricing/&quot;&gt;Amazon Location Service pricing&lt;/a&gt;.&lt;/p&gt; </code>
      * </pre>
      * @return A reference to this updated object so that method calls can be
      *         chained together.

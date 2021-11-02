@@ -971,6 +971,89 @@ public class AmazonConnectAsyncClient extends AmazonConnectClient implements Ama
 
     /**
      * <p>
+     * This API is in preview release for Amazon Connect and is subject to
+     * change.
+     * </p>
+     * <p>
+     * Creates an agent status for the specified Amazon Connect instance.
+     * </p>
+     * 
+     * @param createAgentStatusRequest
+     * @return A Java Future object containing the response from the
+     *         CreateAgentStatus service method, as returned by Amazon Connect.
+     * @throws InvalidRequestException
+     * @throws InvalidParameterException
+     * @throws DuplicateResourceException
+     * @throws ResourceNotFoundException
+     * @throws LimitExceededException
+     * @throws ThrottlingException
+     * @throws InternalServiceException
+     * @throws AmazonClientException If any internal errors are encountered
+     *             inside the client while attempting to make the request or
+     *             handle the response. For example if a network connection is
+     *             not available.
+     * @throws AmazonServiceException If an error response is returned by Amazon
+     *             Connect indicating either a problem with the data in the
+     *             request, or a server side issue.
+     */
+    public Future<CreateAgentStatusResult> createAgentStatusAsync(
+            final CreateAgentStatusRequest createAgentStatusRequest) throws AmazonServiceException,
+            AmazonClientException {
+        return executorService.submit(new Callable<CreateAgentStatusResult>() {
+            public CreateAgentStatusResult call() throws Exception {
+                return createAgentStatus(createAgentStatusRequest);
+            }
+        });
+    }
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to
+     * change.
+     * </p>
+     * <p>
+     * Creates an agent status for the specified Amazon Connect instance.
+     * </p>
+     * 
+     * @param createAgentStatusRequest
+     * @return A Java Future object containing the response from the
+     *         CreateAgentStatus service method, as returned by Amazon Connect.
+     * @throws InvalidRequestException
+     * @throws InvalidParameterException
+     * @throws DuplicateResourceException
+     * @throws ResourceNotFoundException
+     * @throws LimitExceededException
+     * @throws ThrottlingException
+     * @throws InternalServiceException
+     * @throws AmazonClientException If any internal errors are encountered
+     *             inside the client while attempting to make the request or
+     *             handle the response. For example if a network connection is
+     *             not available.
+     * @throws AmazonServiceException If an error response is returned by Amazon
+     *             Connect indicating either a problem with the data in the
+     *             request, or a server side issue.
+     */
+    public Future<CreateAgentStatusResult> createAgentStatusAsync(
+            final CreateAgentStatusRequest createAgentStatusRequest,
+            final AsyncHandler<CreateAgentStatusRequest, CreateAgentStatusResult> asyncHandler)
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<CreateAgentStatusResult>() {
+            public CreateAgentStatusResult call() throws Exception {
+                CreateAgentStatusResult result = null;
+                try {
+                    result = createAgentStatus(createAgentStatusRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(createAgentStatusRequest, result);
+                return result;
+            }
+        });
+    }
+
+    /**
+     * <p>
      * Creates a contact flow for the specified Amazon Connect instance.
      * </p>
      * <p>
@@ -1051,6 +1134,83 @@ public class AmazonConnectAsyncClient extends AmazonConnectClient implements Ama
                     throw ex;
                 }
                 asyncHandler.onSuccess(createContactFlowRequest, result);
+                return result;
+            }
+        });
+    }
+
+    /**
+     * <p>
+     * Creates hours of operation.
+     * </p>
+     * 
+     * @param createHoursOfOperationRequest
+     * @return A Java Future object containing the response from the
+     *         CreateHoursOfOperation service method, as returned by Amazon
+     *         Connect.
+     * @throws DuplicateResourceException
+     * @throws InvalidRequestException
+     * @throws InvalidParameterException
+     * @throws ResourceNotFoundException
+     * @throws LimitExceededException
+     * @throws ThrottlingException
+     * @throws InternalServiceException
+     * @throws AmazonClientException If any internal errors are encountered
+     *             inside the client while attempting to make the request or
+     *             handle the response. For example if a network connection is
+     *             not available.
+     * @throws AmazonServiceException If an error response is returned by Amazon
+     *             Connect indicating either a problem with the data in the
+     *             request, or a server side issue.
+     */
+    public Future<CreateHoursOfOperationResult> createHoursOfOperationAsync(
+            final CreateHoursOfOperationRequest createHoursOfOperationRequest)
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<CreateHoursOfOperationResult>() {
+            public CreateHoursOfOperationResult call() throws Exception {
+                return createHoursOfOperation(createHoursOfOperationRequest);
+            }
+        });
+    }
+
+    /**
+     * <p>
+     * Creates hours of operation.
+     * </p>
+     * 
+     * @param createHoursOfOperationRequest
+     * @return A Java Future object containing the response from the
+     *         CreateHoursOfOperation service method, as returned by Amazon
+     *         Connect.
+     * @throws DuplicateResourceException
+     * @throws InvalidRequestException
+     * @throws InvalidParameterException
+     * @throws ResourceNotFoundException
+     * @throws LimitExceededException
+     * @throws ThrottlingException
+     * @throws InternalServiceException
+     * @throws AmazonClientException If any internal errors are encountered
+     *             inside the client while attempting to make the request or
+     *             handle the response. For example if a network connection is
+     *             not available.
+     * @throws AmazonServiceException If an error response is returned by Amazon
+     *             Connect indicating either a problem with the data in the
+     *             request, or a server side issue.
+     */
+    public Future<CreateHoursOfOperationResult> createHoursOfOperationAsync(
+            final CreateHoursOfOperationRequest createHoursOfOperationRequest,
+            final AsyncHandler<CreateHoursOfOperationRequest, CreateHoursOfOperationResult> asyncHandler)
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<CreateHoursOfOperationResult>() {
+            public CreateHoursOfOperationResult call() throws Exception {
+                CreateHoursOfOperationResult result = null;
+                try {
+                    result = createHoursOfOperation(createHoursOfOperationRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(createHoursOfOperationRequest, result);
                 return result;
             }
         });
@@ -1157,7 +1317,7 @@ public class AmazonConnectAsyncClient extends AmazonConnectClient implements Ama
 
     /**
      * <p>
-     * Create an AppIntegration association with an Amazon Connect instance.
+     * Creates an AWS resource association with an Amazon Connect instance.
      * </p>
      * 
      * @param createIntegrationAssociationRequest
@@ -1189,7 +1349,7 @@ public class AmazonConnectAsyncClient extends AmazonConnectClient implements Ama
 
     /**
      * <p>
-     * Create an AppIntegration association with an Amazon Connect instance.
+     * Creates an AWS resource association with an Amazon Connect instance.
      * </p>
      * 
      * @param createIntegrationAssociationRequest
@@ -1463,7 +1623,7 @@ public class AmazonConnectAsyncClient extends AmazonConnectClient implements Ama
 
     /**
      * <p>
-     * Creates a use case for an AppIntegration association.
+     * Creates a use case for an integration association.
      * </p>
      * 
      * @param createUseCaseRequest
@@ -1494,7 +1654,7 @@ public class AmazonConnectAsyncClient extends AmazonConnectClient implements Ama
 
     /**
      * <p>
-     * Creates a use case for an AppIntegration association.
+     * Creates a use case for an integration association.
      * </p>
      * 
      * @param createUseCaseRequest
@@ -1696,6 +1856,80 @@ public class AmazonConnectAsyncClient extends AmazonConnectClient implements Ama
 
     /**
      * <p>
+     * Deletes an hours of operation.
+     * </p>
+     * 
+     * @param deleteHoursOfOperationRequest
+     * @return A Java Future object containing the response from the
+     *         DeleteHoursOfOperation service method, as returned by Amazon
+     *         Connect.
+     * @throws InvalidRequestException
+     * @throws InvalidParameterException
+     * @throws ResourceNotFoundException
+     * @throws ThrottlingException
+     * @throws InternalServiceException
+     * @throws AmazonClientException If any internal errors are encountered
+     *             inside the client while attempting to make the request or
+     *             handle the response. For example if a network connection is
+     *             not available.
+     * @throws AmazonServiceException If an error response is returned by Amazon
+     *             Connect indicating either a problem with the data in the
+     *             request, or a server side issue.
+     */
+    public Future<Void> deleteHoursOfOperationAsync(
+            final DeleteHoursOfOperationRequest deleteHoursOfOperationRequest)
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                deleteHoursOfOperation(deleteHoursOfOperationRequest);
+                return null;
+            }
+        });
+    }
+
+    /**
+     * <p>
+     * Deletes an hours of operation.
+     * </p>
+     * 
+     * @param deleteHoursOfOperationRequest
+     * @return A Java Future object containing the response from the
+     *         DeleteHoursOfOperation service method, as returned by Amazon
+     *         Connect.
+     * @throws InvalidRequestException
+     * @throws InvalidParameterException
+     * @throws ResourceNotFoundException
+     * @throws ThrottlingException
+     * @throws InternalServiceException
+     * @throws AmazonClientException If any internal errors are encountered
+     *             inside the client while attempting to make the request or
+     *             handle the response. For example if a network connection is
+     *             not available.
+     * @throws AmazonServiceException If an error response is returned by Amazon
+     *             Connect indicating either a problem with the data in the
+     *             request, or a server side issue.
+     */
+    public Future<Void> deleteHoursOfOperationAsync(
+            final DeleteHoursOfOperationRequest deleteHoursOfOperationRequest,
+            final AsyncHandler<DeleteHoursOfOperationRequest, Void> asyncHandler)
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                Void result = null;
+                try {
+                    deleteHoursOfOperation(deleteHoursOfOperationRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(deleteHoursOfOperationRequest, result);
+                return result;
+            }
+        });
+    }
+
+    /**
+     * <p>
      * This API is in preview release for Amazon Connect and is subject to
      * change.
      * </p>
@@ -1784,8 +2018,8 @@ public class AmazonConnectAsyncClient extends AmazonConnectClient implements Ama
 
     /**
      * <p>
-     * Deletes an AppIntegration association from an Amazon Connect instance.
-     * The association must not have any use cases associated with it.
+     * Deletes an AWS resource association from an Amazon Connect instance. The
+     * association must not have any use cases associated with it.
      * </p>
      * 
      * @param deleteIntegrationAssociationRequest
@@ -1817,8 +2051,8 @@ public class AmazonConnectAsyncClient extends AmazonConnectClient implements Ama
 
     /**
      * <p>
-     * Deletes an AppIntegration association from an Amazon Connect instance.
-     * The association must not have any use cases associated with it.
+     * Deletes an AWS resource association from an Amazon Connect instance. The
+     * association must not have any use cases associated with it.
      * </p>
      * 
      * @param deleteIntegrationAssociationRequest
@@ -1930,7 +2164,7 @@ public class AmazonConnectAsyncClient extends AmazonConnectClient implements Ama
 
     /**
      * <p>
-     * Deletes a use case from an AppIntegration association.
+     * Deletes a use case from an integration association.
      * </p>
      * 
      * @param deleteUseCaseRequest
@@ -1960,7 +2194,7 @@ public class AmazonConnectAsyncClient extends AmazonConnectClient implements Ama
 
     /**
      * <p>
-     * Deletes a use case from an AppIntegration association.
+     * Deletes a use case from an integration association.
      * </p>
      * 
      * @param deleteUseCaseRequest
@@ -2160,6 +2394,87 @@ public class AmazonConnectAsyncClient extends AmazonConnectClient implements Ama
 
     /**
      * <p>
+     * This API is in preview release for Amazon Connect and is subject to
+     * change.
+     * </p>
+     * <p>
+     * Describes an agent status.
+     * </p>
+     * 
+     * @param describeAgentStatusRequest
+     * @return A Java Future object containing the response from the
+     *         DescribeAgentStatus service method, as returned by Amazon
+     *         Connect.
+     * @throws InvalidRequestException
+     * @throws InvalidParameterException
+     * @throws ResourceNotFoundException
+     * @throws ThrottlingException
+     * @throws InternalServiceException
+     * @throws AmazonClientException If any internal errors are encountered
+     *             inside the client while attempting to make the request or
+     *             handle the response. For example if a network connection is
+     *             not available.
+     * @throws AmazonServiceException If an error response is returned by Amazon
+     *             Connect indicating either a problem with the data in the
+     *             request, or a server side issue.
+     */
+    public Future<DescribeAgentStatusResult> describeAgentStatusAsync(
+            final DescribeAgentStatusRequest describeAgentStatusRequest)
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeAgentStatusResult>() {
+            public DescribeAgentStatusResult call() throws Exception {
+                return describeAgentStatus(describeAgentStatusRequest);
+            }
+        });
+    }
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to
+     * change.
+     * </p>
+     * <p>
+     * Describes an agent status.
+     * </p>
+     * 
+     * @param describeAgentStatusRequest
+     * @return A Java Future object containing the response from the
+     *         DescribeAgentStatus service method, as returned by Amazon
+     *         Connect.
+     * @throws InvalidRequestException
+     * @throws InvalidParameterException
+     * @throws ResourceNotFoundException
+     * @throws ThrottlingException
+     * @throws InternalServiceException
+     * @throws AmazonClientException If any internal errors are encountered
+     *             inside the client while attempting to make the request or
+     *             handle the response. For example if a network connection is
+     *             not available.
+     * @throws AmazonServiceException If an error response is returned by Amazon
+     *             Connect indicating either a problem with the data in the
+     *             request, or a server side issue.
+     */
+    public Future<DescribeAgentStatusResult> describeAgentStatusAsync(
+            final DescribeAgentStatusRequest describeAgentStatusRequest,
+            final AsyncHandler<DescribeAgentStatusRequest, DescribeAgentStatusResult> asyncHandler)
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeAgentStatusResult>() {
+            public DescribeAgentStatusResult call() throws Exception {
+                DescribeAgentStatusResult result = null;
+                try {
+                    result = describeAgentStatus(describeAgentStatusRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(describeAgentStatusRequest, result);
+                return result;
+            }
+        });
+    }
+
+    /**
+     * <p>
      * Describes the specified contact flow.
      * </p>
      * <p>
@@ -2245,10 +2560,6 @@ public class AmazonConnectAsyncClient extends AmazonConnectClient implements Ama
 
     /**
      * <p>
-     * This API is in preview release for Amazon Connect and is subject to
-     * change.
-     * </p>
-     * <p>
      * Describes the hours of operation.
      * </p>
      * 
@@ -2280,10 +2591,6 @@ public class AmazonConnectAsyncClient extends AmazonConnectClient implements Ama
     }
 
     /**
-     * <p>
-     * This API is in preview release for Amazon Connect and is subject to
-     * change.
-     * </p>
      * <p>
      * Describes the hours of operation.
      * </p>
@@ -4015,6 +4322,85 @@ public class AmazonConnectAsyncClient extends AmazonConnectClient implements Ama
      * change.
      * </p>
      * <p>
+     * Lists agent statuses.
+     * </p>
+     * 
+     * @param listAgentStatusesRequest
+     * @return A Java Future object containing the response from the
+     *         ListAgentStatuses service method, as returned by Amazon Connect.
+     * @throws InvalidRequestException
+     * @throws InvalidParameterException
+     * @throws ResourceNotFoundException
+     * @throws ThrottlingException
+     * @throws InternalServiceException
+     * @throws AmazonClientException If any internal errors are encountered
+     *             inside the client while attempting to make the request or
+     *             handle the response. For example if a network connection is
+     *             not available.
+     * @throws AmazonServiceException If an error response is returned by Amazon
+     *             Connect indicating either a problem with the data in the
+     *             request, or a server side issue.
+     */
+    public Future<ListAgentStatusesResult> listAgentStatusesAsync(
+            final ListAgentStatusesRequest listAgentStatusesRequest) throws AmazonServiceException,
+            AmazonClientException {
+        return executorService.submit(new Callable<ListAgentStatusesResult>() {
+            public ListAgentStatusesResult call() throws Exception {
+                return listAgentStatuses(listAgentStatusesRequest);
+            }
+        });
+    }
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to
+     * change.
+     * </p>
+     * <p>
+     * Lists agent statuses.
+     * </p>
+     * 
+     * @param listAgentStatusesRequest
+     * @return A Java Future object containing the response from the
+     *         ListAgentStatuses service method, as returned by Amazon Connect.
+     * @throws InvalidRequestException
+     * @throws InvalidParameterException
+     * @throws ResourceNotFoundException
+     * @throws ThrottlingException
+     * @throws InternalServiceException
+     * @throws AmazonClientException If any internal errors are encountered
+     *             inside the client while attempting to make the request or
+     *             handle the response. For example if a network connection is
+     *             not available.
+     * @throws AmazonServiceException If an error response is returned by Amazon
+     *             Connect indicating either a problem with the data in the
+     *             request, or a server side issue.
+     */
+    public Future<ListAgentStatusesResult> listAgentStatusesAsync(
+            final ListAgentStatusesRequest listAgentStatusesRequest,
+            final AsyncHandler<ListAgentStatusesRequest, ListAgentStatusesResult> asyncHandler)
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ListAgentStatusesResult>() {
+            public ListAgentStatusesResult call() throws Exception {
+                ListAgentStatusesResult result = null;
+                try {
+                    result = listAgentStatuses(listAgentStatusesRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(listAgentStatusesRequest, result);
+                return result;
+            }
+        });
+    }
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to
+     * change.
+     * </p>
+     * <p>
      * Returns a paginated list of all approved origins associated with the
      * instance.
      * </p>
@@ -4594,8 +4980,8 @@ public class AmazonConnectAsyncClient extends AmazonConnectClient implements Ama
 
     /**
      * <p>
-     * Provides summary information about the AppIntegration associations for
-     * the specified Amazon Connect instance.
+     * Provides summary information about the AWS resource associations for the
+     * specified Amazon Connect instance.
      * </p>
      * 
      * @param listIntegrationAssociationsRequest
@@ -4626,8 +5012,8 @@ public class AmazonConnectAsyncClient extends AmazonConnectClient implements Ama
 
     /**
      * <p>
-     * Provides summary information about the AppIntegration associations for
-     * the specified Amazon Connect instance.
+     * Provides summary information about the AWS resource associations for the
+     * specified Amazon Connect instance.
      * </p>
      * 
      * @param listIntegrationAssociationsRequest
@@ -5649,12 +6035,12 @@ public class AmazonConnectAsyncClient extends AmazonConnectClient implements Ama
 
     /**
      * <p>
-     * Lists the use cases.
+     * Lists the use cases for the integration association.
      * </p>
      * 
      * @param listUseCasesRequest <p>
      *            Provides summary information about the use cases for the
-     *            specified Amazon Connect AppIntegration association.
+     *            specified integration association.
      *            </p>
      * @return A Java Future object containing the response from the
      *         ListUseCases service method, as returned by Amazon Connect.
@@ -5682,12 +6068,12 @@ public class AmazonConnectAsyncClient extends AmazonConnectClient implements Ama
 
     /**
      * <p>
-     * Lists the use cases.
+     * Lists the use cases for the integration association.
      * </p>
      * 
      * @param listUseCasesRequest <p>
      *            Provides summary information about the use cases for the
-     *            specified Amazon Connect AppIntegration association.
+     *            specified integration association.
      *            </p>
      * @return A Java Future object containing the response from the
      *         ListUseCases service method, as returned by Amazon Connect.
@@ -6228,6 +6614,15 @@ public class AmazonConnectAsyncClient extends AmazonConnectClient implements Ama
      * >Amazon Connect Service Quotas</a> in the <i>Amazon Connect Administrator
      * Guide</i>.
      * </p>
+     * </note> <note>
+     * <p>
+     * Campaign calls are not allowed by default. Before you can make a call
+     * with <code>TrafficType</code> = <code>CAMPAIGN</code>, you must submit a
+     * service quota increase request. For more information, see <a href=
+     * "https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html"
+     * >Amazon Connect Service Quotas</a> in the <i>Amazon Connect Administrator
+     * Guide</i>.
+     * </p>
      * </note>
      * 
      * @param startOutboundVoiceContactRequest
@@ -6280,6 +6675,15 @@ public class AmazonConnectAsyncClient extends AmazonConnectClient implements Ama
      * UK numbers with a 447 prefix are not allowed by default. Before you can
      * dial these UK mobile numbers, you must submit a service quota increase
      * request. For more information, see <a href=
+     * "https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html"
+     * >Amazon Connect Service Quotas</a> in the <i>Amazon Connect Administrator
+     * Guide</i>.
+     * </p>
+     * </note> <note>
+     * <p>
+     * Campaign calls are not allowed by default. Before you can make a call
+     * with <code>TrafficType</code> = <code>CAMPAIGN</code>, you must submit a
+     * service quota increase request. For more information, see <a href=
      * "https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html"
      * >Amazon Connect Service Quotas</a> in the <i>Amazon Connect Administrator
      * Guide</i>.
@@ -6648,7 +7052,7 @@ public class AmazonConnectAsyncClient extends AmazonConnectClient implements Ama
      * </p>
      * <p>
      * The supported resource types are users, routing profiles, queues, quick
-     * connects, and contact flows.
+     * connects, contact flows, agent status, and hours of operation.
      * </p>
      * <p>
      * For sample policies that use tags, see <a href=
@@ -6689,7 +7093,7 @@ public class AmazonConnectAsyncClient extends AmazonConnectClient implements Ama
      * </p>
      * <p>
      * The supported resource types are users, routing profiles, queues, quick
-     * connects, and contact flows.
+     * connects, contact flows, agent status, and hours of operation.
      * </p>
      * <p>
      * For sample policies that use tags, see <a href=
@@ -6797,6 +7201,90 @@ public class AmazonConnectAsyncClient extends AmazonConnectClient implements Ama
                     throw ex;
                 }
                 asyncHandler.onSuccess(untagResourceRequest, result);
+                return result;
+            }
+        });
+    }
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to
+     * change.
+     * </p>
+     * <p>
+     * Updates agent status.
+     * </p>
+     * 
+     * @param updateAgentStatusRequest
+     * @return A Java Future object containing the response from the
+     *         UpdateAgentStatus service method, as returned by Amazon Connect.
+     * @throws InvalidRequestException
+     * @throws InvalidParameterException
+     * @throws DuplicateResourceException
+     * @throws ResourceNotFoundException
+     * @throws LimitExceededException
+     * @throws ThrottlingException
+     * @throws InternalServiceException
+     * @throws AmazonClientException If any internal errors are encountered
+     *             inside the client while attempting to make the request or
+     *             handle the response. For example if a network connection is
+     *             not available.
+     * @throws AmazonServiceException If an error response is returned by Amazon
+     *             Connect indicating either a problem with the data in the
+     *             request, or a server side issue.
+     */
+    public Future<Void> updateAgentStatusAsync(
+            final UpdateAgentStatusRequest updateAgentStatusRequest) throws AmazonServiceException,
+            AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                updateAgentStatus(updateAgentStatusRequest);
+                return null;
+            }
+        });
+    }
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to
+     * change.
+     * </p>
+     * <p>
+     * Updates agent status.
+     * </p>
+     * 
+     * @param updateAgentStatusRequest
+     * @return A Java Future object containing the response from the
+     *         UpdateAgentStatus service method, as returned by Amazon Connect.
+     * @throws InvalidRequestException
+     * @throws InvalidParameterException
+     * @throws DuplicateResourceException
+     * @throws ResourceNotFoundException
+     * @throws LimitExceededException
+     * @throws ThrottlingException
+     * @throws InternalServiceException
+     * @throws AmazonClientException If any internal errors are encountered
+     *             inside the client while attempting to make the request or
+     *             handle the response. For example if a network connection is
+     *             not available.
+     * @throws AmazonServiceException If an error response is returned by Amazon
+     *             Connect indicating either a problem with the data in the
+     *             request, or a server side issue.
+     */
+    public Future<Void> updateAgentStatusAsync(
+            final UpdateAgentStatusRequest updateAgentStatusRequest,
+            final AsyncHandler<UpdateAgentStatusRequest, Void> asyncHandler)
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                Void result = null;
+                try {
+                    updateAgentStatus(updateAgentStatusRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(updateAgentStatusRequest, result);
                 return result;
             }
         });
@@ -7096,6 +7584,82 @@ public class AmazonConnectAsyncClient extends AmazonConnectClient implements Ama
                     throw ex;
                 }
                 asyncHandler.onSuccess(updateContactFlowNameRequest, result);
+                return result;
+            }
+        });
+    }
+
+    /**
+     * <p>
+     * Updates the hours of operation.
+     * </p>
+     * 
+     * @param updateHoursOfOperationRequest
+     * @return A Java Future object containing the response from the
+     *         UpdateHoursOfOperation service method, as returned by Amazon
+     *         Connect.
+     * @throws DuplicateResourceException
+     * @throws InvalidRequestException
+     * @throws InvalidParameterException
+     * @throws ResourceNotFoundException
+     * @throws ThrottlingException
+     * @throws InternalServiceException
+     * @throws AmazonClientException If any internal errors are encountered
+     *             inside the client while attempting to make the request or
+     *             handle the response. For example if a network connection is
+     *             not available.
+     * @throws AmazonServiceException If an error response is returned by Amazon
+     *             Connect indicating either a problem with the data in the
+     *             request, or a server side issue.
+     */
+    public Future<Void> updateHoursOfOperationAsync(
+            final UpdateHoursOfOperationRequest updateHoursOfOperationRequest)
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                updateHoursOfOperation(updateHoursOfOperationRequest);
+                return null;
+            }
+        });
+    }
+
+    /**
+     * <p>
+     * Updates the hours of operation.
+     * </p>
+     * 
+     * @param updateHoursOfOperationRequest
+     * @return A Java Future object containing the response from the
+     *         UpdateHoursOfOperation service method, as returned by Amazon
+     *         Connect.
+     * @throws DuplicateResourceException
+     * @throws InvalidRequestException
+     * @throws InvalidParameterException
+     * @throws ResourceNotFoundException
+     * @throws ThrottlingException
+     * @throws InternalServiceException
+     * @throws AmazonClientException If any internal errors are encountered
+     *             inside the client while attempting to make the request or
+     *             handle the response. For example if a network connection is
+     *             not available.
+     * @throws AmazonServiceException If an error response is returned by Amazon
+     *             Connect indicating either a problem with the data in the
+     *             request, or a server side issue.
+     */
+    public Future<Void> updateHoursOfOperationAsync(
+            final UpdateHoursOfOperationRequest updateHoursOfOperationRequest,
+            final AsyncHandler<UpdateHoursOfOperationRequest, Void> asyncHandler)
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                Void result = null;
+                try {
+                    updateHoursOfOperation(updateHoursOfOperationRequest);
+                } catch (Exception ex) {
+                    asyncHandler.onError(ex);
+                    throw ex;
+                }
+                asyncHandler.onSuccess(updateHoursOfOperationRequest, result);
                 return result;
             }
         });

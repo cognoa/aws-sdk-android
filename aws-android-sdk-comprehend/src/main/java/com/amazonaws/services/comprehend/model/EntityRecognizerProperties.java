@@ -32,7 +32,8 @@ public class EntityRecognizerProperties implements Serializable {
      * <b>Length: </b> - 256<br/>
      * <b>Pattern:
      * </b>arn:aws(-[^:]+)?:comprehend:[a-zA-Z0-9-]*:[0-9]{12}:entity
-     * -recognizer/[a-zA-Z0-9](-*[a-zA-Z0-9])*<br/>
+     * -recognizer/
+     * [a-zA-Z0-9](-*[a-zA-Z0-9])*(/version/[a-zA-Z0-9](-*[a-zA-Z0-9])*)?<br/>
      */
     private String entityRecognizerArn;
 
@@ -142,6 +143,7 @@ public class EntityRecognizerProperties implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b> - 2048<br/>
+     * <b>Pattern: </b>.*<br/>
      */
     private String volumeKmsKeyId;
 
@@ -178,8 +180,20 @@ public class EntityRecognizerProperties implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b> - 2048<br/>
+     * <b>Pattern: </b>.*<br/>
      */
     private String modelKmsKeyId;
+
+    /**
+     * <p>
+     * The version name you assigned to the entity recognizer.
+     * </p>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b> - 63<br/>
+     * <b>Pattern: </b>^[a-zA-Z0-9](-*[a-zA-Z0-9])*$<br/>
+     */
+    private String versionName;
 
     /**
      * <p>
@@ -190,7 +204,8 @@ public class EntityRecognizerProperties implements Serializable {
      * <b>Length: </b> - 256<br/>
      * <b>Pattern:
      * </b>arn:aws(-[^:]+)?:comprehend:[a-zA-Z0-9-]*:[0-9]{12}:entity
-     * -recognizer/[a-zA-Z0-9](-*[a-zA-Z0-9])*<br/>
+     * -recognizer/
+     * [a-zA-Z0-9](-*[a-zA-Z0-9])*(/version/[a-zA-Z0-9](-*[a-zA-Z0-9])*)?<br/>
      *
      * @return <p>
      *         The Amazon Resource Name (ARN) that identifies the entity
@@ -210,7 +225,8 @@ public class EntityRecognizerProperties implements Serializable {
      * <b>Length: </b> - 256<br/>
      * <b>Pattern:
      * </b>arn:aws(-[^:]+)?:comprehend:[a-zA-Z0-9-]*:[0-9]{12}:entity
-     * -recognizer/[a-zA-Z0-9](-*[a-zA-Z0-9])*<br/>
+     * -recognizer/
+     * [a-zA-Z0-9](-*[a-zA-Z0-9])*(/version/[a-zA-Z0-9](-*[a-zA-Z0-9])*)?<br/>
      *
      * @param entityRecognizerArn <p>
      *            The Amazon Resource Name (ARN) that identifies the entity
@@ -233,7 +249,8 @@ public class EntityRecognizerProperties implements Serializable {
      * <b>Length: </b> - 256<br/>
      * <b>Pattern:
      * </b>arn:aws(-[^:]+)?:comprehend:[a-zA-Z0-9-]*:[0-9]{12}:entity
-     * -recognizer/[a-zA-Z0-9](-*[a-zA-Z0-9])*<br/>
+     * -recognizer/
+     * [a-zA-Z0-9](-*[a-zA-Z0-9])*(/version/[a-zA-Z0-9](-*[a-zA-Z0-9])*)?<br/>
      *
      * @param entityRecognizerArn <p>
      *            The Amazon Resource Name (ARN) that identifies the entity
@@ -862,6 +879,7 @@ public class EntityRecognizerProperties implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b> - 2048<br/>
+     * <b>Pattern: </b>.*<br/>
      *
      * @return <p>
      *         ID for the AWS Key Management Service (KMS) key that Amazon
@@ -910,6 +928,7 @@ public class EntityRecognizerProperties implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b> - 2048<br/>
+     * <b>Pattern: </b>.*<br/>
      *
      * @param volumeKmsKeyId <p>
      *            ID for the AWS Key Management Service (KMS) key that Amazon
@@ -962,6 +981,7 @@ public class EntityRecognizerProperties implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b> - 2048<br/>
+     * <b>Pattern: </b>.*<br/>
      *
      * @param volumeKmsKeyId <p>
      *            ID for the AWS Key Management Service (KMS) key that Amazon
@@ -1082,6 +1102,7 @@ public class EntityRecognizerProperties implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b> - 2048<br/>
+     * <b>Pattern: </b>.*<br/>
      *
      * @return <p>
      *         ID for the AWS Key Management Service (KMS) key that Amazon
@@ -1128,6 +1149,7 @@ public class EntityRecognizerProperties implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b> - 2048<br/>
+     * <b>Pattern: </b>.*<br/>
      *
      * @param modelKmsKeyId <p>
      *            ID for the AWS Key Management Service (KMS) key that Amazon
@@ -1178,6 +1200,7 @@ public class EntityRecognizerProperties implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b> - 2048<br/>
+     * <b>Pattern: </b>.*<br/>
      *
      * @param modelKmsKeyId <p>
      *            ID for the AWS Key Management Service (KMS) key that Amazon
@@ -1203,6 +1226,63 @@ public class EntityRecognizerProperties implements Serializable {
      */
     public EntityRecognizerProperties withModelKmsKeyId(String modelKmsKeyId) {
         this.modelKmsKeyId = modelKmsKeyId;
+        return this;
+    }
+
+    /**
+     * <p>
+     * The version name you assigned to the entity recognizer.
+     * </p>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b> - 63<br/>
+     * <b>Pattern: </b>^[a-zA-Z0-9](-*[a-zA-Z0-9])*$<br/>
+     *
+     * @return <p>
+     *         The version name you assigned to the entity recognizer.
+     *         </p>
+     */
+    public String getVersionName() {
+        return versionName;
+    }
+
+    /**
+     * <p>
+     * The version name you assigned to the entity recognizer.
+     * </p>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b> - 63<br/>
+     * <b>Pattern: </b>^[a-zA-Z0-9](-*[a-zA-Z0-9])*$<br/>
+     *
+     * @param versionName <p>
+     *            The version name you assigned to the entity recognizer.
+     *            </p>
+     */
+    public void setVersionName(String versionName) {
+        this.versionName = versionName;
+    }
+
+    /**
+     * <p>
+     * The version name you assigned to the entity recognizer.
+     * </p>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained
+     * together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b> - 63<br/>
+     * <b>Pattern: </b>^[a-zA-Z0-9](-*[a-zA-Z0-9])*$<br/>
+     *
+     * @param versionName <p>
+     *            The version name you assigned to the entity recognizer.
+     *            </p>
+     * @return A reference to this updated object so that method calls can be
+     *         chained together.
+     */
+    public EntityRecognizerProperties withVersionName(String versionName) {
+        this.versionName = versionName;
         return this;
     }
 
@@ -1244,7 +1324,9 @@ public class EntityRecognizerProperties implements Serializable {
         if (getVpcConfig() != null)
             sb.append("VpcConfig: " + getVpcConfig() + ",");
         if (getModelKmsKeyId() != null)
-            sb.append("ModelKmsKeyId: " + getModelKmsKeyId());
+            sb.append("ModelKmsKeyId: " + getModelKmsKeyId() + ",");
+        if (getVersionName() != null)
+            sb.append("VersionName: " + getVersionName());
         sb.append("}");
         return sb.toString();
     }
@@ -1277,6 +1359,8 @@ public class EntityRecognizerProperties implements Serializable {
         hashCode = prime * hashCode + ((getVpcConfig() == null) ? 0 : getVpcConfig().hashCode());
         hashCode = prime * hashCode
                 + ((getModelKmsKeyId() == null) ? 0 : getModelKmsKeyId().hashCode());
+        hashCode = prime * hashCode
+                + ((getVersionName() == null) ? 0 : getVersionName().hashCode());
         return hashCode;
     }
 
@@ -1357,6 +1441,11 @@ public class EntityRecognizerProperties implements Serializable {
             return false;
         if (other.getModelKmsKeyId() != null
                 && other.getModelKmsKeyId().equals(this.getModelKmsKeyId()) == false)
+            return false;
+        if (other.getVersionName() == null ^ this.getVersionName() == null)
+            return false;
+        if (other.getVersionName() != null
+                && other.getVersionName().equals(this.getVersionName()) == false)
             return false;
         return true;
     }
