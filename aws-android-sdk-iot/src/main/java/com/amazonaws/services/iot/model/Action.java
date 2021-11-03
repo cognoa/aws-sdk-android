@@ -111,8 +111,18 @@ public class Action implements Serializable {
 
     /**
      * <p>
-     * Write data to an Amazon Elasticsearch Service domain.
+     * Write data to an Amazon OpenSearch Service domain.
      * </p>
+     * <note>
+     * <p>
+     * The <code>Elasticsearch</code> action can only be used by existing rule
+     * actions. To create a new rule action or to update an existing rule
+     * action, use the <code>OpenSearch</code> rule action instead. For more
+     * information, see <a href=
+     * "https://docs.aws.amazon.com/iot/latest/apireference/API_OpenSearchAction.html"
+     * >OpenSearchAction</a>.
+     * </p>
+     * </note>
      */
     private ElasticsearchAction elasticsearch;
 
@@ -125,22 +135,22 @@ public class Action implements Serializable {
 
     /**
      * <p>
-     * Sends message data to an AWS IoT Analytics channel.
+     * Sends message data to an IoT Analytics channel.
      * </p>
      */
     private IotAnalyticsAction iotAnalytics;
 
     /**
      * <p>
-     * Sends an input to an AWS IoT Events detector.
+     * Sends an input to an IoT Events detector.
      * </p>
      */
     private IotEventsAction iotEvents;
 
     /**
      * <p>
-     * Sends data from the MQTT message that triggered the rule to AWS IoT
-     * SiteWise asset properties.
+     * Sends data from the MQTT message that triggered the rule to IoT SiteWise
+     * asset properties.
      * </p>
      */
     private IotSiteWiseAction iotSiteWise;
@@ -177,6 +187,13 @@ public class Action implements Serializable {
      * </p>
      */
     private KafkaAction kafka;
+
+    /**
+     * <p>
+     * Write data to an Amazon OpenSearch Service domain.
+     * </p>
+     */
+    private OpenSearchAction openSearch;
 
     /**
      * <p>
@@ -732,12 +749,32 @@ public class Action implements Serializable {
 
     /**
      * <p>
-     * Write data to an Amazon Elasticsearch Service domain.
+     * Write data to an Amazon OpenSearch Service domain.
      * </p>
+     * <note>
+     * <p>
+     * The <code>Elasticsearch</code> action can only be used by existing rule
+     * actions. To create a new rule action or to update an existing rule
+     * action, use the <code>OpenSearch</code> rule action instead. For more
+     * information, see <a href=
+     * "https://docs.aws.amazon.com/iot/latest/apireference/API_OpenSearchAction.html"
+     * >OpenSearchAction</a>.
+     * </p>
+     * </note>
      *
      * @return <p>
-     *         Write data to an Amazon Elasticsearch Service domain.
+     *         Write data to an Amazon OpenSearch Service domain.
      *         </p>
+     *         <note>
+     *         <p>
+     *         The <code>Elasticsearch</code> action can only be used by
+     *         existing rule actions. To create a new rule action or to update
+     *         an existing rule action, use the <code>OpenSearch</code> rule
+     *         action instead. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/iot/latest/apireference/API_OpenSearchAction.html"
+     *         >OpenSearchAction</a>.
+     *         </p>
+     *         </note>
      */
     public ElasticsearchAction getElasticsearch() {
         return elasticsearch;
@@ -745,12 +782,33 @@ public class Action implements Serializable {
 
     /**
      * <p>
-     * Write data to an Amazon Elasticsearch Service domain.
+     * Write data to an Amazon OpenSearch Service domain.
      * </p>
+     * <note>
+     * <p>
+     * The <code>Elasticsearch</code> action can only be used by existing rule
+     * actions. To create a new rule action or to update an existing rule
+     * action, use the <code>OpenSearch</code> rule action instead. For more
+     * information, see <a href=
+     * "https://docs.aws.amazon.com/iot/latest/apireference/API_OpenSearchAction.html"
+     * >OpenSearchAction</a>.
+     * </p>
+     * </note>
      *
      * @param elasticsearch <p>
-     *            Write data to an Amazon Elasticsearch Service domain.
+     *            Write data to an Amazon OpenSearch Service domain.
      *            </p>
+     *            <note>
+     *            <p>
+     *            The <code>Elasticsearch</code> action can only be used by
+     *            existing rule actions. To create a new rule action or to
+     *            update an existing rule action, use the
+     *            <code>OpenSearch</code> rule action instead. For more
+     *            information, see <a href=
+     *            "https://docs.aws.amazon.com/iot/latest/apireference/API_OpenSearchAction.html"
+     *            >OpenSearchAction</a>.
+     *            </p>
+     *            </note>
      */
     public void setElasticsearch(ElasticsearchAction elasticsearch) {
         this.elasticsearch = elasticsearch;
@@ -758,15 +816,36 @@ public class Action implements Serializable {
 
     /**
      * <p>
-     * Write data to an Amazon Elasticsearch Service domain.
+     * Write data to an Amazon OpenSearch Service domain.
      * </p>
+     * <note>
+     * <p>
+     * The <code>Elasticsearch</code> action can only be used by existing rule
+     * actions. To create a new rule action or to update an existing rule
+     * action, use the <code>OpenSearch</code> rule action instead. For more
+     * information, see <a href=
+     * "https://docs.aws.amazon.com/iot/latest/apireference/API_OpenSearchAction.html"
+     * >OpenSearchAction</a>.
+     * </p>
+     * </note>
      * <p>
      * Returns a reference to this object so that method calls can be chained
      * together.
      *
      * @param elasticsearch <p>
-     *            Write data to an Amazon Elasticsearch Service domain.
+     *            Write data to an Amazon OpenSearch Service domain.
      *            </p>
+     *            <note>
+     *            <p>
+     *            The <code>Elasticsearch</code> action can only be used by
+     *            existing rule actions. To create a new rule action or to
+     *            update an existing rule action, use the
+     *            <code>OpenSearch</code> rule action instead. For more
+     *            information, see <a href=
+     *            "https://docs.aws.amazon.com/iot/latest/apireference/API_OpenSearchAction.html"
+     *            >OpenSearchAction</a>.
+     *            </p>
+     *            </note>
      * @return A reference to this updated object so that method calls can be
      *         chained together.
      */
@@ -822,11 +901,11 @@ public class Action implements Serializable {
 
     /**
      * <p>
-     * Sends message data to an AWS IoT Analytics channel.
+     * Sends message data to an IoT Analytics channel.
      * </p>
      *
      * @return <p>
-     *         Sends message data to an AWS IoT Analytics channel.
+     *         Sends message data to an IoT Analytics channel.
      *         </p>
      */
     public IotAnalyticsAction getIotAnalytics() {
@@ -835,11 +914,11 @@ public class Action implements Serializable {
 
     /**
      * <p>
-     * Sends message data to an AWS IoT Analytics channel.
+     * Sends message data to an IoT Analytics channel.
      * </p>
      *
      * @param iotAnalytics <p>
-     *            Sends message data to an AWS IoT Analytics channel.
+     *            Sends message data to an IoT Analytics channel.
      *            </p>
      */
     public void setIotAnalytics(IotAnalyticsAction iotAnalytics) {
@@ -848,14 +927,14 @@ public class Action implements Serializable {
 
     /**
      * <p>
-     * Sends message data to an AWS IoT Analytics channel.
+     * Sends message data to an IoT Analytics channel.
      * </p>
      * <p>
      * Returns a reference to this object so that method calls can be chained
      * together.
      *
      * @param iotAnalytics <p>
-     *            Sends message data to an AWS IoT Analytics channel.
+     *            Sends message data to an IoT Analytics channel.
      *            </p>
      * @return A reference to this updated object so that method calls can be
      *         chained together.
@@ -867,11 +946,11 @@ public class Action implements Serializable {
 
     /**
      * <p>
-     * Sends an input to an AWS IoT Events detector.
+     * Sends an input to an IoT Events detector.
      * </p>
      *
      * @return <p>
-     *         Sends an input to an AWS IoT Events detector.
+     *         Sends an input to an IoT Events detector.
      *         </p>
      */
     public IotEventsAction getIotEvents() {
@@ -880,11 +959,11 @@ public class Action implements Serializable {
 
     /**
      * <p>
-     * Sends an input to an AWS IoT Events detector.
+     * Sends an input to an IoT Events detector.
      * </p>
      *
      * @param iotEvents <p>
-     *            Sends an input to an AWS IoT Events detector.
+     *            Sends an input to an IoT Events detector.
      *            </p>
      */
     public void setIotEvents(IotEventsAction iotEvents) {
@@ -893,14 +972,14 @@ public class Action implements Serializable {
 
     /**
      * <p>
-     * Sends an input to an AWS IoT Events detector.
+     * Sends an input to an IoT Events detector.
      * </p>
      * <p>
      * Returns a reference to this object so that method calls can be chained
      * together.
      *
      * @param iotEvents <p>
-     *            Sends an input to an AWS IoT Events detector.
+     *            Sends an input to an IoT Events detector.
      *            </p>
      * @return A reference to this updated object so that method calls can be
      *         chained together.
@@ -912,13 +991,13 @@ public class Action implements Serializable {
 
     /**
      * <p>
-     * Sends data from the MQTT message that triggered the rule to AWS IoT
-     * SiteWise asset properties.
+     * Sends data from the MQTT message that triggered the rule to IoT SiteWise
+     * asset properties.
      * </p>
      *
      * @return <p>
-     *         Sends data from the MQTT message that triggered the rule to AWS
-     *         IoT SiteWise asset properties.
+     *         Sends data from the MQTT message that triggered the rule to IoT
+     *         SiteWise asset properties.
      *         </p>
      */
     public IotSiteWiseAction getIotSiteWise() {
@@ -927,13 +1006,13 @@ public class Action implements Serializable {
 
     /**
      * <p>
-     * Sends data from the MQTT message that triggered the rule to AWS IoT
-     * SiteWise asset properties.
+     * Sends data from the MQTT message that triggered the rule to IoT SiteWise
+     * asset properties.
      * </p>
      *
      * @param iotSiteWise <p>
      *            Sends data from the MQTT message that triggered the rule to
-     *            AWS IoT SiteWise asset properties.
+     *            IoT SiteWise asset properties.
      *            </p>
      */
     public void setIotSiteWise(IotSiteWiseAction iotSiteWise) {
@@ -942,8 +1021,8 @@ public class Action implements Serializable {
 
     /**
      * <p>
-     * Sends data from the MQTT message that triggered the rule to AWS IoT
-     * SiteWise asset properties.
+     * Sends data from the MQTT message that triggered the rule to IoT SiteWise
+     * asset properties.
      * </p>
      * <p>
      * Returns a reference to this object so that method calls can be chained
@@ -951,7 +1030,7 @@ public class Action implements Serializable {
      *
      * @param iotSiteWise <p>
      *            Sends data from the MQTT message that triggered the rule to
-     *            AWS IoT SiteWise asset properties.
+     *            IoT SiteWise asset properties.
      *            </p>
      * @return A reference to this updated object so that method calls can be
      *         chained together.
@@ -1172,6 +1251,51 @@ public class Action implements Serializable {
     }
 
     /**
+     * <p>
+     * Write data to an Amazon OpenSearch Service domain.
+     * </p>
+     *
+     * @return <p>
+     *         Write data to an Amazon OpenSearch Service domain.
+     *         </p>
+     */
+    public OpenSearchAction getOpenSearch() {
+        return openSearch;
+    }
+
+    /**
+     * <p>
+     * Write data to an Amazon OpenSearch Service domain.
+     * </p>
+     *
+     * @param openSearch <p>
+     *            Write data to an Amazon OpenSearch Service domain.
+     *            </p>
+     */
+    public void setOpenSearch(OpenSearchAction openSearch) {
+        this.openSearch = openSearch;
+    }
+
+    /**
+     * <p>
+     * Write data to an Amazon OpenSearch Service domain.
+     * </p>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained
+     * together.
+     *
+     * @param openSearch <p>
+     *            Write data to an Amazon OpenSearch Service domain.
+     *            </p>
+     * @return A reference to this updated object so that method calls can be
+     *         chained together.
+     */
+    public Action withOpenSearch(OpenSearchAction openSearch) {
+        this.openSearch = openSearch;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1223,7 +1347,9 @@ public class Action implements Serializable {
         if (getHttp() != null)
             sb.append("http: " + getHttp() + ",");
         if (getKafka() != null)
-            sb.append("kafka: " + getKafka());
+            sb.append("kafka: " + getKafka() + ",");
+        if (getOpenSearch() != null)
+            sb.append("openSearch: " + getOpenSearch());
         sb.append("}");
         return sb.toString();
     }
@@ -1261,6 +1387,7 @@ public class Action implements Serializable {
         hashCode = prime * hashCode + ((getTimestream() == null) ? 0 : getTimestream().hashCode());
         hashCode = prime * hashCode + ((getHttp() == null) ? 0 : getHttp().hashCode());
         hashCode = prime * hashCode + ((getKafka() == null) ? 0 : getKafka().hashCode());
+        hashCode = prime * hashCode + ((getOpenSearch() == null) ? 0 : getOpenSearch().hashCode());
         return hashCode;
     }
 
@@ -1370,6 +1497,11 @@ public class Action implements Serializable {
         if (other.getKafka() == null ^ this.getKafka() == null)
             return false;
         if (other.getKafka() != null && other.getKafka().equals(this.getKafka()) == false)
+            return false;
+        if (other.getOpenSearch() == null ^ this.getOpenSearch() == null)
+            return false;
+        if (other.getOpenSearch() != null
+                && other.getOpenSearch().equals(this.getOpenSearch()) == false)
             return false;
         return true;
     }

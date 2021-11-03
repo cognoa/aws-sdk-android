@@ -1,3 +1,143 @@
+## [Release 2.35.0](https://github.com/aws-amplify/aws-sdk-android/releases/tag/release_v2.35.0)
+
+### Features
+- **aws-android-sdk-chimesdkmessaging:** update models to latest (#2676)
+- **aws-android-sdk-connect:** update models to latest (#2672)
+- **aws-android-sdk-chimesdkidentity:** update models to latest (#2675)
+
+[See all changes between 2.34.0 and 2.35.0](https://github.com/aws-amplify/aws-sdk-android/compare/release_v2.34.0...release_v2.35.0)
+
+---
+
+MOVE THIS SECTION TO THE CORRECT LOCATION
+
+### Misc. Updates
+
+- Model updates for the following services
+---chimesdkmessaging
+---chimesdkidentity
+## [Release 2.34.0](https://github.com/aws-amplify/aws-sdk-android/releases/tag/release_v2.34.0)
+
+### Features
+- **aws-android-sdk-kms:** update models to latest (#2656)
+- **aws-android-sdk-location:** update models to latest (#2658)
+
+[See all changes between 2.33.0 and 2.34.0](https://github.com/aws-amplify/aws-sdk-android/compare/release_v2.33.0...release_v2.34.0)
+
+## [Release 2.33.0](https://github.com/aws-amplify/aws-sdk-android/releases/tag/release_v2.33.0)
+
+### Features
+- **aws-android-sdk-lambda:** update models to latest (#2649)
+- **aws-android-sdk-connect:** update models to latest (#2645)
+- **aws-android-sdk-comprehend:** update models to latest (#2642)
+- **aws-android-sdk-iot:** update models to latest (#2641)
+
+### Bug Fixes
+- **cognitoidentityprovider:** Fix UserPoolId validation ReDoS (#2644)
+
+[See all changes between 2.32.0 and 2.33.0](https://github.com/aws-amplify/aws-sdk-android/compare/release_v2.32.0...release_v2.33.0)
+
+## [Release 2.32.0](https://github.com/aws-amplify/aws-sdk-android/releases/tag/release_v2.32.0)
+
+### Features
+- **aws-android-sdk-iot:** update models to latest (#2631)
+- **aws-android-sdk-comprehend:** update models to latest (#2633)
+
+### Miscellaneous
+- fix(cognitoidentityprovider):save lastAuthUser when using cached tokens (#2628)
+
+[See all changes between 2.31.0 and 2.32.0](https://github.com/aws-amplify/aws-sdk-android/compare/release_v2.31.0...release_v2.32.0)
+
+## [Release 2.31.0](https://github.com/aws-amplify/aws-sdk-android/releases/tag/release_v2.31.0)
+
+### Features
+- **aws-android-sdk-iot:** update models to latest (#2609)
+- **aws-android-sdk-polly:** update models to latest (#2608)
+- **aws-android-sdk-kms:** update models to latest (#2606)
+- **aws-android-sdk-kinesis:** update models to latest (#2605)
+- **aws-android-sdk-chimesdkidentity:** update models to latest (#2621)
+- **aws-android-sdk-chimesdkmessaging:** update models to latest (#2622)
+- **aws-android-sdk-kinesisvideo:** add file media source (#2596)
+- **aws-android-sdk-kinesisvideo:** Update ReadResult (#2611)
+
+### Bug Fixes
+- add overload of confirmResetPassword with user (#2547)
+
+### Miscellaneous
+- Fixing NPE on identityProvider.getdisplayname in onError (#2602)
+- Lambda: LambdaJsonBinder: Injectable Gson (#2613) Thanks, @yongjhih!
+
+[See all changes between 2.30.0 and 2.31.0](https://github.com/aws-amplify/aws-sdk-android/compare/release_v2.30.0...release_v2.31.0)
+
+## [Release 2.30.0](https://github.com/aws-amplify/aws-sdk-android/releases/tag/release_v2.30.0)
+
+### Features
+- **aws-android-sdk-iot:** update models to latest (#2592)
+- **aws-android-sdk-polly:** update models to latest (#2593)
+- **aws-android-sdk-rekognition:** update models to latest (#2599)
+
+### Miscellaneous
+- Kinesis Video Update (#2581)
+
+[See all changes between 2.29.0 and 2.30.0](https://github.com/aws-amplify/aws-sdk-android/compare/release_v2.29.0...release_v2.30.0)
+
+
+
+
+=======
+## [Release 2.29.0](https://github.com/aws-amplify/aws-sdk-android/releases/tag/release_v2.29.0)
+
+### Features
+- **aws-android-sdk-lambda:** update models to latest (#2579)
+- **aws-android-sdk-mobile-client:** adds getUserSub method (#2555)
+- **aws-android-sdk-iot:** add support for retained messages (#2587)
+
+### Bug Fixes
+- Adding a null check for string replace in VersionInfoUtils.
+
+### Miscellaneous
+- Update README.md (#2576)
+- Model updates for the following services
+---comprehend
+
+[See all changes between 2.28.0 and 2.29.0](https://github.com/aws-amplify/aws-sdk-android/compare/release_v2.28.0...release_v2.29.0)
+
+## [Release 2.28.0](https://github.com/aws-amplify/aws-sdk-android/releases/tag/release_v2.28.0)
+
+### Features
+- **aws-android-sdk-mobile-client:** revoke tokens during auth sign out  (#2415)
+- **aws-android-sdk-textract:** update models to latest (#2553)
+- **aws-android-sdk-iot:** update models to latest (#2556)
+- **aws-android-sdk-transcribe:** update models to latest (#2562)
+- **aws-android-sdk-connect:** update models to latest (#2570)
+- **aws-android-sdk-chimesdkmessaging:** update models to latest (#2568)
+- **aws-android-sdk-chimesdkidentity:** update models to latest (#2569)
+- **aws-android-sdk-rekognition:** update models to latest (#2573)
+
+### Bug Fixes
+- **aws-android-sdk-mobile-client:** fix NPE in hosted UI options (#2564)
+- **aws-android-sdk-iot:** fix message queue not respecting size limit (#2565)
+
+[See all changes between 2.27.0 and 2.28.0](https://github.com/aws-amplify/aws-sdk-android/compare/release_v2.27.0...release_v2.28.0)
+
+## [Release 2.27.0](https://github.com/aws-amplify/aws-sdk-android/releases/tag/release_v2.27.0)
+
+### Features
+- **aws-android-sdk-connect:** update models to latest (#2526)
+- **aws-android-sdk-sns:** update models to latest (#2534)
+- **aws-android-sdk-lambda:** update models to latest (#2535)
+- **aws-android-sdk-core:** update models to latest (#2537)
+- **aws-android-sdk-cognitoidentityprovider:** update models to latest (#2541)
+- **aws-android-sdk-location:** update models to latest (#2544)
+- Changes to support encoded resource path coming in request. (#2546)
+
+### Bug Fixes
+- **aws-android-sdk-iot:** Use cert chain to connect to IoT Core (#2521)
+- **aws-android-sdk-cognitoauth:** custom tabs app crash when chrome not available (#2529)
+
+
+[See all changes between 2.26.0 and 2.27.0](https://github.com/aws-amplify/aws-sdk-android/compare/release_v2.26.0...release_v2.27.0)
+
 ## [Release 2.26.0](https://github.com/aws-amplify/aws-sdk-android/releases/tag/release_v2.26.0)
 
 ### Features

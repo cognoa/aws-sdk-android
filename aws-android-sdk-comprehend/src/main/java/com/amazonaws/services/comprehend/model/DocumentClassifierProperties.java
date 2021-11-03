@@ -32,7 +32,8 @@ public class DocumentClassifierProperties implements Serializable {
      * <b>Length: </b> - 256<br/>
      * <b>Pattern:
      * </b>arn:aws(-[^:]+)?:comprehend:[a-zA-Z0-9-]*:[0-9]{12}:document
-     * -classifier/[a-zA-Z0-9](-*[a-zA-Z0-9])*<br/>
+     * -classifier
+     * /[a-zA-Z0-9](-*[a-zA-Z0-9])*(/version/[a-zA-Z0-9](-*[a-zA-Z0-9])*)?<br/>
      */
     private String documentClassifierArn;
 
@@ -161,6 +162,7 @@ public class DocumentClassifierProperties implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b> - 2048<br/>
+     * <b>Pattern: </b>.*<br/>
      */
     private String volumeKmsKeyId;
 
@@ -210,8 +212,20 @@ public class DocumentClassifierProperties implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b> - 2048<br/>
+     * <b>Pattern: </b>.*<br/>
      */
     private String modelKmsKeyId;
+
+    /**
+     * <p>
+     * The version name that you assigned to the document classifier.
+     * </p>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b> - 63<br/>
+     * <b>Pattern: </b>^[a-zA-Z0-9](-*[a-zA-Z0-9])*$<br/>
+     */
+    private String versionName;
 
     /**
      * <p>
@@ -222,7 +236,8 @@ public class DocumentClassifierProperties implements Serializable {
      * <b>Length: </b> - 256<br/>
      * <b>Pattern:
      * </b>arn:aws(-[^:]+)?:comprehend:[a-zA-Z0-9-]*:[0-9]{12}:document
-     * -classifier/[a-zA-Z0-9](-*[a-zA-Z0-9])*<br/>
+     * -classifier
+     * /[a-zA-Z0-9](-*[a-zA-Z0-9])*(/version/[a-zA-Z0-9](-*[a-zA-Z0-9])*)?<br/>
      *
      * @return <p>
      *         The Amazon Resource Name (ARN) that identifies the document
@@ -242,7 +257,8 @@ public class DocumentClassifierProperties implements Serializable {
      * <b>Length: </b> - 256<br/>
      * <b>Pattern:
      * </b>arn:aws(-[^:]+)?:comprehend:[a-zA-Z0-9-]*:[0-9]{12}:document
-     * -classifier/[a-zA-Z0-9](-*[a-zA-Z0-9])*<br/>
+     * -classifier
+     * /[a-zA-Z0-9](-*[a-zA-Z0-9])*(/version/[a-zA-Z0-9](-*[a-zA-Z0-9])*)?<br/>
      *
      * @param documentClassifierArn <p>
      *            The Amazon Resource Name (ARN) that identifies the document
@@ -265,7 +281,8 @@ public class DocumentClassifierProperties implements Serializable {
      * <b>Length: </b> - 256<br/>
      * <b>Pattern:
      * </b>arn:aws(-[^:]+)?:comprehend:[a-zA-Z0-9-]*:[0-9]{12}:document
-     * -classifier/[a-zA-Z0-9](-*[a-zA-Z0-9])*<br/>
+     * -classifier
+     * /[a-zA-Z0-9](-*[a-zA-Z0-9])*(/version/[a-zA-Z0-9](-*[a-zA-Z0-9])*)?<br/>
      *
      * @param documentClassifierArn <p>
      *            The Amazon Resource Name (ARN) that identifies the document
@@ -1032,6 +1049,7 @@ public class DocumentClassifierProperties implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b> - 2048<br/>
+     * <b>Pattern: </b>.*<br/>
      *
      * @return <p>
      *         ID for the AWS Key Management Service (KMS) key that Amazon
@@ -1080,6 +1098,7 @@ public class DocumentClassifierProperties implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b> - 2048<br/>
+     * <b>Pattern: </b>.*<br/>
      *
      * @param volumeKmsKeyId <p>
      *            ID for the AWS Key Management Service (KMS) key that Amazon
@@ -1132,6 +1151,7 @@ public class DocumentClassifierProperties implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b> - 2048<br/>
+     * <b>Pattern: </b>.*<br/>
      *
      * @param volumeKmsKeyId <p>
      *            ID for the AWS Key Management Service (KMS) key that Amazon
@@ -1384,6 +1404,7 @@ public class DocumentClassifierProperties implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b> - 2048<br/>
+     * <b>Pattern: </b>.*<br/>
      *
      * @return <p>
      *         ID for the AWS Key Management Service (KMS) key that Amazon
@@ -1430,6 +1451,7 @@ public class DocumentClassifierProperties implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b> - 2048<br/>
+     * <b>Pattern: </b>.*<br/>
      *
      * @param modelKmsKeyId <p>
      *            ID for the AWS Key Management Service (KMS) key that Amazon
@@ -1480,6 +1502,7 @@ public class DocumentClassifierProperties implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b> - 2048<br/>
+     * <b>Pattern: </b>.*<br/>
      *
      * @param modelKmsKeyId <p>
      *            ID for the AWS Key Management Service (KMS) key that Amazon
@@ -1505,6 +1528,63 @@ public class DocumentClassifierProperties implements Serializable {
      */
     public DocumentClassifierProperties withModelKmsKeyId(String modelKmsKeyId) {
         this.modelKmsKeyId = modelKmsKeyId;
+        return this;
+    }
+
+    /**
+     * <p>
+     * The version name that you assigned to the document classifier.
+     * </p>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b> - 63<br/>
+     * <b>Pattern: </b>^[a-zA-Z0-9](-*[a-zA-Z0-9])*$<br/>
+     *
+     * @return <p>
+     *         The version name that you assigned to the document classifier.
+     *         </p>
+     */
+    public String getVersionName() {
+        return versionName;
+    }
+
+    /**
+     * <p>
+     * The version name that you assigned to the document classifier.
+     * </p>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b> - 63<br/>
+     * <b>Pattern: </b>^[a-zA-Z0-9](-*[a-zA-Z0-9])*$<br/>
+     *
+     * @param versionName <p>
+     *            The version name that you assigned to the document classifier.
+     *            </p>
+     */
+    public void setVersionName(String versionName) {
+        this.versionName = versionName;
+    }
+
+    /**
+     * <p>
+     * The version name that you assigned to the document classifier.
+     * </p>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained
+     * together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b> - 63<br/>
+     * <b>Pattern: </b>^[a-zA-Z0-9](-*[a-zA-Z0-9])*$<br/>
+     *
+     * @param versionName <p>
+     *            The version name that you assigned to the document classifier.
+     *            </p>
+     * @return A reference to this updated object so that method calls can be
+     *         chained together.
+     */
+    public DocumentClassifierProperties withVersionName(String versionName) {
+        this.versionName = versionName;
         return this;
     }
 
@@ -1550,7 +1630,9 @@ public class DocumentClassifierProperties implements Serializable {
         if (getMode() != null)
             sb.append("Mode: " + getMode() + ",");
         if (getModelKmsKeyId() != null)
-            sb.append("ModelKmsKeyId: " + getModelKmsKeyId());
+            sb.append("ModelKmsKeyId: " + getModelKmsKeyId() + ",");
+        if (getVersionName() != null)
+            sb.append("VersionName: " + getVersionName());
         sb.append("}");
         return sb.toString();
     }
@@ -1587,6 +1669,8 @@ public class DocumentClassifierProperties implements Serializable {
         hashCode = prime * hashCode + ((getMode() == null) ? 0 : getMode().hashCode());
         hashCode = prime * hashCode
                 + ((getModelKmsKeyId() == null) ? 0 : getModelKmsKeyId().hashCode());
+        hashCode = prime * hashCode
+                + ((getVersionName() == null) ? 0 : getVersionName().hashCode());
         return hashCode;
     }
 
@@ -1676,6 +1760,11 @@ public class DocumentClassifierProperties implements Serializable {
             return false;
         if (other.getModelKmsKeyId() != null
                 && other.getModelKmsKeyId().equals(this.getModelKmsKeyId()) == false)
+            return false;
+        if (other.getVersionName() == null ^ this.getVersionName() == null)
+            return false;
+        if (other.getVersionName() != null
+                && other.getVersionName().equals(this.getVersionName()) == false)
             return false;
         return true;
     }

@@ -42,6 +42,10 @@ class InputDataConfigJsonUnmarshaller implements
             } else if (name.equals("InputFormat")) {
                 inputDataConfig.setInputFormat(StringJsonUnmarshaller.getInstance()
                         .unmarshall(context));
+            } else if (name.equals("DocumentReaderConfig")) {
+                inputDataConfig.setDocumentReaderConfig(DocumentReaderConfigJsonUnmarshaller
+                        .getInstance()
+                        .unmarshall(context));
             } else {
                 reader.skipValue();
             }

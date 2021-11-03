@@ -115,6 +115,7 @@ public class StartKeyPhrasesDetectionJobRequest extends AmazonWebServiceRequest 
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b> - 2048<br/>
+     * <b>Pattern: </b>.*<br/>
      */
     private String volumeKmsKeyId;
 
@@ -128,6 +129,16 @@ public class StartKeyPhrasesDetectionJobRequest extends AmazonWebServiceRequest 
      * </p>
      */
     private VpcConfig vpcConfig;
+
+    /**
+     * <p>
+     * Tags to be associated with the key phrases detection job. A tag is a
+     * key-value pair that adds metadata to a resource used by Amazon
+     * Comprehend. For example, a tag with "Sales" as the key might be added to
+     * a resource to indicate its use by the sales department.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -568,6 +579,7 @@ public class StartKeyPhrasesDetectionJobRequest extends AmazonWebServiceRequest 
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b> - 2048<br/>
+     * <b>Pattern: </b>.*<br/>
      *
      * @return <p>
      *         ID for the AWS Key Management Service (KMS) key that Amazon
@@ -616,6 +628,7 @@ public class StartKeyPhrasesDetectionJobRequest extends AmazonWebServiceRequest 
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b> - 2048<br/>
+     * <b>Pattern: </b>.*<br/>
      *
      * @param volumeKmsKeyId <p>
      *            ID for the AWS Key Management Service (KMS) key that Amazon
@@ -668,6 +681,7 @@ public class StartKeyPhrasesDetectionJobRequest extends AmazonWebServiceRequest 
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b> - 2048<br/>
+     * <b>Pattern: </b>.*<br/>
      *
      * @param volumeKmsKeyId <p>
      *            ID for the AWS Key Management Service (KMS) key that Amazon
@@ -769,6 +783,108 @@ public class StartKeyPhrasesDetectionJobRequest extends AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * Tags to be associated with the key phrases detection job. A tag is a
+     * key-value pair that adds metadata to a resource used by Amazon
+     * Comprehend. For example, a tag with "Sales" as the key might be added to
+     * a resource to indicate its use by the sales department.
+     * </p>
+     *
+     * @return <p>
+     *         Tags to be associated with the key phrases detection job. A tag
+     *         is a key-value pair that adds metadata to a resource used by
+     *         Amazon Comprehend. For example, a tag with "Sales" as the key
+     *         might be added to a resource to indicate its use by the sales
+     *         department.
+     *         </p>
+     */
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * Tags to be associated with the key phrases detection job. A tag is a
+     * key-value pair that adds metadata to a resource used by Amazon
+     * Comprehend. For example, a tag with "Sales" as the key might be added to
+     * a resource to indicate its use by the sales department.
+     * </p>
+     *
+     * @param tags <p>
+     *            Tags to be associated with the key phrases detection job. A
+     *            tag is a key-value pair that adds metadata to a resource used
+     *            by Amazon Comprehend. For example, a tag with "Sales" as the
+     *            key might be added to a resource to indicate its use by the
+     *            sales department.
+     *            </p>
+     */
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * Tags to be associated with the key phrases detection job. A tag is a
+     * key-value pair that adds metadata to a resource used by Amazon
+     * Comprehend. For example, a tag with "Sales" as the key might be added to
+     * a resource to indicate its use by the sales department.
+     * </p>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained
+     * together.
+     *
+     * @param tags <p>
+     *            Tags to be associated with the key phrases detection job. A
+     *            tag is a key-value pair that adds metadata to a resource used
+     *            by Amazon Comprehend. For example, a tag with "Sales" as the
+     *            key might be added to a resource to indicate its use by the
+     *            sales department.
+     *            </p>
+     * @return A reference to this updated object so that method calls can be
+     *         chained together.
+     */
+    public StartKeyPhrasesDetectionJobRequest withTags(Tag... tags) {
+        if (getTags() == null) {
+            this.tags = new java.util.ArrayList<Tag>(tags.length);
+        }
+        for (Tag value : tags) {
+            this.tags.add(value);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Tags to be associated with the key phrases detection job. A tag is a
+     * key-value pair that adds metadata to a resource used by Amazon
+     * Comprehend. For example, a tag with "Sales" as the key might be added to
+     * a resource to indicate its use by the sales department.
+     * </p>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained
+     * together.
+     *
+     * @param tags <p>
+     *            Tags to be associated with the key phrases detection job. A
+     *            tag is a key-value pair that adds metadata to a resource used
+     *            by Amazon Comprehend. For example, a tag with "Sales" as the
+     *            key might be added to a resource to indicate its use by the
+     *            sales department.
+     *            </p>
+     * @return A reference to this updated object so that method calls can be
+     *         chained together.
+     */
+    public StartKeyPhrasesDetectionJobRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -794,7 +910,9 @@ public class StartKeyPhrasesDetectionJobRequest extends AmazonWebServiceRequest 
         if (getVolumeKmsKeyId() != null)
             sb.append("VolumeKmsKeyId: " + getVolumeKmsKeyId() + ",");
         if (getVpcConfig() != null)
-            sb.append("VpcConfig: " + getVpcConfig());
+            sb.append("VpcConfig: " + getVpcConfig() + ",");
+        if (getTags() != null)
+            sb.append("Tags: " + getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -818,6 +936,7 @@ public class StartKeyPhrasesDetectionJobRequest extends AmazonWebServiceRequest 
         hashCode = prime * hashCode
                 + ((getVolumeKmsKeyId() == null) ? 0 : getVolumeKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getVpcConfig() == null) ? 0 : getVpcConfig().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 
@@ -870,6 +989,10 @@ public class StartKeyPhrasesDetectionJobRequest extends AmazonWebServiceRequest 
             return false;
         if (other.getVpcConfig() != null
                 && other.getVpcConfig().equals(this.getVpcConfig()) == false)
+            return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         return true;
     }

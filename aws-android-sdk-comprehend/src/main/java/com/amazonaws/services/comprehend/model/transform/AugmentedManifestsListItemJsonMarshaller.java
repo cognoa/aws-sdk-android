@@ -32,6 +32,11 @@ class AugmentedManifestsListItemJsonMarshaller {
             jsonWriter.name("S3Uri");
             jsonWriter.value(s3Uri);
         }
+        if (augmentedManifestsListItem.getSplit() != null) {
+            String split = augmentedManifestsListItem.getSplit();
+            jsonWriter.name("Split");
+            jsonWriter.value(split);
+        }
         if (augmentedManifestsListItem.getAttributeNames() != null) {
             java.util.List<String> attributeNames = augmentedManifestsListItem.getAttributeNames();
             jsonWriter.name("AttributeNames");
@@ -42,6 +47,21 @@ class AugmentedManifestsListItemJsonMarshaller {
                 }
             }
             jsonWriter.endArray();
+        }
+        if (augmentedManifestsListItem.getAnnotationDataS3Uri() != null) {
+            String annotationDataS3Uri = augmentedManifestsListItem.getAnnotationDataS3Uri();
+            jsonWriter.name("AnnotationDataS3Uri");
+            jsonWriter.value(annotationDataS3Uri);
+        }
+        if (augmentedManifestsListItem.getSourceDocumentsS3Uri() != null) {
+            String sourceDocumentsS3Uri = augmentedManifestsListItem.getSourceDocumentsS3Uri();
+            jsonWriter.name("SourceDocumentsS3Uri");
+            jsonWriter.value(sourceDocumentsS3Uri);
+        }
+        if (augmentedManifestsListItem.getDocumentType() != null) {
+            String documentType = augmentedManifestsListItem.getDocumentType();
+            jsonWriter.name("DocumentType");
+            jsonWriter.value(documentType);
         }
         jsonWriter.endObject();
     }

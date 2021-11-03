@@ -20,6 +20,8 @@ package com.amazonaws.mobileconnectors.cognitoidentityprovider;
 import android.content.Context;
 import android.os.Handler;
 
+import androidx.annotation.VisibleForTesting;
+
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.auth.AnonymousAWSCredentials;
 import com.amazonaws.internal.keyvaluestore.AWSKeyValueStore;
@@ -47,6 +49,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Pattern;
 
 /**
  * This represents a user-pool in a Cognito identity provider account. The user-pools are called as
@@ -73,6 +76,10 @@ import java.util.Map;
 public class CognitoUserPool {
 
     private static final Log logger = LogFactory.getLog(CognitoUserPool.class);
+
+    private static final int USER_POOL_ID_MAX_LENGTH = 55;
+    private static final String USER_POOL_ID_PATTERN = "^[\\w-]+_[0-9a-zA-Z]+$";
+
     /**
      * Cognito Your Identity Pool ID
      */
@@ -97,7 +104,7 @@ public class CognitoUserPool {
     /**
      * CIP low-level client.
      */
-    private final AmazonCognitoIdentityProvider client;
+    private AmazonCognitoIdentityProvider client;
 
     /**
      * Calculated with {@code userId}, {@code clientId} and {@code clientSecret}
@@ -266,6 +273,12 @@ public class CognitoUserPool {
     public CognitoUserPool(Context context, String userPoolId, String clientId, String clientSecret, ClientConfiguration clientConfiguration, Regions region, String pinpointAppId) {
         initialize(context);
         this.context = context;
+        if (userPoolId.isEmpty() || clientId.isEmpty()) {
+            throw new IllegalArgumentException("Both UserPoolId and ClientId are required.");
+        }
+        if (userPoolId.length() > USER_POOL_ID_MAX_LENGTH || !Pattern.matches(USER_POOL_ID_PATTERN, userPoolId)) {
+            throw new IllegalArgumentException("Invalid userPoolId format.");
+        }
         this.userPoolId = userPoolId;
         this.clientId = clientId;
         this.clientSecret = clientSecret;
@@ -320,6 +333,12 @@ public class CognitoUserPool {
     public CognitoUserPool(Context context, String userPoolId, String clientId, String clientSecret, AmazonCognitoIdentityProvider client, String pinpointAppId, String cognitoUserPoolCustomEndpoint) {
         initialize(context);
         this.context = context;
+        if (userPoolId.isEmpty() || clientId.isEmpty()) {
+            throw new IllegalArgumentException("Both UserPoolId and ClientId are required.");
+        }
+        if (userPoolId.length() > USER_POOL_ID_MAX_LENGTH || !Pattern.matches(USER_POOL_ID_PATTERN, userPoolId)) {
+            throw new IllegalArgumentException("Invalid userPoolId format.");
+        }
         this.userPoolId = userPoolId;
         this.clientId = clientId;
         this.clientSecret = clientSecret;
@@ -330,6 +349,11 @@ public class CognitoUserPool {
         if(cognitoUserPoolCustomEndpoint != null && !cognitoUserPoolCustomEndpoint.isEmpty()) {
             this.client.setEndpoint(cognitoUserPoolCustomEndpoint);
         }
+    }
+
+    @VisibleForTesting
+    void setIdentityProvider(AmazonCognitoIdentityProvider userpool) {
+        this.client = userpool;
     }
 
 
