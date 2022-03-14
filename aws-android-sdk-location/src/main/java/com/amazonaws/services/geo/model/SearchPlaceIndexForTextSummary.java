@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -19,23 +19,31 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A summary of the geocoding request sent using
- * <code>SearchPlaceIndexForText</code>.
+ * A summary of the request sent by using <code>SearchPlaceIndexForText</code>.
  * </p>
  */
 public class SearchPlaceIndexForTextSummary implements Serializable {
     /**
      * <p>
-     * Contains the coordinates for the bias position entered in the geocoding
+     * Contains the coordinates for the optional bias position specified in the
      * request.
+     * </p>
+     * <p>
+     * This parameter contains a pair of numbers. The first number represents
+     * the X coordinate, or longitude; the second number represents the Y
+     * coordinate, or latitude.
+     * </p>
+     * <p>
+     * For example, <code>[-123.1174, 49.2847]</code> represents the position
+     * with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.
      * </p>
      */
     private java.util.List<Double> biasPosition;
 
     /**
      * <p>
-     * The data provider of geospatial data. Indicates one of the available
-     * providers:
+     * The geospatial data provider attached to the place index resource
+     * specified in the request. Values can be one of the following:
      * </p>
      * <ul>
      * <li>
@@ -45,12 +53,12 @@ public class SearchPlaceIndexForTextSummary implements Serializable {
      * </li>
      * <li>
      * <p>
-     * HERE
+     * Here
      * </p>
      * </li>
      * </ul>
      * <p>
-     * For additional details on data providers, see <a href=
+     * For more information about data providers, see <a href=
      * "https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html"
      * >Amazon Location Service data providers</a>.
      * </p>
@@ -59,22 +67,35 @@ public class SearchPlaceIndexForTextSummary implements Serializable {
 
     /**
      * <p>
-     * Contains the coordinates for the optional bounding box coordinated
-     * entered in the geocoding request.
+     * Contains the coordinates for the optional bounding box specified in the
+     * request.
      * </p>
      */
     private java.util.List<Double> filterBBox;
 
     /**
      * <p>
-     * Contains the country filter entered in the geocoding request.
+     * Contains the optional country filter specified in the request.
      * </p>
      */
     private java.util.List<String> filterCountries;
 
     /**
      * <p>
-     * Contains the maximum number of results indicated for the request.
+     * The preferred language used to return results. Matches the language in
+     * the request. The value is a valid <a
+     * href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for
+     * example, <code>en</code> for English.
+     * </p>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>2 - 35<br/>
+     */
+    private String language;
+
+    /**
+     * <p>
+     * Contains the optional result count limit specified in the request.
      * </p>
      * <p>
      * <b>Constraints:</b><br/>
@@ -84,30 +105,53 @@ public class SearchPlaceIndexForTextSummary implements Serializable {
 
     /**
      * <p>
-     * A bounding box that contains the search results within the specified area
-     * indicated by <code>FilterBBox</code>. A subset of bounding box specified
-     * using <code>FilterBBox</code>.
+     * The bounding box that fully contains all search results.
      * </p>
+     * <note>
+     * <p>
+     * If you specified the optional <code>FilterBBox</code> parameter in the
+     * request, <code>ResultBBox</code> is contained within
+     * <code>FilterBBox</code>.
+     * </p>
+     * </note>
      */
     private java.util.List<Double> resultBBox;
 
     /**
      * <p>
-     * The address, name, city or region to be used in the geocoding request. In
-     * free-form text format. For example, <code>Vancouver</code>.
+     * The search text specified in the request.
      * </p>
      */
     private String text;
 
     /**
      * <p>
-     * Contains the coordinates for the bias position entered in the geocoding
+     * Contains the coordinates for the optional bias position specified in the
      * request.
+     * </p>
+     * <p>
+     * This parameter contains a pair of numbers. The first number represents
+     * the X coordinate, or longitude; the second number represents the Y
+     * coordinate, or latitude.
+     * </p>
+     * <p>
+     * For example, <code>[-123.1174, 49.2847]</code> represents the position
+     * with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.
      * </p>
      *
      * @return <p>
-     *         Contains the coordinates for the bias position entered in the
-     *         geocoding request.
+     *         Contains the coordinates for the optional bias position specified
+     *         in the request.
+     *         </p>
+     *         <p>
+     *         This parameter contains a pair of numbers. The first number
+     *         represents the X coordinate, or longitude; the second number
+     *         represents the Y coordinate, or latitude.
+     *         </p>
+     *         <p>
+     *         For example, <code>[-123.1174, 49.2847]</code> represents the
+     *         position with longitude <code>-123.1174</code> and latitude
+     *         <code>49.2847</code>.
      *         </p>
      */
     public java.util.List<Double> getBiasPosition() {
@@ -116,13 +160,32 @@ public class SearchPlaceIndexForTextSummary implements Serializable {
 
     /**
      * <p>
-     * Contains the coordinates for the bias position entered in the geocoding
+     * Contains the coordinates for the optional bias position specified in the
      * request.
+     * </p>
+     * <p>
+     * This parameter contains a pair of numbers. The first number represents
+     * the X coordinate, or longitude; the second number represents the Y
+     * coordinate, or latitude.
+     * </p>
+     * <p>
+     * For example, <code>[-123.1174, 49.2847]</code> represents the position
+     * with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.
      * </p>
      *
      * @param biasPosition <p>
-     *            Contains the coordinates for the bias position entered in the
-     *            geocoding request.
+     *            Contains the coordinates for the optional bias position
+     *            specified in the request.
+     *            </p>
+     *            <p>
+     *            This parameter contains a pair of numbers. The first number
+     *            represents the X coordinate, or longitude; the second number
+     *            represents the Y coordinate, or latitude.
+     *            </p>
+     *            <p>
+     *            For example, <code>[-123.1174, 49.2847]</code> represents the
+     *            position with longitude <code>-123.1174</code> and latitude
+     *            <code>49.2847</code>.
      *            </p>
      */
     public void setBiasPosition(java.util.Collection<Double> biasPosition) {
@@ -136,16 +199,35 @@ public class SearchPlaceIndexForTextSummary implements Serializable {
 
     /**
      * <p>
-     * Contains the coordinates for the bias position entered in the geocoding
+     * Contains the coordinates for the optional bias position specified in the
      * request.
+     * </p>
+     * <p>
+     * This parameter contains a pair of numbers. The first number represents
+     * the X coordinate, or longitude; the second number represents the Y
+     * coordinate, or latitude.
+     * </p>
+     * <p>
+     * For example, <code>[-123.1174, 49.2847]</code> represents the position
+     * with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.
      * </p>
      * <p>
      * Returns a reference to this object so that method calls can be chained
      * together.
      *
      * @param biasPosition <p>
-     *            Contains the coordinates for the bias position entered in the
-     *            geocoding request.
+     *            Contains the coordinates for the optional bias position
+     *            specified in the request.
+     *            </p>
+     *            <p>
+     *            This parameter contains a pair of numbers. The first number
+     *            represents the X coordinate, or longitude; the second number
+     *            represents the Y coordinate, or latitude.
+     *            </p>
+     *            <p>
+     *            For example, <code>[-123.1174, 49.2847]</code> represents the
+     *            position with longitude <code>-123.1174</code> and latitude
+     *            <code>49.2847</code>.
      *            </p>
      * @return A reference to this updated object so that method calls can be
      *         chained together.
@@ -162,16 +244,35 @@ public class SearchPlaceIndexForTextSummary implements Serializable {
 
     /**
      * <p>
-     * Contains the coordinates for the bias position entered in the geocoding
+     * Contains the coordinates for the optional bias position specified in the
      * request.
+     * </p>
+     * <p>
+     * This parameter contains a pair of numbers. The first number represents
+     * the X coordinate, or longitude; the second number represents the Y
+     * coordinate, or latitude.
+     * </p>
+     * <p>
+     * For example, <code>[-123.1174, 49.2847]</code> represents the position
+     * with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.
      * </p>
      * <p>
      * Returns a reference to this object so that method calls can be chained
      * together.
      *
      * @param biasPosition <p>
-     *            Contains the coordinates for the bias position entered in the
-     *            geocoding request.
+     *            Contains the coordinates for the optional bias position
+     *            specified in the request.
+     *            </p>
+     *            <p>
+     *            This parameter contains a pair of numbers. The first number
+     *            represents the X coordinate, or longitude; the second number
+     *            represents the Y coordinate, or latitude.
+     *            </p>
+     *            <p>
+     *            For example, <code>[-123.1174, 49.2847]</code> represents the
+     *            position with longitude <code>-123.1174</code> and latitude
+     *            <code>49.2847</code>.
      *            </p>
      * @return A reference to this updated object so that method calls can be
      *         chained together.
@@ -183,8 +284,8 @@ public class SearchPlaceIndexForTextSummary implements Serializable {
 
     /**
      * <p>
-     * The data provider of geospatial data. Indicates one of the available
-     * providers:
+     * The geospatial data provider attached to the place index resource
+     * specified in the request. Values can be one of the following:
      * </p>
      * <ul>
      * <li>
@@ -194,19 +295,19 @@ public class SearchPlaceIndexForTextSummary implements Serializable {
      * </li>
      * <li>
      * <p>
-     * HERE
+     * Here
      * </p>
      * </li>
      * </ul>
      * <p>
-     * For additional details on data providers, see <a href=
+     * For more information about data providers, see <a href=
      * "https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html"
      * >Amazon Location Service data providers</a>.
      * </p>
      *
      * @return <p>
-     *         The data provider of geospatial data. Indicates one of the
-     *         available providers:
+     *         The geospatial data provider attached to the place index resource
+     *         specified in the request. Values can be one of the following:
      *         </p>
      *         <ul>
      *         <li>
@@ -216,12 +317,12 @@ public class SearchPlaceIndexForTextSummary implements Serializable {
      *         </li>
      *         <li>
      *         <p>
-     *         HERE
+     *         Here
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
-     *         For additional details on data providers, see <a href=
+     *         For more information about data providers, see <a href=
      *         "https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html"
      *         >Amazon Location Service data providers</a>.
      *         </p>
@@ -232,8 +333,8 @@ public class SearchPlaceIndexForTextSummary implements Serializable {
 
     /**
      * <p>
-     * The data provider of geospatial data. Indicates one of the available
-     * providers:
+     * The geospatial data provider attached to the place index resource
+     * specified in the request. Values can be one of the following:
      * </p>
      * <ul>
      * <li>
@@ -243,19 +344,20 @@ public class SearchPlaceIndexForTextSummary implements Serializable {
      * </li>
      * <li>
      * <p>
-     * HERE
+     * Here
      * </p>
      * </li>
      * </ul>
      * <p>
-     * For additional details on data providers, see <a href=
+     * For more information about data providers, see <a href=
      * "https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html"
      * >Amazon Location Service data providers</a>.
      * </p>
      *
      * @param dataSource <p>
-     *            The data provider of geospatial data. Indicates one of the
-     *            available providers:
+     *            The geospatial data provider attached to the place index
+     *            resource specified in the request. Values can be one of the
+     *            following:
      *            </p>
      *            <ul>
      *            <li>
@@ -265,12 +367,12 @@ public class SearchPlaceIndexForTextSummary implements Serializable {
      *            </li>
      *            <li>
      *            <p>
-     *            HERE
+     *            Here
      *            </p>
      *            </li>
      *            </ul>
      *            <p>
-     *            For additional details on data providers, see <a href=
+     *            For more information about data providers, see <a href=
      *            "https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html"
      *            >Amazon Location Service data providers</a>.
      *            </p>
@@ -281,8 +383,8 @@ public class SearchPlaceIndexForTextSummary implements Serializable {
 
     /**
      * <p>
-     * The data provider of geospatial data. Indicates one of the available
-     * providers:
+     * The geospatial data provider attached to the place index resource
+     * specified in the request. Values can be one of the following:
      * </p>
      * <ul>
      * <li>
@@ -292,12 +394,12 @@ public class SearchPlaceIndexForTextSummary implements Serializable {
      * </li>
      * <li>
      * <p>
-     * HERE
+     * Here
      * </p>
      * </li>
      * </ul>
      * <p>
-     * For additional details on data providers, see <a href=
+     * For more information about data providers, see <a href=
      * "https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html"
      * >Amazon Location Service data providers</a>.
      * </p>
@@ -306,8 +408,9 @@ public class SearchPlaceIndexForTextSummary implements Serializable {
      * together.
      *
      * @param dataSource <p>
-     *            The data provider of geospatial data. Indicates one of the
-     *            available providers:
+     *            The geospatial data provider attached to the place index
+     *            resource specified in the request. Values can be one of the
+     *            following:
      *            </p>
      *            <ul>
      *            <li>
@@ -317,12 +420,12 @@ public class SearchPlaceIndexForTextSummary implements Serializable {
      *            </li>
      *            <li>
      *            <p>
-     *            HERE
+     *            Here
      *            </p>
      *            </li>
      *            </ul>
      *            <p>
-     *            For additional details on data providers, see <a href=
+     *            For more information about data providers, see <a href=
      *            "https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html"
      *            >Amazon Location Service data providers</a>.
      *            </p>
@@ -336,13 +439,13 @@ public class SearchPlaceIndexForTextSummary implements Serializable {
 
     /**
      * <p>
-     * Contains the coordinates for the optional bounding box coordinated
-     * entered in the geocoding request.
+     * Contains the coordinates for the optional bounding box specified in the
+     * request.
      * </p>
      *
      * @return <p>
-     *         Contains the coordinates for the optional bounding box
-     *         coordinated entered in the geocoding request.
+     *         Contains the coordinates for the optional bounding box specified
+     *         in the request.
      *         </p>
      */
     public java.util.List<Double> getFilterBBox() {
@@ -351,13 +454,13 @@ public class SearchPlaceIndexForTextSummary implements Serializable {
 
     /**
      * <p>
-     * Contains the coordinates for the optional bounding box coordinated
-     * entered in the geocoding request.
+     * Contains the coordinates for the optional bounding box specified in the
+     * request.
      * </p>
      *
      * @param filterBBox <p>
      *            Contains the coordinates for the optional bounding box
-     *            coordinated entered in the geocoding request.
+     *            specified in the request.
      *            </p>
      */
     public void setFilterBBox(java.util.Collection<Double> filterBBox) {
@@ -371,8 +474,8 @@ public class SearchPlaceIndexForTextSummary implements Serializable {
 
     /**
      * <p>
-     * Contains the coordinates for the optional bounding box coordinated
-     * entered in the geocoding request.
+     * Contains the coordinates for the optional bounding box specified in the
+     * request.
      * </p>
      * <p>
      * Returns a reference to this object so that method calls can be chained
@@ -380,7 +483,7 @@ public class SearchPlaceIndexForTextSummary implements Serializable {
      *
      * @param filterBBox <p>
      *            Contains the coordinates for the optional bounding box
-     *            coordinated entered in the geocoding request.
+     *            specified in the request.
      *            </p>
      * @return A reference to this updated object so that method calls can be
      *         chained together.
@@ -397,8 +500,8 @@ public class SearchPlaceIndexForTextSummary implements Serializable {
 
     /**
      * <p>
-     * Contains the coordinates for the optional bounding box coordinated
-     * entered in the geocoding request.
+     * Contains the coordinates for the optional bounding box specified in the
+     * request.
      * </p>
      * <p>
      * Returns a reference to this object so that method calls can be chained
@@ -406,7 +509,7 @@ public class SearchPlaceIndexForTextSummary implements Serializable {
      *
      * @param filterBBox <p>
      *            Contains the coordinates for the optional bounding box
-     *            coordinated entered in the geocoding request.
+     *            specified in the request.
      *            </p>
      * @return A reference to this updated object so that method calls can be
      *         chained together.
@@ -418,11 +521,11 @@ public class SearchPlaceIndexForTextSummary implements Serializable {
 
     /**
      * <p>
-     * Contains the country filter entered in the geocoding request.
+     * Contains the optional country filter specified in the request.
      * </p>
      *
      * @return <p>
-     *         Contains the country filter entered in the geocoding request.
+     *         Contains the optional country filter specified in the request.
      *         </p>
      */
     public java.util.List<String> getFilterCountries() {
@@ -431,11 +534,11 @@ public class SearchPlaceIndexForTextSummary implements Serializable {
 
     /**
      * <p>
-     * Contains the country filter entered in the geocoding request.
+     * Contains the optional country filter specified in the request.
      * </p>
      *
      * @param filterCountries <p>
-     *            Contains the country filter entered in the geocoding request.
+     *            Contains the optional country filter specified in the request.
      *            </p>
      */
     public void setFilterCountries(java.util.Collection<String> filterCountries) {
@@ -449,14 +552,14 @@ public class SearchPlaceIndexForTextSummary implements Serializable {
 
     /**
      * <p>
-     * Contains the country filter entered in the geocoding request.
+     * Contains the optional country filter specified in the request.
      * </p>
      * <p>
      * Returns a reference to this object so that method calls can be chained
      * together.
      *
      * @param filterCountries <p>
-     *            Contains the country filter entered in the geocoding request.
+     *            Contains the optional country filter specified in the request.
      *            </p>
      * @return A reference to this updated object so that method calls can be
      *         chained together.
@@ -473,14 +576,14 @@ public class SearchPlaceIndexForTextSummary implements Serializable {
 
     /**
      * <p>
-     * Contains the country filter entered in the geocoding request.
+     * Contains the optional country filter specified in the request.
      * </p>
      * <p>
      * Returns a reference to this object so that method calls can be chained
      * together.
      *
      * @param filterCountries <p>
-     *            Contains the country filter entered in the geocoding request.
+     *            Contains the optional country filter specified in the request.
      *            </p>
      * @return A reference to this updated object so that method calls can be
      *         chained together.
@@ -493,14 +596,87 @@ public class SearchPlaceIndexForTextSummary implements Serializable {
 
     /**
      * <p>
-     * Contains the maximum number of results indicated for the request.
+     * The preferred language used to return results. Matches the language in
+     * the request. The value is a valid <a
+     * href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for
+     * example, <code>en</code> for English.
+     * </p>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>2 - 35<br/>
+     *
+     * @return <p>
+     *         The preferred language used to return results. Matches the
+     *         language in the request. The value is a valid <a
+     *         href="https://tools.ietf.org/search/bcp47">BCP 47</a> language
+     *         tag, for example, <code>en</code> for English.
+     *         </p>
+     */
+    public String getLanguage() {
+        return language;
+    }
+
+    /**
+     * <p>
+     * The preferred language used to return results. Matches the language in
+     * the request. The value is a valid <a
+     * href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for
+     * example, <code>en</code> for English.
+     * </p>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>2 - 35<br/>
+     *
+     * @param language <p>
+     *            The preferred language used to return results. Matches the
+     *            language in the request. The value is a valid <a
+     *            href="https://tools.ietf.org/search/bcp47">BCP 47</a> language
+     *            tag, for example, <code>en</code> for English.
+     *            </p>
+     */
+    public void setLanguage(String language) {
+        this.language = language;
+    }
+
+    /**
+     * <p>
+     * The preferred language used to return results. Matches the language in
+     * the request. The value is a valid <a
+     * href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for
+     * example, <code>en</code> for English.
+     * </p>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained
+     * together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>2 - 35<br/>
+     *
+     * @param language <p>
+     *            The preferred language used to return results. Matches the
+     *            language in the request. The value is a valid <a
+     *            href="https://tools.ietf.org/search/bcp47">BCP 47</a> language
+     *            tag, for example, <code>en</code> for English.
+     *            </p>
+     * @return A reference to this updated object so that method calls can be
+     *         chained together.
+     */
+    public SearchPlaceIndexForTextSummary withLanguage(String language) {
+        this.language = language;
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contains the optional result count limit specified in the request.
      * </p>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 50<br/>
      *
      * @return <p>
-     *         Contains the maximum number of results indicated for the request.
+     *         Contains the optional result count limit specified in the
+     *         request.
      *         </p>
      */
     public Integer getMaxResults() {
@@ -509,14 +685,14 @@ public class SearchPlaceIndexForTextSummary implements Serializable {
 
     /**
      * <p>
-     * Contains the maximum number of results indicated for the request.
+     * Contains the optional result count limit specified in the request.
      * </p>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 50<br/>
      *
      * @param maxResults <p>
-     *            Contains the maximum number of results indicated for the
+     *            Contains the optional result count limit specified in the
      *            request.
      *            </p>
      */
@@ -526,7 +702,7 @@ public class SearchPlaceIndexForTextSummary implements Serializable {
 
     /**
      * <p>
-     * Contains the maximum number of results indicated for the request.
+     * Contains the optional result count limit specified in the request.
      * </p>
      * <p>
      * Returns a reference to this object so that method calls can be chained
@@ -536,7 +712,7 @@ public class SearchPlaceIndexForTextSummary implements Serializable {
      * <b>Range: </b>1 - 50<br/>
      *
      * @param maxResults <p>
-     *            Contains the maximum number of results indicated for the
+     *            Contains the optional result count limit specified in the
      *            request.
      *            </p>
      * @return A reference to this updated object so that method calls can be
@@ -549,16 +725,26 @@ public class SearchPlaceIndexForTextSummary implements Serializable {
 
     /**
      * <p>
-     * A bounding box that contains the search results within the specified area
-     * indicated by <code>FilterBBox</code>. A subset of bounding box specified
-     * using <code>FilterBBox</code>.
+     * The bounding box that fully contains all search results.
      * </p>
+     * <note>
+     * <p>
+     * If you specified the optional <code>FilterBBox</code> parameter in the
+     * request, <code>ResultBBox</code> is contained within
+     * <code>FilterBBox</code>.
+     * </p>
+     * </note>
      *
      * @return <p>
-     *         A bounding box that contains the search results within the
-     *         specified area indicated by <code>FilterBBox</code>. A subset of
-     *         bounding box specified using <code>FilterBBox</code>.
+     *         The bounding box that fully contains all search results.
      *         </p>
+     *         <note>
+     *         <p>
+     *         If you specified the optional <code>FilterBBox</code> parameter
+     *         in the request, <code>ResultBBox</code> is contained within
+     *         <code>FilterBBox</code>.
+     *         </p>
+     *         </note>
      */
     public java.util.List<Double> getResultBBox() {
         return resultBBox;
@@ -566,16 +752,26 @@ public class SearchPlaceIndexForTextSummary implements Serializable {
 
     /**
      * <p>
-     * A bounding box that contains the search results within the specified area
-     * indicated by <code>FilterBBox</code>. A subset of bounding box specified
-     * using <code>FilterBBox</code>.
+     * The bounding box that fully contains all search results.
      * </p>
+     * <note>
+     * <p>
+     * If you specified the optional <code>FilterBBox</code> parameter in the
+     * request, <code>ResultBBox</code> is contained within
+     * <code>FilterBBox</code>.
+     * </p>
+     * </note>
      *
      * @param resultBBox <p>
-     *            A bounding box that contains the search results within the
-     *            specified area indicated by <code>FilterBBox</code>. A subset
-     *            of bounding box specified using <code>FilterBBox</code>.
+     *            The bounding box that fully contains all search results.
      *            </p>
+     *            <note>
+     *            <p>
+     *            If you specified the optional <code>FilterBBox</code>
+     *            parameter in the request, <code>ResultBBox</code> is contained
+     *            within <code>FilterBBox</code>.
+     *            </p>
+     *            </note>
      */
     public void setResultBBox(java.util.Collection<Double> resultBBox) {
         if (resultBBox == null) {
@@ -588,19 +784,29 @@ public class SearchPlaceIndexForTextSummary implements Serializable {
 
     /**
      * <p>
-     * A bounding box that contains the search results within the specified area
-     * indicated by <code>FilterBBox</code>. A subset of bounding box specified
-     * using <code>FilterBBox</code>.
+     * The bounding box that fully contains all search results.
      * </p>
+     * <note>
+     * <p>
+     * If you specified the optional <code>FilterBBox</code> parameter in the
+     * request, <code>ResultBBox</code> is contained within
+     * <code>FilterBBox</code>.
+     * </p>
+     * </note>
      * <p>
      * Returns a reference to this object so that method calls can be chained
      * together.
      *
      * @param resultBBox <p>
-     *            A bounding box that contains the search results within the
-     *            specified area indicated by <code>FilterBBox</code>. A subset
-     *            of bounding box specified using <code>FilterBBox</code>.
+     *            The bounding box that fully contains all search results.
      *            </p>
+     *            <note>
+     *            <p>
+     *            If you specified the optional <code>FilterBBox</code>
+     *            parameter in the request, <code>ResultBBox</code> is contained
+     *            within <code>FilterBBox</code>.
+     *            </p>
+     *            </note>
      * @return A reference to this updated object so that method calls can be
      *         chained together.
      */
@@ -616,19 +822,29 @@ public class SearchPlaceIndexForTextSummary implements Serializable {
 
     /**
      * <p>
-     * A bounding box that contains the search results within the specified area
-     * indicated by <code>FilterBBox</code>. A subset of bounding box specified
-     * using <code>FilterBBox</code>.
+     * The bounding box that fully contains all search results.
      * </p>
+     * <note>
+     * <p>
+     * If you specified the optional <code>FilterBBox</code> parameter in the
+     * request, <code>ResultBBox</code> is contained within
+     * <code>FilterBBox</code>.
+     * </p>
+     * </note>
      * <p>
      * Returns a reference to this object so that method calls can be chained
      * together.
      *
      * @param resultBBox <p>
-     *            A bounding box that contains the search results within the
-     *            specified area indicated by <code>FilterBBox</code>. A subset
-     *            of bounding box specified using <code>FilterBBox</code>.
+     *            The bounding box that fully contains all search results.
      *            </p>
+     *            <note>
+     *            <p>
+     *            If you specified the optional <code>FilterBBox</code>
+     *            parameter in the request, <code>ResultBBox</code> is contained
+     *            within <code>FilterBBox</code>.
+     *            </p>
+     *            </note>
      * @return A reference to this updated object so that method calls can be
      *         chained together.
      */
@@ -639,14 +855,11 @@ public class SearchPlaceIndexForTextSummary implements Serializable {
 
     /**
      * <p>
-     * The address, name, city or region to be used in the geocoding request. In
-     * free-form text format. For example, <code>Vancouver</code>.
+     * The search text specified in the request.
      * </p>
      *
      * @return <p>
-     *         The address, name, city or region to be used in the geocoding
-     *         request. In free-form text format. For example,
-     *         <code>Vancouver</code>.
+     *         The search text specified in the request.
      *         </p>
      */
     public String getText() {
@@ -655,14 +868,11 @@ public class SearchPlaceIndexForTextSummary implements Serializable {
 
     /**
      * <p>
-     * The address, name, city or region to be used in the geocoding request. In
-     * free-form text format. For example, <code>Vancouver</code>.
+     * The search text specified in the request.
      * </p>
      *
      * @param text <p>
-     *            The address, name, city or region to be used in the geocoding
-     *            request. In free-form text format. For example,
-     *            <code>Vancouver</code>.
+     *            The search text specified in the request.
      *            </p>
      */
     public void setText(String text) {
@@ -671,17 +881,14 @@ public class SearchPlaceIndexForTextSummary implements Serializable {
 
     /**
      * <p>
-     * The address, name, city or region to be used in the geocoding request. In
-     * free-form text format. For example, <code>Vancouver</code>.
+     * The search text specified in the request.
      * </p>
      * <p>
      * Returns a reference to this object so that method calls can be chained
      * together.
      *
      * @param text <p>
-     *            The address, name, city or region to be used in the geocoding
-     *            request. In free-form text format. For example,
-     *            <code>Vancouver</code>.
+     *            The search text specified in the request.
      *            </p>
      * @return A reference to this updated object so that method calls can be
      *         chained together.
@@ -710,6 +917,8 @@ public class SearchPlaceIndexForTextSummary implements Serializable {
             sb.append("FilterBBox: " + getFilterBBox() + ",");
         if (getFilterCountries() != null)
             sb.append("FilterCountries: " + getFilterCountries() + ",");
+        if (getLanguage() != null)
+            sb.append("Language: " + getLanguage() + ",");
         if (getMaxResults() != null)
             sb.append("MaxResults: " + getMaxResults() + ",");
         if (getResultBBox() != null)
@@ -731,6 +940,7 @@ public class SearchPlaceIndexForTextSummary implements Serializable {
         hashCode = prime * hashCode + ((getFilterBBox() == null) ? 0 : getFilterBBox().hashCode());
         hashCode = prime * hashCode
                 + ((getFilterCountries() == null) ? 0 : getFilterCountries().hashCode());
+        hashCode = prime * hashCode + ((getLanguage() == null) ? 0 : getLanguage().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getResultBBox() == null) ? 0 : getResultBBox().hashCode());
         hashCode = prime * hashCode + ((getText() == null) ? 0 : getText().hashCode());
@@ -767,6 +977,10 @@ public class SearchPlaceIndexForTextSummary implements Serializable {
             return false;
         if (other.getFilterCountries() != null
                 && other.getFilterCountries().equals(this.getFilterCountries()) == false)
+            return false;
+        if (other.getLanguage() == null ^ this.getLanguage() == null)
+            return false;
+        if (other.getLanguage() != null && other.getLanguage().equals(this.getLanguage()) == false)
             return false;
         if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;

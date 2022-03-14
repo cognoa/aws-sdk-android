@@ -1,3 +1,93 @@
+## [Release 2.41.1](https://github.com/aws-amplify/aws-sdk-android/releases/tag/release_v2.41.1)
+
+### Bug Fixes
+- revert change from #2447 (#2804)
+
+[See all changes between 2.41.0 and 2.41.1](https://github.com/aws-amplify/aws-sdk-android/compare/release_v2.41.0...release_v2.41.1)
+
+## [Release 2.41.0](https://github.com/aws-amplify/aws-sdk-android/releases/tag/release_v2.41.0)
+
+### Features
+- **aws-android-sdk-sns:** update models to latest (#2795)
+
+### Miscellaneous
+- Updated the documentation to include optional proguard rules to ignore potential issues with transitive dependencies (#2791)
+- Fix 2634 : Adding the null guard when getTransferNetworkConnectionType is null (#2797)
+- Use 'com.facebook.android:facebook-login:11.2.0' (#2652)
+
+[See all changes between 2.40.0 and 2.41.0](https://github.com/aws-amplify/aws-sdk-android/compare/release_v2.40.0...release_v2.41.0)
+
+## [Release 2.40.0](https://github.com/aws-amplify/aws-sdk-android/releases/tag/release_v2.40.0)
+
+### Features
+- **aws-android-sdk-cognitoidentityprovider:** update models to latest (#2782)
+- **AWSMobileClient:** add deleteUser API (#2785)
+- **aws-android-sdk-comprehend:** update models to latest (#2787)
+
+[See all changes between 2.39.0 and 2.40.0](https://github.com/aws-amplify/aws-sdk-android/compare/release_v2.39.0...release_v2.40.0)
+
+## [Release 2.39.0](https://github.com/aws-amplify/aws-sdk-android/releases/tag/release_v2.39.0)
+
+### Features
+- **aws-android-sdk-location:** update models to latest (#2770)
+- **aws-android-sdk-connect:** update models to latest (#2772)
+- **aws-android-sdk-transcribe:** update models to latest (#2774)
+- **aws-android-sdk-connect:** update models to latest (#2778)
+
+### Miscellaneous
+- Fix pip install error (#2755)
+
+[See all changes between 2.38.0 and 2.39.0](https://github.com/aws-amplify/aws-sdk-android/compare/release_v2.38.0...release_v2.39.0)
+
+## [Release 2.38.0](https://github.com/aws-amplify/aws-sdk-android/releases/tag/release_v2.38.0)
+
+### Features
+- **aws-android-sdk-chimesdkmessaging:** update models to latest (#2749)
+- **aws-android-sdk-location:** update models to latest (#2751)
+- **aws-android-sdk-rekognition:** update models to latest (#2759)
+
+### Miscellaneous
+- downgrade androidx:browser dependency to 1.3.0 (#2766)
+- Add ASF package (#2756)
+
+[See all changes between 2.37.1 and 2.38.0](https://github.com/aws-amplify/aws-sdk-android/compare/release_v2.37.1...release_v2.38.0)
+
+## [Release 2.37.1](https://github.com/aws-amplify/aws-sdk-android/releases/tag/release_v2.37.1)
+
+### Miscellaneous
+- Fix social-sign-in in web-ui when default browser does not support custom-tabs (#2721)
+
+[See all changes between 2.37.0 and 2.37.1](https://github.com/aws-amplify/aws-sdk-android/compare/release_v2.37.0...release_v2.37.1)
+
+## [Release 2.37.0](https://github.com/aws-amplify/aws-sdk-android/releases/tag/release_v2.37.0)
+
+### Features
+- **aws-android-sdk-location:** update models to latest (#2739)
+- **aws-android-sdk-rekognition:** update models to latest (#2736)
+- **aws-android-sdk-textract:** update models to latest (#2733)
+- **aws-android-sdk-lambda:** update models to latest (#2731)
+- **aws-android-sdk-translate:** update models to latest (#2730)
+- **aws-android-sdk-core:** update models to latest (#2725)
+- **aws-android-sdk-connect:** update models to latest (#2722)
+- **aws-android-sdk-sns:** update models to latest (#2714)
+- **aws-android-sdk-connectparticipant:** update models to latest (#2691)
+- **aws-android-sdk-transcribe:** update models to latest (#2684)
+
+### Bug Fixes
+- **Pinpoint:** Add Immutable flag to PendingIntent (#2729)
+
+[See all changes between 2.36.0 and 2.37.0](https://github.com/aws-amplify/aws-sdk-android/compare/release_v2.36.0...release_v2.37.0)
+
+## [Release 2.36.0](https://github.com/aws-amplify/aws-sdk-android/releases/tag/release_v2.36.0)
+
+### Features
+- Support for ap-southeast-3 (#2709)
+
+### Bug Fixes
+- **Pinpoint:** Add null check for endpoint response (#2704)
+
+[See all changes between 2.35.0 and 2.36.0](https://github.com/aws-amplify/aws-sdk-android/compare/release_v2.35.0...release_v2.36.0)
+
 ## [Release 2.35.0](https://github.com/aws-amplify/aws-sdk-android/releases/tag/release_v2.35.0)
 
 ### Features

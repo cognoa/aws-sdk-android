@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -107,6 +107,21 @@ public class StartMedicalTranscriptionJobRequestMarshaller
                 jsonWriter.name("OutputEncryptionKMSKeyId");
                 jsonWriter.value(outputEncryptionKMSKeyId);
             }
+            if (startMedicalTranscriptionJobRequest.getKMSEncryptionContext() != null) {
+                java.util.Map<String, String> kMSEncryptionContext = startMedicalTranscriptionJobRequest
+                        .getKMSEncryptionContext();
+                jsonWriter.name("KMSEncryptionContext");
+                jsonWriter.beginObject();
+                for (java.util.Map.Entry<String, String> kMSEncryptionContextEntry : kMSEncryptionContext
+                        .entrySet()) {
+                    String kMSEncryptionContextValue = kMSEncryptionContextEntry.getValue();
+                    if (kMSEncryptionContextValue != null) {
+                        jsonWriter.name(kMSEncryptionContextEntry.getKey());
+                        jsonWriter.value(kMSEncryptionContextValue);
+                    }
+                }
+                jsonWriter.endObject();
+            }
             if (startMedicalTranscriptionJobRequest.getSettings() != null) {
                 MedicalTranscriptionSetting settings = startMedicalTranscriptionJobRequest
                         .getSettings();
@@ -129,6 +144,17 @@ public class StartMedicalTranscriptionJobRequestMarshaller
                 String type = startMedicalTranscriptionJobRequest.getType();
                 jsonWriter.name("Type");
                 jsonWriter.value(type);
+            }
+            if (startMedicalTranscriptionJobRequest.getTags() != null) {
+                java.util.List<Tag> tags = startMedicalTranscriptionJobRequest.getTags();
+                jsonWriter.name("Tags");
+                jsonWriter.beginArray();
+                for (Tag tagsItem : tags) {
+                    if (tagsItem != null) {
+                        TagJsonMarshaller.getInstance().marshall(tagsItem, jsonWriter);
+                    }
+                }
+                jsonWriter.endArray();
             }
 
             jsonWriter.endObject();

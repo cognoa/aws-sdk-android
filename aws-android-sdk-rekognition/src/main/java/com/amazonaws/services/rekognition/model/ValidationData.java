@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,9 +23,9 @@ import java.io.Serializable;
  * training job.
  * </p>
  * <p>
- * The validation data includes error information for individual JSON lines in
- * the dataset. For more information, see Debugging a Failed Model Training in
- * the Amazon Rekognition Custom Labels Developer Guide.
+ * The validation data includes error information for individual JSON Lines in
+ * the dataset. For more information, see <i>Debugging a Failed Model
+ * Training</i> in the Amazon Rekognition Custom Labels Developer Guide.
  * </p>
  * <p>
  * You get the <code>ValidationData</code> object for the training dataset

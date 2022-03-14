@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -21,9 +21,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Creates a new Amazon Rekognition Custom Labels project. A project is a
- * logical grouping of resources (images, Labels, models) and operations
- * (training, evaluation and detection).
+ * Creates a new Amazon Rekognition Custom Labels project. A project is a group
+ * of resources (datasets, model versions) that you use to create and manage
+ * Amazon Rekognition Custom Labels models.
  * </p>
  * <p>
  * This operation requires permissions to perform the

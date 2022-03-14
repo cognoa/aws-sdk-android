@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -37,9 +37,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * or line of text that was detected in the image.
  * </p>
  * <p>
- * A word is one or more ISO basic latin script characters that are not
- * separated by spaces. <code>DetectText</code> can detect up to 100 words in an
- * image.
+ * A word is one or more script characters that are not separated by spaces.
+ * <code>DetectText</code> can detect up to 100 words in an image.
  * </p>
  * <p>
  * A line is a string of equally spaced words. A line isn't necessarily a

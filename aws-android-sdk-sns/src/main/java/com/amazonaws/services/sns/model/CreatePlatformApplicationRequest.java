@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -48,9 +48,16 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </li>
  * <li>
  * <p>
- * For <code>APNS</code> and <code>APNS_SANDBOX</code>,
- * <code>PlatformPrincipal</code> is <code>SSL certificate</code> and
- * <code>PlatformCredential</code> is <code>private key</code>.
+ * For <code>APNS</code> and <code>APNS_SANDBOX</code> using certificate
+ * credentials, <code>PlatformPrincipal</code> is <code>SSL certificate</code>
+ * and <code>PlatformCredential</code> is <code>private key</code>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * For <code>APNS</code> and <code>APNS_SANDBOX</code> using token credentials,
+ * <code>PlatformPrincipal</code> is <code>signing key ID</code> and
+ * <code>PlatformCredential</code> is <code>signing key</code>.
  * </p>
  * </li>
  * <li>

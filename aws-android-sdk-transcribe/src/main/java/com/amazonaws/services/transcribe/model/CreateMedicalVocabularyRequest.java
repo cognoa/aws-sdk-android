@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Creates a new custom vocabulary that you can use to change how Amazon
+ * Creates a new custom vocabulary that you can use to modify how Amazon
  * Transcribe Medical transcribes your audio file.
  * </p>
  */
@@ -52,7 +52,8 @@ public class CreateMedicalVocabularyRequest extends AmazonWebServiceRequest impl
      * <b>Allowed Values: </b>af-ZA, ar-AE, ar-SA, cy-GB, da-DK, de-CH, de-DE,
      * en-AB, en-AU, en-GB, en-IE, en-IN, en-US, en-WL, es-ES, es-US, fa-IR,
      * fr-CA, fr-FR, ga-IE, gd-GB, he-IL, hi-IN, id-ID, it-IT, ja-JP, ko-KR,
-     * ms-MY, nl-NL, pt-BR, pt-PT, ru-RU, ta-IN, te-IN, tr-TR, zh-CN
+     * ms-MY, nl-NL, pt-BR, pt-PT, ru-RU, ta-IN, te-IN, tr-TR, zh-CN, zh-TW,
+     * th-TH, en-ZA, en-NZ
      */
     private String languageCode;
 
@@ -64,7 +65,7 @@ public class CreateMedicalVocabularyRequest extends AmazonWebServiceRequest impl
      * <code>VocabularyFileUri</code> in the following format:
      * </p>
      * <p>
-     * <code> https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt; </code>
+     * <code>https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;</code>
      * </p>
      * <p>
      * The following is an example URI for a vocabulary file that is stored in
@@ -80,7 +81,7 @@ public class CreateMedicalVocabularyRequest extends AmazonWebServiceRequest impl
      * </p>
      * <p>
      * For more information about custom vocabularies, see <a href=
-     * "https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary-med"
+     * "https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-med.html"
      * >Medical Custom Vocabularies</a>.
      * </p>
      * <p>
@@ -89,6 +90,14 @@ public class CreateMedicalVocabularyRequest extends AmazonWebServiceRequest impl
      * <b>Pattern: </b>(s3://|http(s*)://).+<br/>
      */
     private String vocabularyFileUri;
+
+    /**
+     * <p>
+     * Adds one or more tags, each in the form of a key:value pair, to a new
+     * medical vocabulary at the time you create this new vocabulary.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -177,7 +186,8 @@ public class CreateMedicalVocabularyRequest extends AmazonWebServiceRequest impl
      * <b>Allowed Values: </b>af-ZA, ar-AE, ar-SA, cy-GB, da-DK, de-CH, de-DE,
      * en-AB, en-AU, en-GB, en-IE, en-IN, en-US, en-WL, es-ES, es-US, fa-IR,
      * fr-CA, fr-FR, ga-IE, gd-GB, he-IL, hi-IN, id-ID, it-IT, ja-JP, ko-KR,
-     * ms-MY, nl-NL, pt-BR, pt-PT, ru-RU, ta-IN, te-IN, tr-TR, zh-CN
+     * ms-MY, nl-NL, pt-BR, pt-PT, ru-RU, ta-IN, te-IN, tr-TR, zh-CN, zh-TW,
+     * th-TH, en-ZA, en-NZ
      *
      * @return <p>
      *         The language code for the language used for the entries in your
@@ -204,7 +214,8 @@ public class CreateMedicalVocabularyRequest extends AmazonWebServiceRequest impl
      * <b>Allowed Values: </b>af-ZA, ar-AE, ar-SA, cy-GB, da-DK, de-CH, de-DE,
      * en-AB, en-AU, en-GB, en-IE, en-IN, en-US, en-WL, es-ES, es-US, fa-IR,
      * fr-CA, fr-FR, ga-IE, gd-GB, he-IL, hi-IN, id-ID, it-IT, ja-JP, ko-KR,
-     * ms-MY, nl-NL, pt-BR, pt-PT, ru-RU, ta-IN, te-IN, tr-TR, zh-CN
+     * ms-MY, nl-NL, pt-BR, pt-PT, ru-RU, ta-IN, te-IN, tr-TR, zh-CN, zh-TW,
+     * th-TH, en-ZA, en-NZ
      *
      * @param languageCode <p>
      *            The language code for the language used for the entries in
@@ -234,7 +245,8 @@ public class CreateMedicalVocabularyRequest extends AmazonWebServiceRequest impl
      * <b>Allowed Values: </b>af-ZA, ar-AE, ar-SA, cy-GB, da-DK, de-CH, de-DE,
      * en-AB, en-AU, en-GB, en-IE, en-IN, en-US, en-WL, es-ES, es-US, fa-IR,
      * fr-CA, fr-FR, ga-IE, gd-GB, he-IL, hi-IN, id-ID, it-IT, ja-JP, ko-KR,
-     * ms-MY, nl-NL, pt-BR, pt-PT, ru-RU, ta-IN, te-IN, tr-TR, zh-CN
+     * ms-MY, nl-NL, pt-BR, pt-PT, ru-RU, ta-IN, te-IN, tr-TR, zh-CN, zh-TW,
+     * th-TH, en-ZA, en-NZ
      *
      * @param languageCode <p>
      *            The language code for the language used for the entries in
@@ -264,7 +276,8 @@ public class CreateMedicalVocabularyRequest extends AmazonWebServiceRequest impl
      * <b>Allowed Values: </b>af-ZA, ar-AE, ar-SA, cy-GB, da-DK, de-CH, de-DE,
      * en-AB, en-AU, en-GB, en-IE, en-IN, en-US, en-WL, es-ES, es-US, fa-IR,
      * fr-CA, fr-FR, ga-IE, gd-GB, he-IL, hi-IN, id-ID, it-IT, ja-JP, ko-KR,
-     * ms-MY, nl-NL, pt-BR, pt-PT, ru-RU, ta-IN, te-IN, tr-TR, zh-CN
+     * ms-MY, nl-NL, pt-BR, pt-PT, ru-RU, ta-IN, te-IN, tr-TR, zh-CN, zh-TW,
+     * th-TH, en-ZA, en-NZ
      *
      * @param languageCode <p>
      *            The language code for the language used for the entries in
@@ -294,7 +307,8 @@ public class CreateMedicalVocabularyRequest extends AmazonWebServiceRequest impl
      * <b>Allowed Values: </b>af-ZA, ar-AE, ar-SA, cy-GB, da-DK, de-CH, de-DE,
      * en-AB, en-AU, en-GB, en-IE, en-IN, en-US, en-WL, es-ES, es-US, fa-IR,
      * fr-CA, fr-FR, ga-IE, gd-GB, he-IL, hi-IN, id-ID, it-IT, ja-JP, ko-KR,
-     * ms-MY, nl-NL, pt-BR, pt-PT, ru-RU, ta-IN, te-IN, tr-TR, zh-CN
+     * ms-MY, nl-NL, pt-BR, pt-PT, ru-RU, ta-IN, te-IN, tr-TR, zh-CN, zh-TW,
+     * th-TH, en-ZA, en-NZ
      *
      * @param languageCode <p>
      *            The language code for the language used for the entries in
@@ -320,7 +334,7 @@ public class CreateMedicalVocabularyRequest extends AmazonWebServiceRequest impl
      * <code>VocabularyFileUri</code> in the following format:
      * </p>
      * <p>
-     * <code> https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt; </code>
+     * <code>https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;</code>
      * </p>
      * <p>
      * The following is an example URI for a vocabulary file that is stored in
@@ -336,7 +350,7 @@ public class CreateMedicalVocabularyRequest extends AmazonWebServiceRequest impl
      * </p>
      * <p>
      * For more information about custom vocabularies, see <a href=
-     * "https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary-med"
+     * "https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-med.html"
      * >Medical Custom Vocabularies</a>.
      * </p>
      * <p>
@@ -352,7 +366,7 @@ public class CreateMedicalVocabularyRequest extends AmazonWebServiceRequest impl
      *         following format:
      *         </p>
      *         <p>
-     *         <code> https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt; </code>
+     *         <code>https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;</code>
      *         </p>
      *         <p>
      *         The following is an example URI for a vocabulary file that is
@@ -368,7 +382,7 @@ public class CreateMedicalVocabularyRequest extends AmazonWebServiceRequest impl
      *         </p>
      *         <p>
      *         For more information about custom vocabularies, see <a href=
-     *         "https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary-med"
+     *         "https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-med.html"
      *         >Medical Custom Vocabularies</a>.
      *         </p>
      */
@@ -384,7 +398,7 @@ public class CreateMedicalVocabularyRequest extends AmazonWebServiceRequest impl
      * <code>VocabularyFileUri</code> in the following format:
      * </p>
      * <p>
-     * <code> https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt; </code>
+     * <code>https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;</code>
      * </p>
      * <p>
      * The following is an example URI for a vocabulary file that is stored in
@@ -400,7 +414,7 @@ public class CreateMedicalVocabularyRequest extends AmazonWebServiceRequest impl
      * </p>
      * <p>
      * For more information about custom vocabularies, see <a href=
-     * "https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary-med"
+     * "https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-med.html"
      * >Medical Custom Vocabularies</a>.
      * </p>
      * <p>
@@ -416,7 +430,7 @@ public class CreateMedicalVocabularyRequest extends AmazonWebServiceRequest impl
      *            following format:
      *            </p>
      *            <p>
-     *            <code> https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt; </code>
+     *            <code>https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;</code>
      *            </p>
      *            <p>
      *            The following is an example URI for a vocabulary file that is
@@ -433,7 +447,7 @@ public class CreateMedicalVocabularyRequest extends AmazonWebServiceRequest impl
      *            </p>
      *            <p>
      *            For more information about custom vocabularies, see <a href=
-     *            "https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary-med"
+     *            "https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-med.html"
      *            >Medical Custom Vocabularies</a>.
      *            </p>
      */
@@ -449,7 +463,7 @@ public class CreateMedicalVocabularyRequest extends AmazonWebServiceRequest impl
      * <code>VocabularyFileUri</code> in the following format:
      * </p>
      * <p>
-     * <code> https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt; </code>
+     * <code>https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;</code>
      * </p>
      * <p>
      * The following is an example URI for a vocabulary file that is stored in
@@ -465,7 +479,7 @@ public class CreateMedicalVocabularyRequest extends AmazonWebServiceRequest impl
      * </p>
      * <p>
      * For more information about custom vocabularies, see <a href=
-     * "https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary-med"
+     * "https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-med.html"
      * >Medical Custom Vocabularies</a>.
      * </p>
      * <p>
@@ -484,7 +498,7 @@ public class CreateMedicalVocabularyRequest extends AmazonWebServiceRequest impl
      *            following format:
      *            </p>
      *            <p>
-     *            <code> https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt; </code>
+     *            <code>https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;</code>
      *            </p>
      *            <p>
      *            The following is an example URI for a vocabulary file that is
@@ -501,7 +515,7 @@ public class CreateMedicalVocabularyRequest extends AmazonWebServiceRequest impl
      *            </p>
      *            <p>
      *            For more information about custom vocabularies, see <a href=
-     *            "https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary-med"
+     *            "https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-med.html"
      *            >Medical Custom Vocabularies</a>.
      *            </p>
      * @return A reference to this updated object so that method calls can be
@@ -509,6 +523,92 @@ public class CreateMedicalVocabularyRequest extends AmazonWebServiceRequest impl
      */
     public CreateMedicalVocabularyRequest withVocabularyFileUri(String vocabularyFileUri) {
         this.vocabularyFileUri = vocabularyFileUri;
+        return this;
+    }
+
+    /**
+     * <p>
+     * Adds one or more tags, each in the form of a key:value pair, to a new
+     * medical vocabulary at the time you create this new vocabulary.
+     * </p>
+     *
+     * @return <p>
+     *         Adds one or more tags, each in the form of a key:value pair, to a
+     *         new medical vocabulary at the time you create this new
+     *         vocabulary.
+     *         </p>
+     */
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * Adds one or more tags, each in the form of a key:value pair, to a new
+     * medical vocabulary at the time you create this new vocabulary.
+     * </p>
+     *
+     * @param tags <p>
+     *            Adds one or more tags, each in the form of a key:value pair,
+     *            to a new medical vocabulary at the time you create this new
+     *            vocabulary.
+     *            </p>
+     */
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * Adds one or more tags, each in the form of a key:value pair, to a new
+     * medical vocabulary at the time you create this new vocabulary.
+     * </p>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained
+     * together.
+     *
+     * @param tags <p>
+     *            Adds one or more tags, each in the form of a key:value pair,
+     *            to a new medical vocabulary at the time you create this new
+     *            vocabulary.
+     *            </p>
+     * @return A reference to this updated object so that method calls can be
+     *         chained together.
+     */
+    public CreateMedicalVocabularyRequest withTags(Tag... tags) {
+        if (getTags() == null) {
+            this.tags = new java.util.ArrayList<Tag>(tags.length);
+        }
+        for (Tag value : tags) {
+            this.tags.add(value);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Adds one or more tags, each in the form of a key:value pair, to a new
+     * medical vocabulary at the time you create this new vocabulary.
+     * </p>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained
+     * together.
+     *
+     * @param tags <p>
+     *            Adds one or more tags, each in the form of a key:value pair,
+     *            to a new medical vocabulary at the time you create this new
+     *            vocabulary.
+     *            </p>
+     * @return A reference to this updated object so that method calls can be
+     *         chained together.
+     */
+    public CreateMedicalVocabularyRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
         return this;
     }
 
@@ -528,7 +628,9 @@ public class CreateMedicalVocabularyRequest extends AmazonWebServiceRequest impl
         if (getLanguageCode() != null)
             sb.append("LanguageCode: " + getLanguageCode() + ",");
         if (getVocabularyFileUri() != null)
-            sb.append("VocabularyFileUri: " + getVocabularyFileUri());
+            sb.append("VocabularyFileUri: " + getVocabularyFileUri() + ",");
+        if (getTags() != null)
+            sb.append("Tags: " + getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -544,6 +646,7 @@ public class CreateMedicalVocabularyRequest extends AmazonWebServiceRequest impl
                 + ((getLanguageCode() == null) ? 0 : getLanguageCode().hashCode());
         hashCode = prime * hashCode
                 + ((getVocabularyFileUri() == null) ? 0 : getVocabularyFileUri().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 
@@ -572,6 +675,10 @@ public class CreateMedicalVocabularyRequest extends AmazonWebServiceRequest impl
             return false;
         if (other.getVocabularyFileUri() != null
                 && other.getVocabularyFileUri().equals(this.getVocabularyFileUri()) == false)
+            return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         return true;
     }

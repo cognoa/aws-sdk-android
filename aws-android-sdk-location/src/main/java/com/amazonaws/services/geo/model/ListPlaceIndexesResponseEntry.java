@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -34,8 +34,7 @@ public class ListPlaceIndexesResponseEntry implements Serializable {
 
     /**
      * <p>
-     * The data provider of geospatial data. Indicates one of the available
-     * providers:
+     * The data provider of geospatial data. Values can be one of the following:
      * </p>
      * <ul>
      * <li>
@@ -50,7 +49,7 @@ public class ListPlaceIndexesResponseEntry implements Serializable {
      * </li>
      * </ul>
      * <p>
-     * For additional details on data providers, see <a href=
+     * For more information about data providers, see <a href=
      * "https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html"
      * >Amazon Location Service data providers</a>.
      * </p>
@@ -80,12 +79,7 @@ public class ListPlaceIndexesResponseEntry implements Serializable {
 
     /**
      * <p>
-     * The pricing plan for the specified place index resource.
-     * </p>
-     * <p>
-     * For additional details and restrictions on each pricing plan option, see
-     * <a href="https://aws.amazon.com/location/pricing/">Amazon Location
-     * Service pricing</a>.
+     * No longer used. Always returns <code>RequestBasedUsage</code>.
      * </p>
      * <p>
      * <b>Constraints:</b><br/>
@@ -164,8 +158,7 @@ public class ListPlaceIndexesResponseEntry implements Serializable {
 
     /**
      * <p>
-     * The data provider of geospatial data. Indicates one of the available
-     * providers:
+     * The data provider of geospatial data. Values can be one of the following:
      * </p>
      * <ul>
      * <li>
@@ -180,14 +173,14 @@ public class ListPlaceIndexesResponseEntry implements Serializable {
      * </li>
      * </ul>
      * <p>
-     * For additional details on data providers, see <a href=
+     * For more information about data providers, see <a href=
      * "https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html"
      * >Amazon Location Service data providers</a>.
      * </p>
      *
      * @return <p>
-     *         The data provider of geospatial data. Indicates one of the
-     *         available providers:
+     *         The data provider of geospatial data. Values can be one of the
+     *         following:
      *         </p>
      *         <ul>
      *         <li>
@@ -202,7 +195,7 @@ public class ListPlaceIndexesResponseEntry implements Serializable {
      *         </li>
      *         </ul>
      *         <p>
-     *         For additional details on data providers, see <a href=
+     *         For more information about data providers, see <a href=
      *         "https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html"
      *         >Amazon Location Service data providers</a>.
      *         </p>
@@ -213,8 +206,7 @@ public class ListPlaceIndexesResponseEntry implements Serializable {
 
     /**
      * <p>
-     * The data provider of geospatial data. Indicates one of the available
-     * providers:
+     * The data provider of geospatial data. Values can be one of the following:
      * </p>
      * <ul>
      * <li>
@@ -229,14 +221,14 @@ public class ListPlaceIndexesResponseEntry implements Serializable {
      * </li>
      * </ul>
      * <p>
-     * For additional details on data providers, see <a href=
+     * For more information about data providers, see <a href=
      * "https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html"
      * >Amazon Location Service data providers</a>.
      * </p>
      *
      * @param dataSource <p>
-     *            The data provider of geospatial data. Indicates one of the
-     *            available providers:
+     *            The data provider of geospatial data. Values can be one of the
+     *            following:
      *            </p>
      *            <ul>
      *            <li>
@@ -251,7 +243,7 @@ public class ListPlaceIndexesResponseEntry implements Serializable {
      *            </li>
      *            </ul>
      *            <p>
-     *            For additional details on data providers, see <a href=
+     *            For more information about data providers, see <a href=
      *            "https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html"
      *            >Amazon Location Service data providers</a>.
      *            </p>
@@ -262,8 +254,7 @@ public class ListPlaceIndexesResponseEntry implements Serializable {
 
     /**
      * <p>
-     * The data provider of geospatial data. Indicates one of the available
-     * providers:
+     * The data provider of geospatial data. Values can be one of the following:
      * </p>
      * <ul>
      * <li>
@@ -278,7 +269,7 @@ public class ListPlaceIndexesResponseEntry implements Serializable {
      * </li>
      * </ul>
      * <p>
-     * For additional details on data providers, see <a href=
+     * For more information about data providers, see <a href=
      * "https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html"
      * >Amazon Location Service data providers</a>.
      * </p>
@@ -287,8 +278,8 @@ public class ListPlaceIndexesResponseEntry implements Serializable {
      * together.
      *
      * @param dataSource <p>
-     *            The data provider of geospatial data. Indicates one of the
-     *            available providers:
+     *            The data provider of geospatial data. Values can be one of the
+     *            following:
      *            </p>
      *            <ul>
      *            <li>
@@ -303,7 +294,7 @@ public class ListPlaceIndexesResponseEntry implements Serializable {
      *            </li>
      *            </ul>
      *            <p>
-     *            For additional details on data providers, see <a href=
+     *            For more information about data providers, see <a href=
      *            "https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html"
      *            >Amazon Location Service data providers</a>.
      *            </p>
@@ -428,12 +419,7 @@ public class ListPlaceIndexesResponseEntry implements Serializable {
 
     /**
      * <p>
-     * The pricing plan for the specified place index resource.
-     * </p>
-     * <p>
-     * For additional details and restrictions on each pricing plan option, see
-     * <a href="https://aws.amazon.com/location/pricing/">Amazon Location
-     * Service pricing</a>.
+     * No longer used. Always returns <code>RequestBasedUsage</code>.
      * </p>
      * <p>
      * <b>Constraints:</b><br/>
@@ -441,13 +427,7 @@ public class ListPlaceIndexesResponseEntry implements Serializable {
      * MobileAssetManagement
      *
      * @return <p>
-     *         The pricing plan for the specified place index resource.
-     *         </p>
-     *         <p>
-     *         For additional details and restrictions on each pricing plan
-     *         option, see <a
-     *         href="https://aws.amazon.com/location/pricing/">Amazon Location
-     *         Service pricing</a>.
+     *         No longer used. Always returns <code>RequestBasedUsage</code>.
      *         </p>
      * @see PricingPlan
      */
@@ -457,12 +437,7 @@ public class ListPlaceIndexesResponseEntry implements Serializable {
 
     /**
      * <p>
-     * The pricing plan for the specified place index resource.
-     * </p>
-     * <p>
-     * For additional details and restrictions on each pricing plan option, see
-     * <a href="https://aws.amazon.com/location/pricing/">Amazon Location
-     * Service pricing</a>.
+     * No longer used. Always returns <code>RequestBasedUsage</code>.
      * </p>
      * <p>
      * <b>Constraints:</b><br/>
@@ -470,13 +445,7 @@ public class ListPlaceIndexesResponseEntry implements Serializable {
      * MobileAssetManagement
      *
      * @param pricingPlan <p>
-     *            The pricing plan for the specified place index resource.
-     *            </p>
-     *            <p>
-     *            For additional details and restrictions on each pricing plan
-     *            option, see <a
-     *            href="https://aws.amazon.com/location/pricing/">Amazon
-     *            Location Service pricing</a>.
+     *            No longer used. Always returns <code>RequestBasedUsage</code>.
      *            </p>
      * @see PricingPlan
      */
@@ -486,12 +455,7 @@ public class ListPlaceIndexesResponseEntry implements Serializable {
 
     /**
      * <p>
-     * The pricing plan for the specified place index resource.
-     * </p>
-     * <p>
-     * For additional details and restrictions on each pricing plan option, see
-     * <a href="https://aws.amazon.com/location/pricing/">Amazon Location
-     * Service pricing</a>.
+     * No longer used. Always returns <code>RequestBasedUsage</code>.
      * </p>
      * <p>
      * Returns a reference to this object so that method calls can be chained
@@ -502,13 +466,7 @@ public class ListPlaceIndexesResponseEntry implements Serializable {
      * MobileAssetManagement
      *
      * @param pricingPlan <p>
-     *            The pricing plan for the specified place index resource.
-     *            </p>
-     *            <p>
-     *            For additional details and restrictions on each pricing plan
-     *            option, see <a
-     *            href="https://aws.amazon.com/location/pricing/">Amazon
-     *            Location Service pricing</a>.
+     *            No longer used. Always returns <code>RequestBasedUsage</code>.
      *            </p>
      * @return A reference to this updated object so that method calls can be
      *         chained together.
@@ -521,12 +479,7 @@ public class ListPlaceIndexesResponseEntry implements Serializable {
 
     /**
      * <p>
-     * The pricing plan for the specified place index resource.
-     * </p>
-     * <p>
-     * For additional details and restrictions on each pricing plan option, see
-     * <a href="https://aws.amazon.com/location/pricing/">Amazon Location
-     * Service pricing</a>.
+     * No longer used. Always returns <code>RequestBasedUsage</code>.
      * </p>
      * <p>
      * <b>Constraints:</b><br/>
@@ -534,13 +487,7 @@ public class ListPlaceIndexesResponseEntry implements Serializable {
      * MobileAssetManagement
      *
      * @param pricingPlan <p>
-     *            The pricing plan for the specified place index resource.
-     *            </p>
-     *            <p>
-     *            For additional details and restrictions on each pricing plan
-     *            option, see <a
-     *            href="https://aws.amazon.com/location/pricing/">Amazon
-     *            Location Service pricing</a>.
+     *            No longer used. Always returns <code>RequestBasedUsage</code>.
      *            </p>
      * @see PricingPlan
      */
@@ -550,12 +497,7 @@ public class ListPlaceIndexesResponseEntry implements Serializable {
 
     /**
      * <p>
-     * The pricing plan for the specified place index resource.
-     * </p>
-     * <p>
-     * For additional details and restrictions on each pricing plan option, see
-     * <a href="https://aws.amazon.com/location/pricing/">Amazon Location
-     * Service pricing</a>.
+     * No longer used. Always returns <code>RequestBasedUsage</code>.
      * </p>
      * <p>
      * Returns a reference to this object so that method calls can be chained
@@ -566,13 +508,7 @@ public class ListPlaceIndexesResponseEntry implements Serializable {
      * MobileAssetManagement
      *
      * @param pricingPlan <p>
-     *            The pricing plan for the specified place index resource.
-     *            </p>
-     *            <p>
-     *            For additional details and restrictions on each pricing plan
-     *            option, see <a
-     *            href="https://aws.amazon.com/location/pricing/">Amazon
-     *            Location Service pricing</a>.
+     *            No longer used. Always returns <code>RequestBasedUsage</code>.
      *            </p>
      * @return A reference to this updated object so that method calls can be
      *         chained together.

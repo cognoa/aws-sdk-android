@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -21,8 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Provides summary information about the AWS resource associations for the
- * specified Amazon Connect instance.
+ * Provides summary information about the Amazon Web Services resource
+ * associations for the specified Amazon Connect instance.
  * </p>
  */
 public class ListIntegrationAssociationsRequest extends AmazonWebServiceRequest implements
@@ -40,6 +40,17 @@ public class ListIntegrationAssociationsRequest extends AmazonWebServiceRequest 
 
     /**
      * <p/>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>EVENT, VOICE_ID, PINPOINT_APP, WISDOM_ASSISTANT,
+     * WISDOM_KNOWLEDGE_BASE
+     */
+    private String integrationType;
+
+    /**
+     * <p>
+     * The integration type.
+     * </p>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>EVENT, VOICE_ID, PINPOINT_APP, WISDOM_ASSISTANT,
@@ -199,6 +210,108 @@ public class ListIntegrationAssociationsRequest extends AmazonWebServiceRequest 
      * WISDOM_KNOWLEDGE_BASE
      *
      * @param integrationType <p/>
+     * @return A reference to this updated object so that method calls can be
+     *         chained together.
+     * @see IntegrationType
+     */
+    public ListIntegrationAssociationsRequest withIntegrationType(IntegrationType integrationType) {
+        this.integrationType = integrationType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The integration type.
+     * </p>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>EVENT, VOICE_ID, PINPOINT_APP, WISDOM_ASSISTANT,
+     * WISDOM_KNOWLEDGE_BASE
+     *
+     * @return <p>
+     *         The integration type.
+     *         </p>
+     * @see IntegrationType
+     */
+    public String getIntegrationType() {
+        return integrationType;
+    }
+
+    /**
+     * <p>
+     * The integration type.
+     * </p>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>EVENT, VOICE_ID, PINPOINT_APP, WISDOM_ASSISTANT,
+     * WISDOM_KNOWLEDGE_BASE
+     *
+     * @param integrationType <p>
+     *            The integration type.
+     *            </p>
+     * @see IntegrationType
+     */
+    public void setIntegrationType(String integrationType) {
+        this.integrationType = integrationType;
+    }
+
+    /**
+     * <p>
+     * The integration type.
+     * </p>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained
+     * together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>EVENT, VOICE_ID, PINPOINT_APP, WISDOM_ASSISTANT,
+     * WISDOM_KNOWLEDGE_BASE
+     *
+     * @param integrationType <p>
+     *            The integration type.
+     *            </p>
+     * @return A reference to this updated object so that method calls can be
+     *         chained together.
+     * @see IntegrationType
+     */
+    public ListIntegrationAssociationsRequest withIntegrationType(String integrationType) {
+        this.integrationType = integrationType;
+        return this;
+    }
+
+    /**
+     * <p>
+     * The integration type.
+     * </p>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>EVENT, VOICE_ID, PINPOINT_APP, WISDOM_ASSISTANT,
+     * WISDOM_KNOWLEDGE_BASE
+     *
+     * @param integrationType <p>
+     *            The integration type.
+     *            </p>
+     * @see IntegrationType
+     */
+    public void setIntegrationType(IntegrationType integrationType) {
+        this.integrationType = integrationType.toString();
+    }
+
+    /**
+     * <p>
+     * The integration type.
+     * </p>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained
+     * together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>EVENT, VOICE_ID, PINPOINT_APP, WISDOM_ASSISTANT,
+     * WISDOM_KNOWLEDGE_BASE
+     *
+     * @param integrationType <p>
+     *            The integration type.
+     *            </p>
      * @return A reference to this updated object so that method calls can be
      *         chained together.
      * @see IntegrationType

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -41,6 +41,17 @@ class ProjectDescriptionJsonMarshaller {
             String status = projectDescription.getStatus();
             jsonWriter.name("Status");
             jsonWriter.value(status);
+        }
+        if (projectDescription.getDatasets() != null) {
+            java.util.List<DatasetMetadata> datasets = projectDescription.getDatasets();
+            jsonWriter.name("Datasets");
+            jsonWriter.beginArray();
+            for (DatasetMetadata datasetsItem : datasets) {
+                if (datasetsItem != null) {
+                    DatasetMetadataJsonMarshaller.getInstance().marshall(datasetsItem, jsonWriter);
+                }
+            }
+            jsonWriter.endArray();
         }
         jsonWriter.endObject();
     }

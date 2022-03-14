@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -19,13 +19,13 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Endpoint for mobile app and device.
+ * The endpoint for mobile app and device.
  * </p>
  */
 public class Endpoint implements Serializable {
     /**
      * <p>
-     * EndpointArn for mobile app and device.
+     * The <code>EndpointArn</code> for mobile app and device.
      * </p>
      */
     private String endpointArn;
@@ -39,11 +39,11 @@ public class Endpoint implements Serializable {
 
     /**
      * <p>
-     * EndpointArn for mobile app and device.
+     * The <code>EndpointArn</code> for mobile app and device.
      * </p>
      *
      * @return <p>
-     *         EndpointArn for mobile app and device.
+     *         The <code>EndpointArn</code> for mobile app and device.
      *         </p>
      */
     public String getEndpointArn() {
@@ -52,11 +52,11 @@ public class Endpoint implements Serializable {
 
     /**
      * <p>
-     * EndpointArn for mobile app and device.
+     * The <code>EndpointArn</code> for mobile app and device.
      * </p>
      *
      * @param endpointArn <p>
-     *            EndpointArn for mobile app and device.
+     *            The <code>EndpointArn</code> for mobile app and device.
      *            </p>
      */
     public void setEndpointArn(String endpointArn) {
@@ -65,14 +65,14 @@ public class Endpoint implements Serializable {
 
     /**
      * <p>
-     * EndpointArn for mobile app and device.
+     * The <code>EndpointArn</code> for mobile app and device.
      * </p>
      * <p>
      * Returns a reference to this object so that method calls can be chained
      * together.
      *
      * @param endpointArn <p>
-     *            EndpointArn for mobile app and device.
+     *            The <code>EndpointArn</code> for mobile app and device.
      *            </p>
      * @return A reference to this updated object so that method calls can be
      *         chained together.

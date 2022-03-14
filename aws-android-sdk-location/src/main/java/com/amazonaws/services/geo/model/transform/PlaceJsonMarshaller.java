@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -41,6 +41,11 @@ class PlaceJsonMarshaller {
             jsonWriter.name("Geometry");
             PlaceGeometryJsonMarshaller.getInstance().marshall(geometry, jsonWriter);
         }
+        if (place.getInterpolated() != null) {
+            Boolean interpolated = place.getInterpolated();
+            jsonWriter.name("Interpolated");
+            jsonWriter.value(interpolated);
+        }
         if (place.getLabel() != null) {
             String label = place.getLabel();
             jsonWriter.name("Label");
@@ -75,6 +80,11 @@ class PlaceJsonMarshaller {
             String subRegion = place.getSubRegion();
             jsonWriter.name("SubRegion");
             jsonWriter.value(subRegion);
+        }
+        if (place.getTimeZone() != null) {
+            TimeZone timeZone = place.getTimeZone();
+            jsonWriter.name("TimeZone");
+            TimeZoneJsonMarshaller.getInstance().marshall(timeZone, jsonWriter);
         }
         jsonWriter.endObject();
     }

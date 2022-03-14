@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -36,8 +36,14 @@ class SearchForTextResultJsonUnmarshaller implements
         reader.beginObject();
         while (reader.hasNext()) {
             String name = reader.nextName();
-            if (name.equals("Place")) {
+            if (name.equals("Distance")) {
+                searchForTextResult.setDistance(DoubleJsonUnmarshaller.getInstance()
+                        .unmarshall(context));
+            } else if (name.equals("Place")) {
                 searchForTextResult.setPlace(PlaceJsonUnmarshaller.getInstance()
+                        .unmarshall(context));
+            } else if (name.equals("Relevance")) {
+                searchForTextResult.setRelevance(DoubleJsonUnmarshaller.getInstance()
                         .unmarshall(context));
             } else {
                 reader.skipValue();

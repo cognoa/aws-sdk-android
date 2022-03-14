@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -37,12 +37,21 @@ class ListDevicePositionsResponseEntryJsonUnmarshaller implements
         reader.beginObject();
         while (reader.hasNext()) {
             String name = reader.nextName();
-            if (name.equals("DeviceId")) {
+            if (name.equals("Accuracy")) {
+                listDevicePositionsResponseEntry.setAccuracy(PositionalAccuracyJsonUnmarshaller
+                        .getInstance()
+                        .unmarshall(context));
+            } else if (name.equals("DeviceId")) {
                 listDevicePositionsResponseEntry.setDeviceId(StringJsonUnmarshaller.getInstance()
                         .unmarshall(context));
             } else if (name.equals("Position")) {
                 listDevicePositionsResponseEntry.setPosition(new ListUnmarshaller<Double>(
                         DoubleJsonUnmarshaller.getInstance()
+                        )
+                                .unmarshall(context));
+            } else if (name.equals("PositionProperties")) {
+                listDevicePositionsResponseEntry.setPositionProperties(new MapUnmarshaller<String>(
+                        StringJsonUnmarshaller.getInstance()
                         )
                                 .unmarshall(context));
             } else if (name.equals("SampleTime")) {

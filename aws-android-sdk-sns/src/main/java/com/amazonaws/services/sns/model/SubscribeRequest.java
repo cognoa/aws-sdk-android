@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -22,9 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p>
  * Subscribes an endpoint to an Amazon SNS topic. If the endpoint type is HTTP/S
- * or email, or if the endpoint and the topic are not in the same account, the
- * endpoint owner must run the <code>ConfirmSubscription</code> action to
- * confirm the subscription.
+ * or email, or if the endpoint and the topic are not in the same Amazon Web
+ * Services account, the endpoint owner must run the
+ * <code>ConfirmSubscription</code> action to confirm the subscription.
  * </p>
  * <p>
  * You call the <code>ConfirmSubscription</code> action with the token from the

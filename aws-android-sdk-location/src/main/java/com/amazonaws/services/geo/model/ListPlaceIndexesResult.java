@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -27,9 +27,8 @@ public class ListPlaceIndexesResult implements Serializable {
 
     /**
      * <p>
-     * A pagination token indicating there are additional pages available. You
-     * can use the token in a following request to fetch the next set of
-     * results.
+     * A pagination token indicating that there are additional pages available.
+     * You can use the token in a new request to fetch the next page of results.
      * </p>
      * <p>
      * <b>Constraints:</b><br/>
@@ -114,18 +113,17 @@ public class ListPlaceIndexesResult implements Serializable {
 
     /**
      * <p>
-     * A pagination token indicating there are additional pages available. You
-     * can use the token in a following request to fetch the next set of
-     * results.
+     * A pagination token indicating that there are additional pages available.
+     * You can use the token in a new request to fetch the next page of results.
      * </p>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 2000<br/>
      *
      * @return <p>
-     *         A pagination token indicating there are additional pages
-     *         available. You can use the token in a following request to fetch
-     *         the next set of results.
+     *         A pagination token indicating that there are additional pages
+     *         available. You can use the token in a new request to fetch the
+     *         next page of results.
      *         </p>
      */
     public String getNextToken() {
@@ -134,18 +132,17 @@ public class ListPlaceIndexesResult implements Serializable {
 
     /**
      * <p>
-     * A pagination token indicating there are additional pages available. You
-     * can use the token in a following request to fetch the next set of
-     * results.
+     * A pagination token indicating that there are additional pages available.
+     * You can use the token in a new request to fetch the next page of results.
      * </p>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 2000<br/>
      *
      * @param nextToken <p>
-     *            A pagination token indicating there are additional pages
-     *            available. You can use the token in a following request to
-     *            fetch the next set of results.
+     *            A pagination token indicating that there are additional pages
+     *            available. You can use the token in a new request to fetch the
+     *            next page of results.
      *            </p>
      */
     public void setNextToken(String nextToken) {
@@ -154,9 +151,8 @@ public class ListPlaceIndexesResult implements Serializable {
 
     /**
      * <p>
-     * A pagination token indicating there are additional pages available. You
-     * can use the token in a following request to fetch the next set of
-     * results.
+     * A pagination token indicating that there are additional pages available.
+     * You can use the token in a new request to fetch the next page of results.
      * </p>
      * <p>
      * Returns a reference to this object so that method calls can be chained
@@ -166,9 +162,9 @@ public class ListPlaceIndexesResult implements Serializable {
      * <b>Length: </b>1 - 2000<br/>
      *
      * @param nextToken <p>
-     *            A pagination token indicating there are additional pages
-     *            available. You can use the token in a following request to
-     *            fetch the next set of results.
+     *            A pagination token indicating that there are additional pages
+     *            available. You can use the token in a new request to fetch the
+     *            next page of results.
      *            </p>
      * @return A reference to this updated object so that method calls can be
      *         chained together.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -22,16 +22,17 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p>
  * Verifies a destination phone number with a one-time password (OTP) for the
- * calling account.
+ * calling Amazon Web Services account.
  * </p>
  * <p>
- * When you start using Amazon SNS to send SMS messages, your account is in the
- * <i>SMS sandbox</i>. The SMS sandbox provides a safe environment for you to
- * try Amazon SNS features without risking your reputation as an SMS sender.
- * While your account is in the SMS sandbox, you can use all of the features of
- * Amazon SNS. However, you can send SMS messages only to verified destination
- * phone numbers. For more information, including how to move out of the sandbox
- * to send messages without restrictions, see <a
+ * When you start using Amazon SNS to send SMS messages, your Amazon Web
+ * Services account is in the <i>SMS sandbox</i>. The SMS sandbox provides a
+ * safe environment for you to try Amazon SNS features without risking your
+ * reputation as an SMS sender. While your Amazon Web Services account is in the
+ * SMS sandbox, you can use all of the features of Amazon SNS. However, you can
+ * send SMS messages only to verified destination phone numbers. For more
+ * information, including how to move out of the sandbox to send messages
+ * without restrictions, see <a
  * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">SMS
  * sandbox</a> in the <i>Amazon SNS Developer Guide</i>.
  * </p>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -27,6 +27,11 @@ class SearchForPositionResultJsonMarshaller {
     public void marshall(SearchForPositionResult searchForPositionResult, AwsJsonWriter jsonWriter)
             throws Exception {
         jsonWriter.beginObject();
+        if (searchForPositionResult.getDistance() != null) {
+            Double distance = searchForPositionResult.getDistance();
+            jsonWriter.name("Distance");
+            jsonWriter.value(distance);
+        }
         if (searchForPositionResult.getPlace() != null) {
             Place place = searchForPositionResult.getPlace();
             jsonWriter.name("Place");

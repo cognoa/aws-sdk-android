@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -123,6 +123,38 @@ class TranscriptionJobJsonMarshaller {
             Float identifiedLanguageScore = transcriptionJob.getIdentifiedLanguageScore();
             jsonWriter.name("IdentifiedLanguageScore");
             jsonWriter.value(identifiedLanguageScore);
+        }
+        if (transcriptionJob.getTags() != null) {
+            java.util.List<Tag> tags = transcriptionJob.getTags();
+            jsonWriter.name("Tags");
+            jsonWriter.beginArray();
+            for (Tag tagsItem : tags) {
+                if (tagsItem != null) {
+                    TagJsonMarshaller.getInstance().marshall(tagsItem, jsonWriter);
+                }
+            }
+            jsonWriter.endArray();
+        }
+        if (transcriptionJob.getSubtitles() != null) {
+            SubtitlesOutput subtitles = transcriptionJob.getSubtitles();
+            jsonWriter.name("Subtitles");
+            SubtitlesOutputJsonMarshaller.getInstance().marshall(subtitles, jsonWriter);
+        }
+        if (transcriptionJob.getLanguageIdSettings() != null) {
+            java.util.Map<String, LanguageIdSettings> languageIdSettings = transcriptionJob
+                    .getLanguageIdSettings();
+            jsonWriter.name("LanguageIdSettings");
+            jsonWriter.beginObject();
+            for (java.util.Map.Entry<String, LanguageIdSettings> languageIdSettingsEntry : languageIdSettings
+                    .entrySet()) {
+                LanguageIdSettings languageIdSettingsValue = languageIdSettingsEntry.getValue();
+                if (languageIdSettingsValue != null) {
+                    jsonWriter.name(languageIdSettingsEntry.getKey());
+                    LanguageIdSettingsJsonMarshaller.getInstance().marshall(
+                            languageIdSettingsValue, jsonWriter);
+                }
+            }
+            jsonWriter.endObject();
         }
         jsonWriter.endObject();
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -68,7 +68,7 @@ public class CalculateRouteSummary implements Serializable {
 
     /**
      * <p>
-     * The unit of measurement for the distance.
+     * The unit of measurement for route distances.
      * </p>
      * <p>
      * <b>Constraints:</b><br/>
@@ -392,14 +392,14 @@ public class CalculateRouteSummary implements Serializable {
 
     /**
      * <p>
-     * The unit of measurement for the distance.
+     * The unit of measurement for route distances.
      * </p>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>Kilometers, Miles
      *
      * @return <p>
-     *         The unit of measurement for the distance.
+     *         The unit of measurement for route distances.
      *         </p>
      * @see DistanceUnit
      */
@@ -409,14 +409,14 @@ public class CalculateRouteSummary implements Serializable {
 
     /**
      * <p>
-     * The unit of measurement for the distance.
+     * The unit of measurement for route distances.
      * </p>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>Kilometers, Miles
      *
      * @param distanceUnit <p>
-     *            The unit of measurement for the distance.
+     *            The unit of measurement for route distances.
      *            </p>
      * @see DistanceUnit
      */
@@ -426,7 +426,7 @@ public class CalculateRouteSummary implements Serializable {
 
     /**
      * <p>
-     * The unit of measurement for the distance.
+     * The unit of measurement for route distances.
      * </p>
      * <p>
      * Returns a reference to this object so that method calls can be chained
@@ -436,7 +436,7 @@ public class CalculateRouteSummary implements Serializable {
      * <b>Allowed Values: </b>Kilometers, Miles
      *
      * @param distanceUnit <p>
-     *            The unit of measurement for the distance.
+     *            The unit of measurement for route distances.
      *            </p>
      * @return A reference to this updated object so that method calls can be
      *         chained together.
@@ -449,14 +449,14 @@ public class CalculateRouteSummary implements Serializable {
 
     /**
      * <p>
-     * The unit of measurement for the distance.
+     * The unit of measurement for route distances.
      * </p>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>Kilometers, Miles
      *
      * @param distanceUnit <p>
-     *            The unit of measurement for the distance.
+     *            The unit of measurement for route distances.
      *            </p>
      * @see DistanceUnit
      */
@@ -466,7 +466,7 @@ public class CalculateRouteSummary implements Serializable {
 
     /**
      * <p>
-     * The unit of measurement for the distance.
+     * The unit of measurement for route distances.
      * </p>
      * <p>
      * Returns a reference to this object so that method calls can be chained
@@ -476,7 +476,7 @@ public class CalculateRouteSummary implements Serializable {
      * <b>Allowed Values: </b>Kilometers, Miles
      *
      * @param distanceUnit <p>
-     *            The unit of measurement for the distance.
+     *            The unit of measurement for route distances.
      *            </p>
      * @return A reference to this updated object so that method calls can be
      *         chained together.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -58,7 +58,11 @@ public enum LanguageCode {
     TaIN("ta-IN"),
     TeIN("te-IN"),
     TrTR("tr-TR"),
-    ZhCN("zh-CN");
+    ZhCN("zh-CN"),
+    ZhTW("zh-TW"),
+    ThTH("th-TH"),
+    EnZA("en-ZA"),
+    EnNZ("en-NZ");
 
     private String value;
 
@@ -110,6 +114,10 @@ public enum LanguageCode {
         enumMap.put("te-IN", TeIN);
         enumMap.put("tr-TR", TrTR);
         enumMap.put("zh-CN", ZhCN);
+        enumMap.put("zh-TW", ZhTW);
+        enumMap.put("th-TH", ThTH);
+        enumMap.put("en-ZA", EnZA);
+        enumMap.put("en-NZ", EnNZ);
     }
 
     /**

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -27,6 +27,11 @@ class DevicePositionUpdateJsonMarshaller {
     public void marshall(DevicePositionUpdate devicePositionUpdate, AwsJsonWriter jsonWriter)
             throws Exception {
         jsonWriter.beginObject();
+        if (devicePositionUpdate.getAccuracy() != null) {
+            PositionalAccuracy accuracy = devicePositionUpdate.getAccuracy();
+            jsonWriter.name("Accuracy");
+            PositionalAccuracyJsonMarshaller.getInstance().marshall(accuracy, jsonWriter);
+        }
         if (devicePositionUpdate.getDeviceId() != null) {
             String deviceId = devicePositionUpdate.getDeviceId();
             jsonWriter.name("DeviceId");
@@ -42,6 +47,21 @@ class DevicePositionUpdateJsonMarshaller {
                 }
             }
             jsonWriter.endArray();
+        }
+        if (devicePositionUpdate.getPositionProperties() != null) {
+            java.util.Map<String, String> positionProperties = devicePositionUpdate
+                    .getPositionProperties();
+            jsonWriter.name("PositionProperties");
+            jsonWriter.beginObject();
+            for (java.util.Map.Entry<String, String> positionPropertiesEntry : positionProperties
+                    .entrySet()) {
+                String positionPropertiesValue = positionPropertiesEntry.getValue();
+                if (positionPropertiesValue != null) {
+                    jsonWriter.name(positionPropertiesEntry.getKey());
+                    jsonWriter.value(positionPropertiesValue);
+                }
+            }
+            jsonWriter.endObject();
         }
         if (devicePositionUpdate.getSampleTime() != null) {
             java.util.Date sampleTime = devicePositionUpdate.getSampleTime();

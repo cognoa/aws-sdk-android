@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -55,125 +55,17 @@ public class CallAnalyticsJob implements Serializable {
      * Amazon Transcribe will use machine learning to automatically identify the
      * language. To improve the accuracy of language identification, you can
      * provide an array containing the possible language codes for the language
-     * spoken in your audio.
+     * spoken in your audio. Refer to <a href=
+     * "https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html"
+     * >Supported languages</a> for additional information.
      * </p>
-     * <p>
-     * The following list shows the supported languages and corresponding
-     * language codes for call analytics jobs:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Gulf Arabic (ar-AE)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Mandarin Chinese, Mainland (zh-CN)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Australian English (en-AU)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * British English (en-GB)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Indian English (en-IN)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Irish English (en-IE)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Scottish English (en-AB)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * US English (en-US)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Welsh English (en-WL)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Spanish (es-ES)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * US Spanish (es-US)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * French (fr-FR)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Canadian French (fr-CA)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * German (de-DE)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Swiss German (de-CH)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Indian Hindi (hi-IN)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Italian (it-IT)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Japanese (ja-JP)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Korean (ko-KR)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Portuguese (pt-PT)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Brazilian Portuguese (pt-BR)
-     * </p>
-     * </li>
-     * </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>af-ZA, ar-AE, ar-SA, cy-GB, da-DK, de-CH, de-DE,
      * en-AB, en-AU, en-GB, en-IE, en-IN, en-US, en-WL, es-ES, es-US, fa-IR,
      * fr-CA, fr-FR, ga-IE, gd-GB, he-IL, hi-IN, id-ID, it-IT, ja-JP, ko-KR,
-     * ms-MY, nl-NL, pt-BR, pt-PT, ru-RU, ta-IN, te-IN, tr-TR, zh-CN
+     * ms-MY, nl-NL, pt-BR, pt-PT, ru-RU, ta-IN, te-IN, tr-TR, zh-CN, zh-TW,
+     * th-TH, en-ZA, en-NZ
      */
     private String languageCode;
 
@@ -264,7 +156,7 @@ public class CallAnalyticsJob implements Serializable {
      * <p>
      * <code>Invalid sample rate for audio file</code>: The sample rate
      * specified in the <code>MediaSampleRateHertz</code> of the request isn't
-     * valid. The sample rate must be between 8000 and 48000 Hertz.
+     * valid. The sample rate must be between 8,000 and 48,000 Hertz.
      * </p>
      * </li>
      * <li>
@@ -281,7 +173,7 @@ public class CallAnalyticsJob implements Serializable {
      * <code>Invalid file size: file size too large</code>: The size of your
      * audio file is larger than what Amazon Transcribe Medical can process. For
      * more information, see <i>Guidelines and Quotas</i> in the Amazon
-     * Transcribe Medical Guide
+     * Transcribe Medical Guide.
      * </p>
      * </li>
      * <li>
@@ -300,8 +192,10 @@ public class CallAnalyticsJob implements Serializable {
 
     /**
      * <p>
-     * The Amazon Resource Number (ARN) that you use to get access to the
-     * analytics job.
+     * The Amazon Resource Number (ARN) that you use to access the analytics
+     * job. ARNs have the format
+     * <code>arn:partition:service:region:account-id:resource-type/resource-id</code>
+     * .
      * </p>
      * <p>
      * <b>Constraints:</b><br/>
@@ -318,7 +212,7 @@ public class CallAnalyticsJob implements Serializable {
      * language that it identified in the source audio. This value appears only
      * when you don't provide a single language code. Larger values indicate
      * that Amazon Transcribe has higher confidence in the language that it
-     * identified
+     * identified.
      * </p>
      */
     private Float identifiedLanguageScore;
@@ -502,125 +396,17 @@ public class CallAnalyticsJob implements Serializable {
      * Amazon Transcribe will use machine learning to automatically identify the
      * language. To improve the accuracy of language identification, you can
      * provide an array containing the possible language codes for the language
-     * spoken in your audio.
+     * spoken in your audio. Refer to <a href=
+     * "https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html"
+     * >Supported languages</a> for additional information.
      * </p>
-     * <p>
-     * The following list shows the supported languages and corresponding
-     * language codes for call analytics jobs:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Gulf Arabic (ar-AE)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Mandarin Chinese, Mainland (zh-CN)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Australian English (en-AU)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * British English (en-GB)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Indian English (en-IN)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Irish English (en-IE)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Scottish English (en-AB)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * US English (en-US)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Welsh English (en-WL)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Spanish (es-ES)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * US Spanish (es-US)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * French (fr-FR)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Canadian French (fr-CA)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * German (de-DE)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Swiss German (de-CH)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Indian Hindi (hi-IN)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Italian (it-IT)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Japanese (ja-JP)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Korean (ko-KR)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Portuguese (pt-PT)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Brazilian Portuguese (pt-BR)
-     * </p>
-     * </li>
-     * </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>af-ZA, ar-AE, ar-SA, cy-GB, da-DK, de-CH, de-DE,
      * en-AB, en-AU, en-GB, en-IE, en-IN, en-US, en-WL, es-ES, es-US, fa-IR,
      * fr-CA, fr-FR, ga-IE, gd-GB, he-IL, hi-IN, id-ID, it-IT, ja-JP, ko-KR,
-     * ms-MY, nl-NL, pt-BR, pt-PT, ru-RU, ta-IN, te-IN, tr-TR, zh-CN
+     * ms-MY, nl-NL, pt-BR, pt-PT, ru-RU, ta-IN, te-IN, tr-TR, zh-CN, zh-TW,
+     * th-TH, en-ZA, en-NZ
      *
      * @return <p>
      *         If you know the language spoken between the customer and the
@@ -631,119 +417,11 @@ public class CallAnalyticsJob implements Serializable {
      *         and Amazon Transcribe will use machine learning to automatically
      *         identify the language. To improve the accuracy of language
      *         identification, you can provide an array containing the possible
-     *         language codes for the language spoken in your audio.
+     *         language codes for the language spoken in your audio. Refer to <a
+     *         href=
+     *         "https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html"
+     *         >Supported languages</a> for additional information.
      *         </p>
-     *         <p>
-     *         The following list shows the supported languages and
-     *         corresponding language codes for call analytics jobs:
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         Gulf Arabic (ar-AE)
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Mandarin Chinese, Mainland (zh-CN)
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Australian English (en-AU)
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         British English (en-GB)
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Indian English (en-IN)
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Irish English (en-IE)
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Scottish English (en-AB)
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         US English (en-US)
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Welsh English (en-WL)
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Spanish (es-ES)
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         US Spanish (es-US)
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         French (fr-FR)
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Canadian French (fr-CA)
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         German (de-DE)
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Swiss German (de-CH)
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Indian Hindi (hi-IN)
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Italian (it-IT)
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Japanese (ja-JP)
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Korean (ko-KR)
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Portuguese (pt-PT)
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Brazilian Portuguese (pt-BR)
-     *         </p>
-     *         </li>
-     *         </ul>
      * @see LanguageCode
      */
     public String getLanguageCode() {
@@ -760,125 +438,17 @@ public class CallAnalyticsJob implements Serializable {
      * Amazon Transcribe will use machine learning to automatically identify the
      * language. To improve the accuracy of language identification, you can
      * provide an array containing the possible language codes for the language
-     * spoken in your audio.
+     * spoken in your audio. Refer to <a href=
+     * "https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html"
+     * >Supported languages</a> for additional information.
      * </p>
-     * <p>
-     * The following list shows the supported languages and corresponding
-     * language codes for call analytics jobs:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Gulf Arabic (ar-AE)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Mandarin Chinese, Mainland (zh-CN)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Australian English (en-AU)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * British English (en-GB)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Indian English (en-IN)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Irish English (en-IE)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Scottish English (en-AB)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * US English (en-US)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Welsh English (en-WL)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Spanish (es-ES)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * US Spanish (es-US)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * French (fr-FR)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Canadian French (fr-CA)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * German (de-DE)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Swiss German (de-CH)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Indian Hindi (hi-IN)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Italian (it-IT)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Japanese (ja-JP)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Korean (ko-KR)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Portuguese (pt-PT)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Brazilian Portuguese (pt-BR)
-     * </p>
-     * </li>
-     * </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>af-ZA, ar-AE, ar-SA, cy-GB, da-DK, de-CH, de-DE,
      * en-AB, en-AU, en-GB, en-IE, en-IN, en-US, en-WL, es-ES, es-US, fa-IR,
      * fr-CA, fr-FR, ga-IE, gd-GB, he-IL, hi-IN, id-ID, it-IT, ja-JP, ko-KR,
-     * ms-MY, nl-NL, pt-BR, pt-PT, ru-RU, ta-IN, te-IN, tr-TR, zh-CN
+     * ms-MY, nl-NL, pt-BR, pt-PT, ru-RU, ta-IN, te-IN, tr-TR, zh-CN, zh-TW,
+     * th-TH, en-ZA, en-NZ
      *
      * @param languageCode <p>
      *            If you know the language spoken between the customer and the
@@ -890,119 +460,10 @@ public class CallAnalyticsJob implements Serializable {
      *            automatically identify the language. To improve the accuracy
      *            of language identification, you can provide an array
      *            containing the possible language codes for the language spoken
-     *            in your audio.
+     *            in your audio. Refer to <a href=
+     *            "https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html"
+     *            >Supported languages</a> for additional information.
      *            </p>
-     *            <p>
-     *            The following list shows the supported languages and
-     *            corresponding language codes for call analytics jobs:
-     *            </p>
-     *            <ul>
-     *            <li>
-     *            <p>
-     *            Gulf Arabic (ar-AE)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            Mandarin Chinese, Mainland (zh-CN)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            Australian English (en-AU)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            British English (en-GB)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            Indian English (en-IN)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            Irish English (en-IE)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            Scottish English (en-AB)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            US English (en-US)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            Welsh English (en-WL)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            Spanish (es-ES)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            US Spanish (es-US)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            French (fr-FR)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            Canadian French (fr-CA)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            German (de-DE)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            Swiss German (de-CH)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            Indian Hindi (hi-IN)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            Italian (it-IT)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            Japanese (ja-JP)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            Korean (ko-KR)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            Portuguese (pt-PT)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            Brazilian Portuguese (pt-BR)
-     *            </p>
-     *            </li>
-     *            </ul>
      * @see LanguageCode
      */
     public void setLanguageCode(String languageCode) {
@@ -1019,119 +480,10 @@ public class CallAnalyticsJob implements Serializable {
      * Amazon Transcribe will use machine learning to automatically identify the
      * language. To improve the accuracy of language identification, you can
      * provide an array containing the possible language codes for the language
-     * spoken in your audio.
+     * spoken in your audio. Refer to <a href=
+     * "https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html"
+     * >Supported languages</a> for additional information.
      * </p>
-     * <p>
-     * The following list shows the supported languages and corresponding
-     * language codes for call analytics jobs:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Gulf Arabic (ar-AE)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Mandarin Chinese, Mainland (zh-CN)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Australian English (en-AU)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * British English (en-GB)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Indian English (en-IN)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Irish English (en-IE)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Scottish English (en-AB)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * US English (en-US)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Welsh English (en-WL)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Spanish (es-ES)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * US Spanish (es-US)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * French (fr-FR)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Canadian French (fr-CA)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * German (de-DE)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Swiss German (de-CH)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Indian Hindi (hi-IN)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Italian (it-IT)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Japanese (ja-JP)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Korean (ko-KR)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Portuguese (pt-PT)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Brazilian Portuguese (pt-BR)
-     * </p>
-     * </li>
-     * </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained
      * together.
@@ -1140,7 +492,8 @@ public class CallAnalyticsJob implements Serializable {
      * <b>Allowed Values: </b>af-ZA, ar-AE, ar-SA, cy-GB, da-DK, de-CH, de-DE,
      * en-AB, en-AU, en-GB, en-IE, en-IN, en-US, en-WL, es-ES, es-US, fa-IR,
      * fr-CA, fr-FR, ga-IE, gd-GB, he-IL, hi-IN, id-ID, it-IT, ja-JP, ko-KR,
-     * ms-MY, nl-NL, pt-BR, pt-PT, ru-RU, ta-IN, te-IN, tr-TR, zh-CN
+     * ms-MY, nl-NL, pt-BR, pt-PT, ru-RU, ta-IN, te-IN, tr-TR, zh-CN, zh-TW,
+     * th-TH, en-ZA, en-NZ
      *
      * @param languageCode <p>
      *            If you know the language spoken between the customer and the
@@ -1152,119 +505,10 @@ public class CallAnalyticsJob implements Serializable {
      *            automatically identify the language. To improve the accuracy
      *            of language identification, you can provide an array
      *            containing the possible language codes for the language spoken
-     *            in your audio.
+     *            in your audio. Refer to <a href=
+     *            "https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html"
+     *            >Supported languages</a> for additional information.
      *            </p>
-     *            <p>
-     *            The following list shows the supported languages and
-     *            corresponding language codes for call analytics jobs:
-     *            </p>
-     *            <ul>
-     *            <li>
-     *            <p>
-     *            Gulf Arabic (ar-AE)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            Mandarin Chinese, Mainland (zh-CN)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            Australian English (en-AU)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            British English (en-GB)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            Indian English (en-IN)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            Irish English (en-IE)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            Scottish English (en-AB)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            US English (en-US)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            Welsh English (en-WL)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            Spanish (es-ES)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            US Spanish (es-US)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            French (fr-FR)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            Canadian French (fr-CA)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            German (de-DE)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            Swiss German (de-CH)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            Indian Hindi (hi-IN)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            Italian (it-IT)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            Japanese (ja-JP)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            Korean (ko-KR)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            Portuguese (pt-PT)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            Brazilian Portuguese (pt-BR)
-     *            </p>
-     *            </li>
-     *            </ul>
      * @return A reference to this updated object so that method calls can be
      *         chained together.
      * @see LanguageCode
@@ -1284,125 +528,17 @@ public class CallAnalyticsJob implements Serializable {
      * Amazon Transcribe will use machine learning to automatically identify the
      * language. To improve the accuracy of language identification, you can
      * provide an array containing the possible language codes for the language
-     * spoken in your audio.
+     * spoken in your audio. Refer to <a href=
+     * "https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html"
+     * >Supported languages</a> for additional information.
      * </p>
-     * <p>
-     * The following list shows the supported languages and corresponding
-     * language codes for call analytics jobs:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Gulf Arabic (ar-AE)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Mandarin Chinese, Mainland (zh-CN)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Australian English (en-AU)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * British English (en-GB)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Indian English (en-IN)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Irish English (en-IE)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Scottish English (en-AB)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * US English (en-US)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Welsh English (en-WL)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Spanish (es-ES)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * US Spanish (es-US)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * French (fr-FR)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Canadian French (fr-CA)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * German (de-DE)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Swiss German (de-CH)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Indian Hindi (hi-IN)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Italian (it-IT)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Japanese (ja-JP)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Korean (ko-KR)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Portuguese (pt-PT)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Brazilian Portuguese (pt-BR)
-     * </p>
-     * </li>
-     * </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>af-ZA, ar-AE, ar-SA, cy-GB, da-DK, de-CH, de-DE,
      * en-AB, en-AU, en-GB, en-IE, en-IN, en-US, en-WL, es-ES, es-US, fa-IR,
      * fr-CA, fr-FR, ga-IE, gd-GB, he-IL, hi-IN, id-ID, it-IT, ja-JP, ko-KR,
-     * ms-MY, nl-NL, pt-BR, pt-PT, ru-RU, ta-IN, te-IN, tr-TR, zh-CN
+     * ms-MY, nl-NL, pt-BR, pt-PT, ru-RU, ta-IN, te-IN, tr-TR, zh-CN, zh-TW,
+     * th-TH, en-ZA, en-NZ
      *
      * @param languageCode <p>
      *            If you know the language spoken between the customer and the
@@ -1414,119 +550,10 @@ public class CallAnalyticsJob implements Serializable {
      *            automatically identify the language. To improve the accuracy
      *            of language identification, you can provide an array
      *            containing the possible language codes for the language spoken
-     *            in your audio.
+     *            in your audio. Refer to <a href=
+     *            "https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html"
+     *            >Supported languages</a> for additional information.
      *            </p>
-     *            <p>
-     *            The following list shows the supported languages and
-     *            corresponding language codes for call analytics jobs:
-     *            </p>
-     *            <ul>
-     *            <li>
-     *            <p>
-     *            Gulf Arabic (ar-AE)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            Mandarin Chinese, Mainland (zh-CN)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            Australian English (en-AU)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            British English (en-GB)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            Indian English (en-IN)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            Irish English (en-IE)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            Scottish English (en-AB)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            US English (en-US)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            Welsh English (en-WL)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            Spanish (es-ES)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            US Spanish (es-US)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            French (fr-FR)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            Canadian French (fr-CA)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            German (de-DE)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            Swiss German (de-CH)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            Indian Hindi (hi-IN)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            Italian (it-IT)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            Japanese (ja-JP)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            Korean (ko-KR)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            Portuguese (pt-PT)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            Brazilian Portuguese (pt-BR)
-     *            </p>
-     *            </li>
-     *            </ul>
      * @see LanguageCode
      */
     public void setLanguageCode(LanguageCode languageCode) {
@@ -1543,119 +570,10 @@ public class CallAnalyticsJob implements Serializable {
      * Amazon Transcribe will use machine learning to automatically identify the
      * language. To improve the accuracy of language identification, you can
      * provide an array containing the possible language codes for the language
-     * spoken in your audio.
+     * spoken in your audio. Refer to <a href=
+     * "https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html"
+     * >Supported languages</a> for additional information.
      * </p>
-     * <p>
-     * The following list shows the supported languages and corresponding
-     * language codes for call analytics jobs:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Gulf Arabic (ar-AE)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Mandarin Chinese, Mainland (zh-CN)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Australian English (en-AU)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * British English (en-GB)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Indian English (en-IN)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Irish English (en-IE)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Scottish English (en-AB)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * US English (en-US)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Welsh English (en-WL)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Spanish (es-ES)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * US Spanish (es-US)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * French (fr-FR)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Canadian French (fr-CA)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * German (de-DE)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Swiss German (de-CH)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Indian Hindi (hi-IN)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Italian (it-IT)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Japanese (ja-JP)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Korean (ko-KR)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Portuguese (pt-PT)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Brazilian Portuguese (pt-BR)
-     * </p>
-     * </li>
-     * </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained
      * together.
@@ -1664,7 +582,8 @@ public class CallAnalyticsJob implements Serializable {
      * <b>Allowed Values: </b>af-ZA, ar-AE, ar-SA, cy-GB, da-DK, de-CH, de-DE,
      * en-AB, en-AU, en-GB, en-IE, en-IN, en-US, en-WL, es-ES, es-US, fa-IR,
      * fr-CA, fr-FR, ga-IE, gd-GB, he-IL, hi-IN, id-ID, it-IT, ja-JP, ko-KR,
-     * ms-MY, nl-NL, pt-BR, pt-PT, ru-RU, ta-IN, te-IN, tr-TR, zh-CN
+     * ms-MY, nl-NL, pt-BR, pt-PT, ru-RU, ta-IN, te-IN, tr-TR, zh-CN, zh-TW,
+     * th-TH, en-ZA, en-NZ
      *
      * @param languageCode <p>
      *            If you know the language spoken between the customer and the
@@ -1676,119 +595,10 @@ public class CallAnalyticsJob implements Serializable {
      *            automatically identify the language. To improve the accuracy
      *            of language identification, you can provide an array
      *            containing the possible language codes for the language spoken
-     *            in your audio.
+     *            in your audio. Refer to <a href=
+     *            "https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html"
+     *            >Supported languages</a> for additional information.
      *            </p>
-     *            <p>
-     *            The following list shows the supported languages and
-     *            corresponding language codes for call analytics jobs:
-     *            </p>
-     *            <ul>
-     *            <li>
-     *            <p>
-     *            Gulf Arabic (ar-AE)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            Mandarin Chinese, Mainland (zh-CN)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            Australian English (en-AU)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            British English (en-GB)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            Indian English (en-IN)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            Irish English (en-IE)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            Scottish English (en-AB)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            US English (en-US)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            Welsh English (en-WL)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            Spanish (es-ES)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            US Spanish (es-US)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            French (fr-FR)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            Canadian French (fr-CA)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            German (de-DE)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            Swiss German (de-CH)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            Indian Hindi (hi-IN)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            Italian (it-IT)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            Japanese (ja-JP)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            Korean (ko-KR)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            Portuguese (pt-PT)
-     *            </p>
-     *            </li>
-     *            <li>
-     *            <p>
-     *            Brazilian Portuguese (pt-BR)
-     *            </p>
-     *            </li>
-     *            </ul>
      * @return A reference to this updated object so that method calls can be
      *         chained together.
      * @see LanguageCode
@@ -2226,7 +1036,7 @@ public class CallAnalyticsJob implements Serializable {
      * <p>
      * <code>Invalid sample rate for audio file</code>: The sample rate
      * specified in the <code>MediaSampleRateHertz</code> of the request isn't
-     * valid. The sample rate must be between 8000 and 48000 Hertz.
+     * valid. The sample rate must be between 8,000 and 48,000 Hertz.
      * </p>
      * </li>
      * <li>
@@ -2243,7 +1053,7 @@ public class CallAnalyticsJob implements Serializable {
      * <code>Invalid file size: file size too large</code>: The size of your
      * audio file is larger than what Amazon Transcribe Medical can process. For
      * more information, see <i>Guidelines and Quotas</i> in the Amazon
-     * Transcribe Medical Guide
+     * Transcribe Medical Guide.
      * </p>
      * </li>
      * <li>
@@ -2288,7 +1098,7 @@ public class CallAnalyticsJob implements Serializable {
      *         <p>
      *         <code>Invalid sample rate for audio file</code>: The sample rate
      *         specified in the <code>MediaSampleRateHertz</code> of the request
-     *         isn't valid. The sample rate must be between 8000 and 48000
+     *         isn't valid. The sample rate must be between 8,000 and 48,000
      *         Hertz.
      *         </p>
      *         </li>
@@ -2306,7 +1116,7 @@ public class CallAnalyticsJob implements Serializable {
      *         <code>Invalid file size: file size too large</code>: The size of
      *         your audio file is larger than what Amazon Transcribe Medical can
      *         process. For more information, see <i>Guidelines and Quotas</i>
-     *         in the Amazon Transcribe Medical Guide
+     *         in the Amazon Transcribe Medical Guide.
      *         </p>
      *         </li>
      *         <li>
@@ -2356,7 +1166,7 @@ public class CallAnalyticsJob implements Serializable {
      * <p>
      * <code>Invalid sample rate for audio file</code>: The sample rate
      * specified in the <code>MediaSampleRateHertz</code> of the request isn't
-     * valid. The sample rate must be between 8000 and 48000 Hertz.
+     * valid. The sample rate must be between 8,000 and 48,000 Hertz.
      * </p>
      * </li>
      * <li>
@@ -2373,7 +1183,7 @@ public class CallAnalyticsJob implements Serializable {
      * <code>Invalid file size: file size too large</code>: The size of your
      * audio file is larger than what Amazon Transcribe Medical can process. For
      * more information, see <i>Guidelines and Quotas</i> in the Amazon
-     * Transcribe Medical Guide
+     * Transcribe Medical Guide.
      * </p>
      * </li>
      * <li>
@@ -2418,8 +1228,8 @@ public class CallAnalyticsJob implements Serializable {
      *            <p>
      *            <code>Invalid sample rate for audio file</code>: The sample
      *            rate specified in the <code>MediaSampleRateHertz</code> of the
-     *            request isn't valid. The sample rate must be between 8000 and
-     *            48000 Hertz.
+     *            request isn't valid. The sample rate must be between 8,000 and
+     *            48,000 Hertz.
      *            </p>
      *            </li>
      *            <li>
@@ -2436,7 +1246,7 @@ public class CallAnalyticsJob implements Serializable {
      *            <code>Invalid file size: file size too large</code>: The size
      *            of your audio file is larger than what Amazon Transcribe
      *            Medical can process. For more information, see <i>Guidelines
-     *            and Quotas</i> in the Amazon Transcribe Medical Guide
+     *            and Quotas</i> in the Amazon Transcribe Medical Guide.
      *            </p>
      *            </li>
      *            <li>
@@ -2486,7 +1296,7 @@ public class CallAnalyticsJob implements Serializable {
      * <p>
      * <code>Invalid sample rate for audio file</code>: The sample rate
      * specified in the <code>MediaSampleRateHertz</code> of the request isn't
-     * valid. The sample rate must be between 8000 and 48000 Hertz.
+     * valid. The sample rate must be between 8,000 and 48,000 Hertz.
      * </p>
      * </li>
      * <li>
@@ -2503,7 +1313,7 @@ public class CallAnalyticsJob implements Serializable {
      * <code>Invalid file size: file size too large</code>: The size of your
      * audio file is larger than what Amazon Transcribe Medical can process. For
      * more information, see <i>Guidelines and Quotas</i> in the Amazon
-     * Transcribe Medical Guide
+     * Transcribe Medical Guide.
      * </p>
      * </li>
      * <li>
@@ -2551,8 +1361,8 @@ public class CallAnalyticsJob implements Serializable {
      *            <p>
      *            <code>Invalid sample rate for audio file</code>: The sample
      *            rate specified in the <code>MediaSampleRateHertz</code> of the
-     *            request isn't valid. The sample rate must be between 8000 and
-     *            48000 Hertz.
+     *            request isn't valid. The sample rate must be between 8,000 and
+     *            48,000 Hertz.
      *            </p>
      *            </li>
      *            <li>
@@ -2569,7 +1379,7 @@ public class CallAnalyticsJob implements Serializable {
      *            <code>Invalid file size: file size too large</code>: The size
      *            of your audio file is larger than what Amazon Transcribe
      *            Medical can process. For more information, see <i>Guidelines
-     *            and Quotas</i> in the Amazon Transcribe Medical Guide
+     *            and Quotas</i> in the Amazon Transcribe Medical Guide.
      *            </p>
      *            </li>
      *            <li>
@@ -2594,8 +1404,10 @@ public class CallAnalyticsJob implements Serializable {
 
     /**
      * <p>
-     * The Amazon Resource Number (ARN) that you use to get access to the
-     * analytics job.
+     * The Amazon Resource Number (ARN) that you use to access the analytics
+     * job. ARNs have the format
+     * <code>arn:partition:service:region:account-id:resource-type/resource-id</code>
+     * .
      * </p>
      * <p>
      * <b>Constraints:</b><br/>
@@ -2605,8 +1417,10 @@ public class CallAnalyticsJob implements Serializable {
      * [0-9]{0,63}:role/[A-Za-z0-9:_/+=,@.-]{0,1024}$<br/>
      *
      * @return <p>
-     *         The Amazon Resource Number (ARN) that you use to get access to
-     *         the analytics job.
+     *         The Amazon Resource Number (ARN) that you use to access the
+     *         analytics job. ARNs have the format
+     *         <code>arn:partition:service:region:account-id:resource-type/resource-id</code>
+     *         .
      *         </p>
      */
     public String getDataAccessRoleArn() {
@@ -2615,8 +1429,10 @@ public class CallAnalyticsJob implements Serializable {
 
     /**
      * <p>
-     * The Amazon Resource Number (ARN) that you use to get access to the
-     * analytics job.
+     * The Amazon Resource Number (ARN) that you use to access the analytics
+     * job. ARNs have the format
+     * <code>arn:partition:service:region:account-id:resource-type/resource-id</code>
+     * .
      * </p>
      * <p>
      * <b>Constraints:</b><br/>
@@ -2626,8 +1442,10 @@ public class CallAnalyticsJob implements Serializable {
      * [0-9]{0,63}:role/[A-Za-z0-9:_/+=,@.-]{0,1024}$<br/>
      *
      * @param dataAccessRoleArn <p>
-     *            The Amazon Resource Number (ARN) that you use to get access to
-     *            the analytics job.
+     *            The Amazon Resource Number (ARN) that you use to access the
+     *            analytics job. ARNs have the format
+     *            <code>arn:partition:service:region:account-id:resource-type/resource-id</code>
+     *            .
      *            </p>
      */
     public void setDataAccessRoleArn(String dataAccessRoleArn) {
@@ -2636,8 +1454,10 @@ public class CallAnalyticsJob implements Serializable {
 
     /**
      * <p>
-     * The Amazon Resource Number (ARN) that you use to get access to the
-     * analytics job.
+     * The Amazon Resource Number (ARN) that you use to access the analytics
+     * job. ARNs have the format
+     * <code>arn:partition:service:region:account-id:resource-type/resource-id</code>
+     * .
      * </p>
      * <p>
      * Returns a reference to this object so that method calls can be chained
@@ -2650,8 +1470,10 @@ public class CallAnalyticsJob implements Serializable {
      * [0-9]{0,63}:role/[A-Za-z0-9:_/+=,@.-]{0,1024}$<br/>
      *
      * @param dataAccessRoleArn <p>
-     *            The Amazon Resource Number (ARN) that you use to get access to
-     *            the analytics job.
+     *            The Amazon Resource Number (ARN) that you use to access the
+     *            analytics job. ARNs have the format
+     *            <code>arn:partition:service:region:account-id:resource-type/resource-id</code>
+     *            .
      *            </p>
      * @return A reference to this updated object so that method calls can be
      *         chained together.
@@ -2667,7 +1489,7 @@ public class CallAnalyticsJob implements Serializable {
      * language that it identified in the source audio. This value appears only
      * when you don't provide a single language code. Larger values indicate
      * that Amazon Transcribe has higher confidence in the language that it
-     * identified
+     * identified.
      * </p>
      *
      * @return <p>
@@ -2675,7 +1497,7 @@ public class CallAnalyticsJob implements Serializable {
      *         the language that it identified in the source audio. This value
      *         appears only when you don't provide a single language code.
      *         Larger values indicate that Amazon Transcribe has higher
-     *         confidence in the language that it identified
+     *         confidence in the language that it identified.
      *         </p>
      */
     public Float getIdentifiedLanguageScore() {
@@ -2688,7 +1510,7 @@ public class CallAnalyticsJob implements Serializable {
      * language that it identified in the source audio. This value appears only
      * when you don't provide a single language code. Larger values indicate
      * that Amazon Transcribe has higher confidence in the language that it
-     * identified
+     * identified.
      * </p>
      *
      * @param identifiedLanguageScore <p>
@@ -2696,7 +1518,7 @@ public class CallAnalyticsJob implements Serializable {
      *            to the language that it identified in the source audio. This
      *            value appears only when you don't provide a single language
      *            code. Larger values indicate that Amazon Transcribe has higher
-     *            confidence in the language that it identified
+     *            confidence in the language that it identified.
      *            </p>
      */
     public void setIdentifiedLanguageScore(Float identifiedLanguageScore) {
@@ -2709,7 +1531,7 @@ public class CallAnalyticsJob implements Serializable {
      * language that it identified in the source audio. This value appears only
      * when you don't provide a single language code. Larger values indicate
      * that Amazon Transcribe has higher confidence in the language that it
-     * identified
+     * identified.
      * </p>
      * <p>
      * Returns a reference to this object so that method calls can be chained
@@ -2720,7 +1542,7 @@ public class CallAnalyticsJob implements Serializable {
      *            to the language that it identified in the source audio. This
      *            value appears only when you don't provide a single language
      *            code. Larger values indicate that Amazon Transcribe has higher
-     *            confidence in the language that it identified
+     *            confidence in the language that it identified.
      *            </p>
      * @return A reference to this updated object so that method calls can be
      *         chained together.

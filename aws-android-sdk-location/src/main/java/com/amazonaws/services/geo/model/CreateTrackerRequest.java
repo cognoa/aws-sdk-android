@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -68,11 +68,24 @@ public class CreateTrackerRequest extends AmazonWebServiceRequest implements Ser
      * <li>
      * <p>
      * <code>DistanceBased</code> - If the device has moved less than 30 m (98.4
-     * ft), location updates are ignored. Location updates within this distance
-     * are neither evaluated against linked geofence collections, nor stored.
-     * This helps control costs by reducing the number of geofence evaluations
-     * and device positions to retrieve. Distance-based filtering can also
-     * reduce the jitter effect when displaying device trajectory on a map.
+     * ft), location updates are ignored. Location updates within this area are
+     * neither evaluated against linked geofence collections, nor stored. This
+     * helps control costs by reducing the number of geofence evaluations and
+     * historical device positions to paginate through. Distance-based filtering
+     * can also reduce the effects of GPS noise when displaying device
+     * trajectories on a map.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AccuracyBased</code> - If the device has moved less than the
+     * measured accuracy, location updates are ignored. For example, if two
+     * consecutive updates from a device have a horizontal accuracy of 5 m and
+     * 10 m, the second update is ignored if the device has moved less than 15
+     * m. Ignored location updates are neither evaluated against linked geofence
+     * collections, nor stored. This can reduce the effects of GPS noise when
+     * displaying device trajectories on a map, and can help control your costs
+     * by reducing the number of geofence evaluations.
      * </p>
      * </li>
      * </ul>
@@ -82,18 +95,14 @@ public class CreateTrackerRequest extends AmazonWebServiceRequest implements Ser
      * </p>
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>TimeBased, DistanceBased
+     * <b>Allowed Values: </b>TimeBased, DistanceBased, AccuracyBased
      */
     private String positionFiltering;
 
     /**
      * <p>
-     * Specifies the pricing plan for the tracker resource.
-     * </p>
-     * <p>
-     * For additional details and restrictions on each pricing plan option, see
-     * <a href="https://aws.amazon.com/location/pricing/">Amazon Location
-     * Service pricing</a>.
+     * No longer used. If included, the only allowed value is
+     * <code>RequestBasedUsage</code>.
      * </p>
      * <p>
      * <b>Constraints:</b><br/>
@@ -104,33 +113,7 @@ public class CreateTrackerRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * <p>
-     * Specifies the data provider for the tracker resource.
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Required value for the following pricing plans:
-     * <code>MobileAssetTracking </code>| <code>MobileAssetManagement</code>
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * For more information about <a
-     * href="https://aws.amazon.com/location/data-providers/">Data
-     * Providers</a>, and <a
-     * href="https://aws.amazon.com/location/pricing/">Pricing plans</a>, see
-     * the Amazon Location Service product page.
-     * </p>
-     * <note>
-     * <p>
-     * Amazon Location Service only uses <code>PricingPlanDataSource</code> to
-     * calculate billing for your tracker resource. Your data will not be shared
-     * with the data provider, and will remain in your AWS account or Region
-     * unless you move it.
-     * </p>
-     * </note>
-     * <p>
-     * Valid values: <code>Esri</code> | <code>Here</code>
+     * This parameter is no longer used.
      * </p>
      */
     private String pricingPlanDataSource;
@@ -172,6 +155,11 @@ public class CreateTrackerRequest extends AmazonWebServiceRequest implements Ser
      * <p>
      * Can use alphanumeric characters (A–Z, a–z, 0–9), and the following
      * characters: + - = . _ : / @.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot use "aws:" as a prefix for a key.
      * </p>
      * </li>
      * </ul>
@@ -355,11 +343,24 @@ public class CreateTrackerRequest extends AmazonWebServiceRequest implements Ser
      * <li>
      * <p>
      * <code>DistanceBased</code> - If the device has moved less than 30 m (98.4
-     * ft), location updates are ignored. Location updates within this distance
-     * are neither evaluated against linked geofence collections, nor stored.
-     * This helps control costs by reducing the number of geofence evaluations
-     * and device positions to retrieve. Distance-based filtering can also
-     * reduce the jitter effect when displaying device trajectory on a map.
+     * ft), location updates are ignored. Location updates within this area are
+     * neither evaluated against linked geofence collections, nor stored. This
+     * helps control costs by reducing the number of geofence evaluations and
+     * historical device positions to paginate through. Distance-based filtering
+     * can also reduce the effects of GPS noise when displaying device
+     * trajectories on a map.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AccuracyBased</code> - If the device has moved less than the
+     * measured accuracy, location updates are ignored. For example, if two
+     * consecutive updates from a device have a horizontal accuracy of 5 m and
+     * 10 m, the second update is ignored if the device has moved less than 15
+     * m. Ignored location updates are neither evaluated against linked geofence
+     * collections, nor stored. This can reduce the effects of GPS noise when
+     * displaying device trajectories on a map, and can help control your costs
+     * by reducing the number of geofence evaluations.
      * </p>
      * </li>
      * </ul>
@@ -369,7 +370,7 @@ public class CreateTrackerRequest extends AmazonWebServiceRequest implements Ser
      * </p>
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>TimeBased, DistanceBased
+     * <b>Allowed Values: </b>TimeBased, DistanceBased, AccuracyBased
      *
      * @return <p>
      *         Specifies the position filtering for the tracker resource.
@@ -391,11 +392,25 @@ public class CreateTrackerRequest extends AmazonWebServiceRequest implements Ser
      *         <p>
      *         <code>DistanceBased</code> - If the device has moved less than 30
      *         m (98.4 ft), location updates are ignored. Location updates
-     *         within this distance are neither evaluated against linked
-     *         geofence collections, nor stored. This helps control costs by
-     *         reducing the number of geofence evaluations and device positions
-     *         to retrieve. Distance-based filtering can also reduce the jitter
-     *         effect when displaying device trajectory on a map.
+     *         within this area are neither evaluated against linked geofence
+     *         collections, nor stored. This helps control costs by reducing the
+     *         number of geofence evaluations and historical device positions to
+     *         paginate through. Distance-based filtering can also reduce the
+     *         effects of GPS noise when displaying device trajectories on a
+     *         map.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AccuracyBased</code> - If the device has moved less than
+     *         the measured accuracy, location updates are ignored. For example,
+     *         if two consecutive updates from a device have a horizontal
+     *         accuracy of 5 m and 10 m, the second update is ignored if the
+     *         device has moved less than 15 m. Ignored location updates are
+     *         neither evaluated against linked geofence collections, nor
+     *         stored. This can reduce the effects of GPS noise when displaying
+     *         device trajectories on a map, and can help control your costs by
+     *         reducing the number of geofence evaluations.
      *         </p>
      *         </li>
      *         </ul>
@@ -428,11 +443,24 @@ public class CreateTrackerRequest extends AmazonWebServiceRequest implements Ser
      * <li>
      * <p>
      * <code>DistanceBased</code> - If the device has moved less than 30 m (98.4
-     * ft), location updates are ignored. Location updates within this distance
-     * are neither evaluated against linked geofence collections, nor stored.
-     * This helps control costs by reducing the number of geofence evaluations
-     * and device positions to retrieve. Distance-based filtering can also
-     * reduce the jitter effect when displaying device trajectory on a map.
+     * ft), location updates are ignored. Location updates within this area are
+     * neither evaluated against linked geofence collections, nor stored. This
+     * helps control costs by reducing the number of geofence evaluations and
+     * historical device positions to paginate through. Distance-based filtering
+     * can also reduce the effects of GPS noise when displaying device
+     * trajectories on a map.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AccuracyBased</code> - If the device has moved less than the
+     * measured accuracy, location updates are ignored. For example, if two
+     * consecutive updates from a device have a horizontal accuracy of 5 m and
+     * 10 m, the second update is ignored if the device has moved less than 15
+     * m. Ignored location updates are neither evaluated against linked geofence
+     * collections, nor stored. This can reduce the effects of GPS noise when
+     * displaying device trajectories on a map, and can help control your costs
+     * by reducing the number of geofence evaluations.
      * </p>
      * </li>
      * </ul>
@@ -442,7 +470,7 @@ public class CreateTrackerRequest extends AmazonWebServiceRequest implements Ser
      * </p>
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>TimeBased, DistanceBased
+     * <b>Allowed Values: </b>TimeBased, DistanceBased, AccuracyBased
      *
      * @param positionFiltering <p>
      *            Specifies the position filtering for the tracker resource.
@@ -464,12 +492,26 @@ public class CreateTrackerRequest extends AmazonWebServiceRequest implements Ser
      *            <p>
      *            <code>DistanceBased</code> - If the device has moved less than
      *            30 m (98.4 ft), location updates are ignored. Location updates
-     *            within this distance are neither evaluated against linked
-     *            geofence collections, nor stored. This helps control costs by
-     *            reducing the number of geofence evaluations and device
-     *            positions to retrieve. Distance-based filtering can also
-     *            reduce the jitter effect when displaying device trajectory on
-     *            a map.
+     *            within this area are neither evaluated against linked geofence
+     *            collections, nor stored. This helps control costs by reducing
+     *            the number of geofence evaluations and historical device
+     *            positions to paginate through. Distance-based filtering can
+     *            also reduce the effects of GPS noise when displaying device
+     *            trajectories on a map.
+     *            </p>
+     *            </li>
+     *            <li>
+     *            <p>
+     *            <code>AccuracyBased</code> - If the device has moved less than
+     *            the measured accuracy, location updates are ignored. For
+     *            example, if two consecutive updates from a device have a
+     *            horizontal accuracy of 5 m and 10 m, the second update is
+     *            ignored if the device has moved less than 15 m. Ignored
+     *            location updates are neither evaluated against linked geofence
+     *            collections, nor stored. This can reduce the effects of GPS
+     *            noise when displaying device trajectories on a map, and can
+     *            help control your costs by reducing the number of geofence
+     *            evaluations.
      *            </p>
      *            </li>
      *            </ul>
@@ -502,11 +544,24 @@ public class CreateTrackerRequest extends AmazonWebServiceRequest implements Ser
      * <li>
      * <p>
      * <code>DistanceBased</code> - If the device has moved less than 30 m (98.4
-     * ft), location updates are ignored. Location updates within this distance
-     * are neither evaluated against linked geofence collections, nor stored.
-     * This helps control costs by reducing the number of geofence evaluations
-     * and device positions to retrieve. Distance-based filtering can also
-     * reduce the jitter effect when displaying device trajectory on a map.
+     * ft), location updates are ignored. Location updates within this area are
+     * neither evaluated against linked geofence collections, nor stored. This
+     * helps control costs by reducing the number of geofence evaluations and
+     * historical device positions to paginate through. Distance-based filtering
+     * can also reduce the effects of GPS noise when displaying device
+     * trajectories on a map.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AccuracyBased</code> - If the device has moved less than the
+     * measured accuracy, location updates are ignored. For example, if two
+     * consecutive updates from a device have a horizontal accuracy of 5 m and
+     * 10 m, the second update is ignored if the device has moved less than 15
+     * m. Ignored location updates are neither evaluated against linked geofence
+     * collections, nor stored. This can reduce the effects of GPS noise when
+     * displaying device trajectories on a map, and can help control your costs
+     * by reducing the number of geofence evaluations.
      * </p>
      * </li>
      * </ul>
@@ -519,7 +574,7 @@ public class CreateTrackerRequest extends AmazonWebServiceRequest implements Ser
      * together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>TimeBased, DistanceBased
+     * <b>Allowed Values: </b>TimeBased, DistanceBased, AccuracyBased
      *
      * @param positionFiltering <p>
      *            Specifies the position filtering for the tracker resource.
@@ -541,12 +596,26 @@ public class CreateTrackerRequest extends AmazonWebServiceRequest implements Ser
      *            <p>
      *            <code>DistanceBased</code> - If the device has moved less than
      *            30 m (98.4 ft), location updates are ignored. Location updates
-     *            within this distance are neither evaluated against linked
-     *            geofence collections, nor stored. This helps control costs by
-     *            reducing the number of geofence evaluations and device
-     *            positions to retrieve. Distance-based filtering can also
-     *            reduce the jitter effect when displaying device trajectory on
-     *            a map.
+     *            within this area are neither evaluated against linked geofence
+     *            collections, nor stored. This helps control costs by reducing
+     *            the number of geofence evaluations and historical device
+     *            positions to paginate through. Distance-based filtering can
+     *            also reduce the effects of GPS noise when displaying device
+     *            trajectories on a map.
+     *            </p>
+     *            </li>
+     *            <li>
+     *            <p>
+     *            <code>AccuracyBased</code> - If the device has moved less than
+     *            the measured accuracy, location updates are ignored. For
+     *            example, if two consecutive updates from a device have a
+     *            horizontal accuracy of 5 m and 10 m, the second update is
+     *            ignored if the device has moved less than 15 m. Ignored
+     *            location updates are neither evaluated against linked geofence
+     *            collections, nor stored. This can reduce the effects of GPS
+     *            noise when displaying device trajectories on a map, and can
+     *            help control your costs by reducing the number of geofence
+     *            evaluations.
      *            </p>
      *            </li>
      *            </ul>
@@ -582,11 +651,24 @@ public class CreateTrackerRequest extends AmazonWebServiceRequest implements Ser
      * <li>
      * <p>
      * <code>DistanceBased</code> - If the device has moved less than 30 m (98.4
-     * ft), location updates are ignored. Location updates within this distance
-     * are neither evaluated against linked geofence collections, nor stored.
-     * This helps control costs by reducing the number of geofence evaluations
-     * and device positions to retrieve. Distance-based filtering can also
-     * reduce the jitter effect when displaying device trajectory on a map.
+     * ft), location updates are ignored. Location updates within this area are
+     * neither evaluated against linked geofence collections, nor stored. This
+     * helps control costs by reducing the number of geofence evaluations and
+     * historical device positions to paginate through. Distance-based filtering
+     * can also reduce the effects of GPS noise when displaying device
+     * trajectories on a map.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AccuracyBased</code> - If the device has moved less than the
+     * measured accuracy, location updates are ignored. For example, if two
+     * consecutive updates from a device have a horizontal accuracy of 5 m and
+     * 10 m, the second update is ignored if the device has moved less than 15
+     * m. Ignored location updates are neither evaluated against linked geofence
+     * collections, nor stored. This can reduce the effects of GPS noise when
+     * displaying device trajectories on a map, and can help control your costs
+     * by reducing the number of geofence evaluations.
      * </p>
      * </li>
      * </ul>
@@ -596,7 +678,7 @@ public class CreateTrackerRequest extends AmazonWebServiceRequest implements Ser
      * </p>
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>TimeBased, DistanceBased
+     * <b>Allowed Values: </b>TimeBased, DistanceBased, AccuracyBased
      *
      * @param positionFiltering <p>
      *            Specifies the position filtering for the tracker resource.
@@ -618,12 +700,26 @@ public class CreateTrackerRequest extends AmazonWebServiceRequest implements Ser
      *            <p>
      *            <code>DistanceBased</code> - If the device has moved less than
      *            30 m (98.4 ft), location updates are ignored. Location updates
-     *            within this distance are neither evaluated against linked
-     *            geofence collections, nor stored. This helps control costs by
-     *            reducing the number of geofence evaluations and device
-     *            positions to retrieve. Distance-based filtering can also
-     *            reduce the jitter effect when displaying device trajectory on
-     *            a map.
+     *            within this area are neither evaluated against linked geofence
+     *            collections, nor stored. This helps control costs by reducing
+     *            the number of geofence evaluations and historical device
+     *            positions to paginate through. Distance-based filtering can
+     *            also reduce the effects of GPS noise when displaying device
+     *            trajectories on a map.
+     *            </p>
+     *            </li>
+     *            <li>
+     *            <p>
+     *            <code>AccuracyBased</code> - If the device has moved less than
+     *            the measured accuracy, location updates are ignored. For
+     *            example, if two consecutive updates from a device have a
+     *            horizontal accuracy of 5 m and 10 m, the second update is
+     *            ignored if the device has moved less than 15 m. Ignored
+     *            location updates are neither evaluated against linked geofence
+     *            collections, nor stored. This can reduce the effects of GPS
+     *            noise when displaying device trajectories on a map, and can
+     *            help control your costs by reducing the number of geofence
+     *            evaluations.
      *            </p>
      *            </li>
      *            </ul>
@@ -656,11 +752,24 @@ public class CreateTrackerRequest extends AmazonWebServiceRequest implements Ser
      * <li>
      * <p>
      * <code>DistanceBased</code> - If the device has moved less than 30 m (98.4
-     * ft), location updates are ignored. Location updates within this distance
-     * are neither evaluated against linked geofence collections, nor stored.
-     * This helps control costs by reducing the number of geofence evaluations
-     * and device positions to retrieve. Distance-based filtering can also
-     * reduce the jitter effect when displaying device trajectory on a map.
+     * ft), location updates are ignored. Location updates within this area are
+     * neither evaluated against linked geofence collections, nor stored. This
+     * helps control costs by reducing the number of geofence evaluations and
+     * historical device positions to paginate through. Distance-based filtering
+     * can also reduce the effects of GPS noise when displaying device
+     * trajectories on a map.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AccuracyBased</code> - If the device has moved less than the
+     * measured accuracy, location updates are ignored. For example, if two
+     * consecutive updates from a device have a horizontal accuracy of 5 m and
+     * 10 m, the second update is ignored if the device has moved less than 15
+     * m. Ignored location updates are neither evaluated against linked geofence
+     * collections, nor stored. This can reduce the effects of GPS noise when
+     * displaying device trajectories on a map, and can help control your costs
+     * by reducing the number of geofence evaluations.
      * </p>
      * </li>
      * </ul>
@@ -673,7 +782,7 @@ public class CreateTrackerRequest extends AmazonWebServiceRequest implements Ser
      * together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>TimeBased, DistanceBased
+     * <b>Allowed Values: </b>TimeBased, DistanceBased, AccuracyBased
      *
      * @param positionFiltering <p>
      *            Specifies the position filtering for the tracker resource.
@@ -695,12 +804,26 @@ public class CreateTrackerRequest extends AmazonWebServiceRequest implements Ser
      *            <p>
      *            <code>DistanceBased</code> - If the device has moved less than
      *            30 m (98.4 ft), location updates are ignored. Location updates
-     *            within this distance are neither evaluated against linked
-     *            geofence collections, nor stored. This helps control costs by
-     *            reducing the number of geofence evaluations and device
-     *            positions to retrieve. Distance-based filtering can also
-     *            reduce the jitter effect when displaying device trajectory on
-     *            a map.
+     *            within this area are neither evaluated against linked geofence
+     *            collections, nor stored. This helps control costs by reducing
+     *            the number of geofence evaluations and historical device
+     *            positions to paginate through. Distance-based filtering can
+     *            also reduce the effects of GPS noise when displaying device
+     *            trajectories on a map.
+     *            </p>
+     *            </li>
+     *            <li>
+     *            <p>
+     *            <code>AccuracyBased</code> - If the device has moved less than
+     *            the measured accuracy, location updates are ignored. For
+     *            example, if two consecutive updates from a device have a
+     *            horizontal accuracy of 5 m and 10 m, the second update is
+     *            ignored if the device has moved less than 15 m. Ignored
+     *            location updates are neither evaluated against linked geofence
+     *            collections, nor stored. This can reduce the effects of GPS
+     *            noise when displaying device trajectories on a map, and can
+     *            help control your costs by reducing the number of geofence
+     *            evaluations.
      *            </p>
      *            </li>
      *            </ul>
@@ -719,12 +842,8 @@ public class CreateTrackerRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * <p>
-     * Specifies the pricing plan for the tracker resource.
-     * </p>
-     * <p>
-     * For additional details and restrictions on each pricing plan option, see
-     * <a href="https://aws.amazon.com/location/pricing/">Amazon Location
-     * Service pricing</a>.
+     * No longer used. If included, the only allowed value is
+     * <code>RequestBasedUsage</code>.
      * </p>
      * <p>
      * <b>Constraints:</b><br/>
@@ -732,13 +851,8 @@ public class CreateTrackerRequest extends AmazonWebServiceRequest implements Ser
      * MobileAssetManagement
      *
      * @return <p>
-     *         Specifies the pricing plan for the tracker resource.
-     *         </p>
-     *         <p>
-     *         For additional details and restrictions on each pricing plan
-     *         option, see <a
-     *         href="https://aws.amazon.com/location/pricing/">Amazon Location
-     *         Service pricing</a>.
+     *         No longer used. If included, the only allowed value is
+     *         <code>RequestBasedUsage</code>.
      *         </p>
      * @see PricingPlan
      */
@@ -748,12 +862,8 @@ public class CreateTrackerRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * <p>
-     * Specifies the pricing plan for the tracker resource.
-     * </p>
-     * <p>
-     * For additional details and restrictions on each pricing plan option, see
-     * <a href="https://aws.amazon.com/location/pricing/">Amazon Location
-     * Service pricing</a>.
+     * No longer used. If included, the only allowed value is
+     * <code>RequestBasedUsage</code>.
      * </p>
      * <p>
      * <b>Constraints:</b><br/>
@@ -761,13 +871,8 @@ public class CreateTrackerRequest extends AmazonWebServiceRequest implements Ser
      * MobileAssetManagement
      *
      * @param pricingPlan <p>
-     *            Specifies the pricing plan for the tracker resource.
-     *            </p>
-     *            <p>
-     *            For additional details and restrictions on each pricing plan
-     *            option, see <a
-     *            href="https://aws.amazon.com/location/pricing/">Amazon
-     *            Location Service pricing</a>.
+     *            No longer used. If included, the only allowed value is
+     *            <code>RequestBasedUsage</code>.
      *            </p>
      * @see PricingPlan
      */
@@ -777,12 +882,8 @@ public class CreateTrackerRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * <p>
-     * Specifies the pricing plan for the tracker resource.
-     * </p>
-     * <p>
-     * For additional details and restrictions on each pricing plan option, see
-     * <a href="https://aws.amazon.com/location/pricing/">Amazon Location
-     * Service pricing</a>.
+     * No longer used. If included, the only allowed value is
+     * <code>RequestBasedUsage</code>.
      * </p>
      * <p>
      * Returns a reference to this object so that method calls can be chained
@@ -793,13 +894,8 @@ public class CreateTrackerRequest extends AmazonWebServiceRequest implements Ser
      * MobileAssetManagement
      *
      * @param pricingPlan <p>
-     *            Specifies the pricing plan for the tracker resource.
-     *            </p>
-     *            <p>
-     *            For additional details and restrictions on each pricing plan
-     *            option, see <a
-     *            href="https://aws.amazon.com/location/pricing/">Amazon
-     *            Location Service pricing</a>.
+     *            No longer used. If included, the only allowed value is
+     *            <code>RequestBasedUsage</code>.
      *            </p>
      * @return A reference to this updated object so that method calls can be
      *         chained together.
@@ -812,12 +908,8 @@ public class CreateTrackerRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * <p>
-     * Specifies the pricing plan for the tracker resource.
-     * </p>
-     * <p>
-     * For additional details and restrictions on each pricing plan option, see
-     * <a href="https://aws.amazon.com/location/pricing/">Amazon Location
-     * Service pricing</a>.
+     * No longer used. If included, the only allowed value is
+     * <code>RequestBasedUsage</code>.
      * </p>
      * <p>
      * <b>Constraints:</b><br/>
@@ -825,13 +917,8 @@ public class CreateTrackerRequest extends AmazonWebServiceRequest implements Ser
      * MobileAssetManagement
      *
      * @param pricingPlan <p>
-     *            Specifies the pricing plan for the tracker resource.
-     *            </p>
-     *            <p>
-     *            For additional details and restrictions on each pricing plan
-     *            option, see <a
-     *            href="https://aws.amazon.com/location/pricing/">Amazon
-     *            Location Service pricing</a>.
+     *            No longer used. If included, the only allowed value is
+     *            <code>RequestBasedUsage</code>.
      *            </p>
      * @see PricingPlan
      */
@@ -841,12 +928,8 @@ public class CreateTrackerRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * <p>
-     * Specifies the pricing plan for the tracker resource.
-     * </p>
-     * <p>
-     * For additional details and restrictions on each pricing plan option, see
-     * <a href="https://aws.amazon.com/location/pricing/">Amazon Location
-     * Service pricing</a>.
+     * No longer used. If included, the only allowed value is
+     * <code>RequestBasedUsage</code>.
      * </p>
      * <p>
      * Returns a reference to this object so that method calls can be chained
@@ -857,13 +940,8 @@ public class CreateTrackerRequest extends AmazonWebServiceRequest implements Ser
      * MobileAssetManagement
      *
      * @param pricingPlan <p>
-     *            Specifies the pricing plan for the tracker resource.
-     *            </p>
-     *            <p>
-     *            For additional details and restrictions on each pricing plan
-     *            option, see <a
-     *            href="https://aws.amazon.com/location/pricing/">Amazon
-     *            Location Service pricing</a>.
+     *            No longer used. If included, the only allowed value is
+     *            <code>RequestBasedUsage</code>.
      *            </p>
      * @return A reference to this updated object so that method calls can be
      *         chained together.
@@ -876,65 +954,11 @@ public class CreateTrackerRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * <p>
-     * Specifies the data provider for the tracker resource.
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Required value for the following pricing plans:
-     * <code>MobileAssetTracking </code>| <code>MobileAssetManagement</code>
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * For more information about <a
-     * href="https://aws.amazon.com/location/data-providers/">Data
-     * Providers</a>, and <a
-     * href="https://aws.amazon.com/location/pricing/">Pricing plans</a>, see
-     * the Amazon Location Service product page.
-     * </p>
-     * <note>
-     * <p>
-     * Amazon Location Service only uses <code>PricingPlanDataSource</code> to
-     * calculate billing for your tracker resource. Your data will not be shared
-     * with the data provider, and will remain in your AWS account or Region
-     * unless you move it.
-     * </p>
-     * </note>
-     * <p>
-     * Valid values: <code>Esri</code> | <code>Here</code>
+     * This parameter is no longer used.
      * </p>
      *
      * @return <p>
-     *         Specifies the data provider for the tracker resource.
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         Required value for the following pricing plans:
-     *         <code>MobileAssetTracking </code>|
-     *         <code>MobileAssetManagement</code>
-     *         </p>
-     *         </li>
-     *         </ul>
-     *         <p>
-     *         For more information about <a
-     *         href="https://aws.amazon.com/location/data-providers/">Data
-     *         Providers</a>, and <a
-     *         href="https://aws.amazon.com/location/pricing/">Pricing
-     *         plans</a>, see the Amazon Location Service product page.
-     *         </p>
-     *         <note>
-     *         <p>
-     *         Amazon Location Service only uses
-     *         <code>PricingPlanDataSource</code> to calculate billing for your
-     *         tracker resource. Your data will not be shared with the data
-     *         provider, and will remain in your AWS account or Region unless
-     *         you move it.
-     *         </p>
-     *         </note>
-     *         <p>
-     *         Valid values: <code>Esri</code> | <code>Here</code>
+     *         This parameter is no longer used.
      *         </p>
      */
     public String getPricingPlanDataSource() {
@@ -943,65 +967,11 @@ public class CreateTrackerRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * <p>
-     * Specifies the data provider for the tracker resource.
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Required value for the following pricing plans:
-     * <code>MobileAssetTracking </code>| <code>MobileAssetManagement</code>
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * For more information about <a
-     * href="https://aws.amazon.com/location/data-providers/">Data
-     * Providers</a>, and <a
-     * href="https://aws.amazon.com/location/pricing/">Pricing plans</a>, see
-     * the Amazon Location Service product page.
-     * </p>
-     * <note>
-     * <p>
-     * Amazon Location Service only uses <code>PricingPlanDataSource</code> to
-     * calculate billing for your tracker resource. Your data will not be shared
-     * with the data provider, and will remain in your AWS account or Region
-     * unless you move it.
-     * </p>
-     * </note>
-     * <p>
-     * Valid values: <code>Esri</code> | <code>Here</code>
+     * This parameter is no longer used.
      * </p>
      *
      * @param pricingPlanDataSource <p>
-     *            Specifies the data provider for the tracker resource.
-     *            </p>
-     *            <ul>
-     *            <li>
-     *            <p>
-     *            Required value for the following pricing plans:
-     *            <code>MobileAssetTracking </code>|
-     *            <code>MobileAssetManagement</code>
-     *            </p>
-     *            </li>
-     *            </ul>
-     *            <p>
-     *            For more information about <a
-     *            href="https://aws.amazon.com/location/data-providers/">Data
-     *            Providers</a>, and <a
-     *            href="https://aws.amazon.com/location/pricing/">Pricing
-     *            plans</a>, see the Amazon Location Service product page.
-     *            </p>
-     *            <note>
-     *            <p>
-     *            Amazon Location Service only uses
-     *            <code>PricingPlanDataSource</code> to calculate billing for
-     *            your tracker resource. Your data will not be shared with the
-     *            data provider, and will remain in your AWS account or Region
-     *            unless you move it.
-     *            </p>
-     *            </note>
-     *            <p>
-     *            Valid values: <code>Esri</code> | <code>Here</code>
+     *            This parameter is no longer used.
      *            </p>
      */
     public void setPricingPlanDataSource(String pricingPlanDataSource) {
@@ -1010,68 +980,14 @@ public class CreateTrackerRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * <p>
-     * Specifies the data provider for the tracker resource.
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Required value for the following pricing plans:
-     * <code>MobileAssetTracking </code>| <code>MobileAssetManagement</code>
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * For more information about <a
-     * href="https://aws.amazon.com/location/data-providers/">Data
-     * Providers</a>, and <a
-     * href="https://aws.amazon.com/location/pricing/">Pricing plans</a>, see
-     * the Amazon Location Service product page.
-     * </p>
-     * <note>
-     * <p>
-     * Amazon Location Service only uses <code>PricingPlanDataSource</code> to
-     * calculate billing for your tracker resource. Your data will not be shared
-     * with the data provider, and will remain in your AWS account or Region
-     * unless you move it.
-     * </p>
-     * </note>
-     * <p>
-     * Valid values: <code>Esri</code> | <code>Here</code>
+     * This parameter is no longer used.
      * </p>
      * <p>
      * Returns a reference to this object so that method calls can be chained
      * together.
      *
      * @param pricingPlanDataSource <p>
-     *            Specifies the data provider for the tracker resource.
-     *            </p>
-     *            <ul>
-     *            <li>
-     *            <p>
-     *            Required value for the following pricing plans:
-     *            <code>MobileAssetTracking </code>|
-     *            <code>MobileAssetManagement</code>
-     *            </p>
-     *            </li>
-     *            </ul>
-     *            <p>
-     *            For more information about <a
-     *            href="https://aws.amazon.com/location/data-providers/">Data
-     *            Providers</a>, and <a
-     *            href="https://aws.amazon.com/location/pricing/">Pricing
-     *            plans</a>, see the Amazon Location Service product page.
-     *            </p>
-     *            <note>
-     *            <p>
-     *            Amazon Location Service only uses
-     *            <code>PricingPlanDataSource</code> to calculate billing for
-     *            your tracker resource. Your data will not be shared with the
-     *            data provider, and will remain in your AWS account or Region
-     *            unless you move it.
-     *            </p>
-     *            </note>
-     *            <p>
-     *            Valid values: <code>Esri</code> | <code>Here</code>
+     *            This parameter is no longer used.
      *            </p>
      * @return A reference to this updated object so that method calls can be
      *         chained together.
@@ -1120,6 +1036,11 @@ public class CreateTrackerRequest extends AmazonWebServiceRequest implements Ser
      * characters: + - = . _ : / @.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Cannot use "aws:" as a prefix for a key.
+     * </p>
+     * </li>
      * </ul>
      *
      * @return <p>
@@ -1158,6 +1079,11 @@ public class CreateTrackerRequest extends AmazonWebServiceRequest implements Ser
      *         <p>
      *         Can use alphanumeric characters (A–Z, a–z, 0–9), and the
      *         following characters: + - = . _ : / @.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot use "aws:" as a prefix for a key.
      *         </p>
      *         </li>
      *         </ul>
@@ -1205,6 +1131,11 @@ public class CreateTrackerRequest extends AmazonWebServiceRequest implements Ser
      * characters: + - = . _ : / @.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Cannot use "aws:" as a prefix for a key.
+     * </p>
+     * </li>
      * </ul>
      *
      * @param tags <p>
@@ -1243,6 +1174,11 @@ public class CreateTrackerRequest extends AmazonWebServiceRequest implements Ser
      *            <p>
      *            Can use alphanumeric characters (A–Z, a–z, 0–9), and the
      *            following characters: + - = . _ : / @.
+     *            </p>
+     *            </li>
+     *            <li>
+     *            <p>
+     *            Cannot use "aws:" as a prefix for a key.
      *            </p>
      *            </li>
      *            </ul>
@@ -1290,6 +1226,11 @@ public class CreateTrackerRequest extends AmazonWebServiceRequest implements Ser
      * characters: + - = . _ : / @.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Cannot use "aws:" as a prefix for a key.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained
@@ -1331,6 +1272,11 @@ public class CreateTrackerRequest extends AmazonWebServiceRequest implements Ser
      *            <p>
      *            Can use alphanumeric characters (A–Z, a–z, 0–9), and the
      *            following characters: + - = . _ : / @.
+     *            </p>
+     *            </li>
+     *            <li>
+     *            <p>
+     *            Cannot use "aws:" as a prefix for a key.
      *            </p>
      *            </li>
      *            </ul>
@@ -1379,6 +1325,11 @@ public class CreateTrackerRequest extends AmazonWebServiceRequest implements Ser
      * <p>
      * Can use alphanumeric characters (A–Z, a–z, 0–9), and the following
      * characters: + - = . _ : / @.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot use "aws:" as a prefix for a key.
      * </p>
      * </li>
      * </ul>

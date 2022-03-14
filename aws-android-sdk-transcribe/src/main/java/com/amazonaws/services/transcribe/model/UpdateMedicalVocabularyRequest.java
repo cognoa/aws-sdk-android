@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -44,24 +44,24 @@ public class UpdateMedicalVocabularyRequest extends AmazonWebServiceRequest impl
     /**
      * <p>
      * The language code of the language used for the entries in the updated
-     * vocabulary. US English (en-US) is the only valid language code in Amazon
-     * Transcribe Medical.
+     * vocabulary. U.S. English (en-US) is the only valid language code in
+     * Amazon Transcribe Medical.
      * </p>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>af-ZA, ar-AE, ar-SA, cy-GB, da-DK, de-CH, de-DE,
      * en-AB, en-AU, en-GB, en-IE, en-IN, en-US, en-WL, es-ES, es-US, fa-IR,
      * fr-CA, fr-FR, ga-IE, gd-GB, he-IL, hi-IN, id-ID, it-IT, ja-JP, ko-KR,
-     * ms-MY, nl-NL, pt-BR, pt-PT, ru-RU, ta-IN, te-IN, tr-TR, zh-CN
+     * ms-MY, nl-NL, pt-BR, pt-PT, ru-RU, ta-IN, te-IN, tr-TR, zh-CN, zh-TW,
+     * th-TH, en-ZA, en-NZ
      */
     private String languageCode;
 
     /**
      * <p>
-     * The location in Amazon S3 of the text file that contains the you use for
-     * your custom vocabulary. The URI must be in the same Amazon Web Services
-     * Region as the resource that you are calling. The following is the format
-     * for a URI:
+     * The location in Amazon S3 of the text file that contains your custom
+     * vocabulary. The URI must be in the same Amazon Web Services Region as the
+     * resource that you are calling. The following is the format for a URI:
      * </p>
      * <p>
      * <code> https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt; </code>
@@ -80,7 +80,7 @@ public class UpdateMedicalVocabularyRequest extends AmazonWebServiceRequest impl
      * <p>
      * For more information about custom vocabularies in Amazon Transcribe
      * Medical, see <a href=
-     * "https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary"
+     * "https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-med.html"
      * >Medical Custom Vocabularies</a>.
      * </p>
      * <p>
@@ -165,20 +165,21 @@ public class UpdateMedicalVocabularyRequest extends AmazonWebServiceRequest impl
     /**
      * <p>
      * The language code of the language used for the entries in the updated
-     * vocabulary. US English (en-US) is the only valid language code in Amazon
-     * Transcribe Medical.
+     * vocabulary. U.S. English (en-US) is the only valid language code in
+     * Amazon Transcribe Medical.
      * </p>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>af-ZA, ar-AE, ar-SA, cy-GB, da-DK, de-CH, de-DE,
      * en-AB, en-AU, en-GB, en-IE, en-IN, en-US, en-WL, es-ES, es-US, fa-IR,
      * fr-CA, fr-FR, ga-IE, gd-GB, he-IL, hi-IN, id-ID, it-IT, ja-JP, ko-KR,
-     * ms-MY, nl-NL, pt-BR, pt-PT, ru-RU, ta-IN, te-IN, tr-TR, zh-CN
+     * ms-MY, nl-NL, pt-BR, pt-PT, ru-RU, ta-IN, te-IN, tr-TR, zh-CN, zh-TW,
+     * th-TH, en-ZA, en-NZ
      *
      * @return <p>
      *         The language code of the language used for the entries in the
-     *         updated vocabulary. US English (en-US) is the only valid language
-     *         code in Amazon Transcribe Medical.
+     *         updated vocabulary. U.S. English (en-US) is the only valid
+     *         language code in Amazon Transcribe Medical.
      *         </p>
      * @see LanguageCode
      */
@@ -189,19 +190,20 @@ public class UpdateMedicalVocabularyRequest extends AmazonWebServiceRequest impl
     /**
      * <p>
      * The language code of the language used for the entries in the updated
-     * vocabulary. US English (en-US) is the only valid language code in Amazon
-     * Transcribe Medical.
+     * vocabulary. U.S. English (en-US) is the only valid language code in
+     * Amazon Transcribe Medical.
      * </p>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>af-ZA, ar-AE, ar-SA, cy-GB, da-DK, de-CH, de-DE,
      * en-AB, en-AU, en-GB, en-IE, en-IN, en-US, en-WL, es-ES, es-US, fa-IR,
      * fr-CA, fr-FR, ga-IE, gd-GB, he-IL, hi-IN, id-ID, it-IT, ja-JP, ko-KR,
-     * ms-MY, nl-NL, pt-BR, pt-PT, ru-RU, ta-IN, te-IN, tr-TR, zh-CN
+     * ms-MY, nl-NL, pt-BR, pt-PT, ru-RU, ta-IN, te-IN, tr-TR, zh-CN, zh-TW,
+     * th-TH, en-ZA, en-NZ
      *
      * @param languageCode <p>
      *            The language code of the language used for the entries in the
-     *            updated vocabulary. US English (en-US) is the only valid
+     *            updated vocabulary. U.S. English (en-US) is the only valid
      *            language code in Amazon Transcribe Medical.
      *            </p>
      * @see LanguageCode
@@ -213,8 +215,8 @@ public class UpdateMedicalVocabularyRequest extends AmazonWebServiceRequest impl
     /**
      * <p>
      * The language code of the language used for the entries in the updated
-     * vocabulary. US English (en-US) is the only valid language code in Amazon
-     * Transcribe Medical.
+     * vocabulary. U.S. English (en-US) is the only valid language code in
+     * Amazon Transcribe Medical.
      * </p>
      * <p>
      * Returns a reference to this object so that method calls can be chained
@@ -224,11 +226,12 @@ public class UpdateMedicalVocabularyRequest extends AmazonWebServiceRequest impl
      * <b>Allowed Values: </b>af-ZA, ar-AE, ar-SA, cy-GB, da-DK, de-CH, de-DE,
      * en-AB, en-AU, en-GB, en-IE, en-IN, en-US, en-WL, es-ES, es-US, fa-IR,
      * fr-CA, fr-FR, ga-IE, gd-GB, he-IL, hi-IN, id-ID, it-IT, ja-JP, ko-KR,
-     * ms-MY, nl-NL, pt-BR, pt-PT, ru-RU, ta-IN, te-IN, tr-TR, zh-CN
+     * ms-MY, nl-NL, pt-BR, pt-PT, ru-RU, ta-IN, te-IN, tr-TR, zh-CN, zh-TW,
+     * th-TH, en-ZA, en-NZ
      *
      * @param languageCode <p>
      *            The language code of the language used for the entries in the
-     *            updated vocabulary. US English (en-US) is the only valid
+     *            updated vocabulary. U.S. English (en-US) is the only valid
      *            language code in Amazon Transcribe Medical.
      *            </p>
      * @return A reference to this updated object so that method calls can be
@@ -243,19 +246,20 @@ public class UpdateMedicalVocabularyRequest extends AmazonWebServiceRequest impl
     /**
      * <p>
      * The language code of the language used for the entries in the updated
-     * vocabulary. US English (en-US) is the only valid language code in Amazon
-     * Transcribe Medical.
+     * vocabulary. U.S. English (en-US) is the only valid language code in
+     * Amazon Transcribe Medical.
      * </p>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>af-ZA, ar-AE, ar-SA, cy-GB, da-DK, de-CH, de-DE,
      * en-AB, en-AU, en-GB, en-IE, en-IN, en-US, en-WL, es-ES, es-US, fa-IR,
      * fr-CA, fr-FR, ga-IE, gd-GB, he-IL, hi-IN, id-ID, it-IT, ja-JP, ko-KR,
-     * ms-MY, nl-NL, pt-BR, pt-PT, ru-RU, ta-IN, te-IN, tr-TR, zh-CN
+     * ms-MY, nl-NL, pt-BR, pt-PT, ru-RU, ta-IN, te-IN, tr-TR, zh-CN, zh-TW,
+     * th-TH, en-ZA, en-NZ
      *
      * @param languageCode <p>
      *            The language code of the language used for the entries in the
-     *            updated vocabulary. US English (en-US) is the only valid
+     *            updated vocabulary. U.S. English (en-US) is the only valid
      *            language code in Amazon Transcribe Medical.
      *            </p>
      * @see LanguageCode
@@ -267,8 +271,8 @@ public class UpdateMedicalVocabularyRequest extends AmazonWebServiceRequest impl
     /**
      * <p>
      * The language code of the language used for the entries in the updated
-     * vocabulary. US English (en-US) is the only valid language code in Amazon
-     * Transcribe Medical.
+     * vocabulary. U.S. English (en-US) is the only valid language code in
+     * Amazon Transcribe Medical.
      * </p>
      * <p>
      * Returns a reference to this object so that method calls can be chained
@@ -278,11 +282,12 @@ public class UpdateMedicalVocabularyRequest extends AmazonWebServiceRequest impl
      * <b>Allowed Values: </b>af-ZA, ar-AE, ar-SA, cy-GB, da-DK, de-CH, de-DE,
      * en-AB, en-AU, en-GB, en-IE, en-IN, en-US, en-WL, es-ES, es-US, fa-IR,
      * fr-CA, fr-FR, ga-IE, gd-GB, he-IL, hi-IN, id-ID, it-IT, ja-JP, ko-KR,
-     * ms-MY, nl-NL, pt-BR, pt-PT, ru-RU, ta-IN, te-IN, tr-TR, zh-CN
+     * ms-MY, nl-NL, pt-BR, pt-PT, ru-RU, ta-IN, te-IN, tr-TR, zh-CN, zh-TW,
+     * th-TH, en-ZA, en-NZ
      *
      * @param languageCode <p>
      *            The language code of the language used for the entries in the
-     *            updated vocabulary. US English (en-US) is the only valid
+     *            updated vocabulary. U.S. English (en-US) is the only valid
      *            language code in Amazon Transcribe Medical.
      *            </p>
      * @return A reference to this updated object so that method calls can be
@@ -296,10 +301,9 @@ public class UpdateMedicalVocabularyRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The location in Amazon S3 of the text file that contains the you use for
-     * your custom vocabulary. The URI must be in the same Amazon Web Services
-     * Region as the resource that you are calling. The following is the format
-     * for a URI:
+     * The location in Amazon S3 of the text file that contains your custom
+     * vocabulary. The URI must be in the same Amazon Web Services Region as the
+     * resource that you are calling. The following is the format for a URI:
      * </p>
      * <p>
      * <code> https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt; </code>
@@ -318,7 +322,7 @@ public class UpdateMedicalVocabularyRequest extends AmazonWebServiceRequest impl
      * <p>
      * For more information about custom vocabularies in Amazon Transcribe
      * Medical, see <a href=
-     * "https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary"
+     * "https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-med.html"
      * >Medical Custom Vocabularies</a>.
      * </p>
      * <p>
@@ -327,10 +331,10 @@ public class UpdateMedicalVocabularyRequest extends AmazonWebServiceRequest impl
      * <b>Pattern: </b>(s3://|http(s*)://).+<br/>
      *
      * @return <p>
-     *         The location in Amazon S3 of the text file that contains the you
-     *         use for your custom vocabulary. The URI must be in the same
-     *         Amazon Web Services Region as the resource that you are calling.
-     *         The following is the format for a URI:
+     *         The location in Amazon S3 of the text file that contains your
+     *         custom vocabulary. The URI must be in the same Amazon Web
+     *         Services Region as the resource that you are calling. The
+     *         following is the format for a URI:
      *         </p>
      *         <p>
      *         <code> https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt; </code>
@@ -349,7 +353,7 @@ public class UpdateMedicalVocabularyRequest extends AmazonWebServiceRequest impl
      *         <p>
      *         For more information about custom vocabularies in Amazon
      *         Transcribe Medical, see <a href=
-     *         "https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary"
+     *         "https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-med.html"
      *         >Medical Custom Vocabularies</a>.
      *         </p>
      */
@@ -359,10 +363,9 @@ public class UpdateMedicalVocabularyRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The location in Amazon S3 of the text file that contains the you use for
-     * your custom vocabulary. The URI must be in the same Amazon Web Services
-     * Region as the resource that you are calling. The following is the format
-     * for a URI:
+     * The location in Amazon S3 of the text file that contains your custom
+     * vocabulary. The URI must be in the same Amazon Web Services Region as the
+     * resource that you are calling. The following is the format for a URI:
      * </p>
      * <p>
      * <code> https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt; </code>
@@ -381,7 +384,7 @@ public class UpdateMedicalVocabularyRequest extends AmazonWebServiceRequest impl
      * <p>
      * For more information about custom vocabularies in Amazon Transcribe
      * Medical, see <a href=
-     * "https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary"
+     * "https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-med.html"
      * >Medical Custom Vocabularies</a>.
      * </p>
      * <p>
@@ -390,10 +393,10 @@ public class UpdateMedicalVocabularyRequest extends AmazonWebServiceRequest impl
      * <b>Pattern: </b>(s3://|http(s*)://).+<br/>
      *
      * @param vocabularyFileUri <p>
-     *            The location in Amazon S3 of the text file that contains the
-     *            you use for your custom vocabulary. The URI must be in the
-     *            same Amazon Web Services Region as the resource that you are
-     *            calling. The following is the format for a URI:
+     *            The location in Amazon S3 of the text file that contains your
+     *            custom vocabulary. The URI must be in the same Amazon Web
+     *            Services Region as the resource that you are calling. The
+     *            following is the format for a URI:
      *            </p>
      *            <p>
      *            <code> https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt; </code>
@@ -413,7 +416,7 @@ public class UpdateMedicalVocabularyRequest extends AmazonWebServiceRequest impl
      *            <p>
      *            For more information about custom vocabularies in Amazon
      *            Transcribe Medical, see <a href=
-     *            "https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary"
+     *            "https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-med.html"
      *            >Medical Custom Vocabularies</a>.
      *            </p>
      */
@@ -423,10 +426,9 @@ public class UpdateMedicalVocabularyRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The location in Amazon S3 of the text file that contains the you use for
-     * your custom vocabulary. The URI must be in the same Amazon Web Services
-     * Region as the resource that you are calling. The following is the format
-     * for a URI:
+     * The location in Amazon S3 of the text file that contains your custom
+     * vocabulary. The URI must be in the same Amazon Web Services Region as the
+     * resource that you are calling. The following is the format for a URI:
      * </p>
      * <p>
      * <code> https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt; </code>
@@ -445,7 +447,7 @@ public class UpdateMedicalVocabularyRequest extends AmazonWebServiceRequest impl
      * <p>
      * For more information about custom vocabularies in Amazon Transcribe
      * Medical, see <a href=
-     * "https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary"
+     * "https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-med.html"
      * >Medical Custom Vocabularies</a>.
      * </p>
      * <p>
@@ -457,10 +459,10 @@ public class UpdateMedicalVocabularyRequest extends AmazonWebServiceRequest impl
      * <b>Pattern: </b>(s3://|http(s*)://).+<br/>
      *
      * @param vocabularyFileUri <p>
-     *            The location in Amazon S3 of the text file that contains the
-     *            you use for your custom vocabulary. The URI must be in the
-     *            same Amazon Web Services Region as the resource that you are
-     *            calling. The following is the format for a URI:
+     *            The location in Amazon S3 of the text file that contains your
+     *            custom vocabulary. The URI must be in the same Amazon Web
+     *            Services Region as the resource that you are calling. The
+     *            following is the format for a URI:
      *            </p>
      *            <p>
      *            <code> https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt; </code>
@@ -480,7 +482,7 @@ public class UpdateMedicalVocabularyRequest extends AmazonWebServiceRequest impl
      *            <p>
      *            For more information about custom vocabularies in Amazon
      *            Transcribe Medical, see <a href=
-     *            "https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary"
+     *            "https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-med.html"
      *            >Medical Custom Vocabularies</a>.
      *            </p>
      * @return A reference to this updated object so that method calls can be

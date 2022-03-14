@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -21,8 +21,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Lists the calling account's dedicated origination numbers and their metadata.
- * For more information about origination numbers, see <a href=
+ * Lists the calling Amazon Web Services account's dedicated origination numbers
+ * and their metadata. For more information about origination numbers, see <a
+ * href=
  * "https://docs.aws.amazon.com/sns/latest/dg/channels-sms-originating-identities-origination-numbers.html"
  * >Origination numbers</a> in the <i>Amazon SNS Developer Guide</i>.
  * </p>

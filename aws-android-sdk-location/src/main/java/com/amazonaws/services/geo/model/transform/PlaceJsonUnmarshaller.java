@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -44,6 +44,9 @@ class PlaceJsonUnmarshaller implements Unmarshaller<Place, JsonUnmarshallerConte
             } else if (name.equals("Geometry")) {
                 place.setGeometry(PlaceGeometryJsonUnmarshaller.getInstance()
                         .unmarshall(context));
+            } else if (name.equals("Interpolated")) {
+                place.setInterpolated(BooleanJsonUnmarshaller.getInstance()
+                        .unmarshall(context));
             } else if (name.equals("Label")) {
                 place.setLabel(StringJsonUnmarshaller.getInstance()
                         .unmarshall(context));
@@ -64,6 +67,9 @@ class PlaceJsonUnmarshaller implements Unmarshaller<Place, JsonUnmarshallerConte
                         .unmarshall(context));
             } else if (name.equals("SubRegion")) {
                 place.setSubRegion(StringJsonUnmarshaller.getInstance()
+                        .unmarshall(context));
+            } else if (name.equals("TimeZone")) {
+                place.setTimeZone(TimeZoneJsonUnmarshaller.getInstance()
                         .unmarshall(context));
             } else {
                 reader.skipValue();

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -24,7 +24,8 @@ import java.util.Map;
 public enum PositionFiltering {
 
     TimeBased("TimeBased"),
-    DistanceBased("DistanceBased");
+    DistanceBased("DistanceBased"),
+    AccuracyBased("AccuracyBased");
 
     private String value;
 
@@ -42,6 +43,7 @@ public enum PositionFiltering {
         enumMap = new HashMap<String, PositionFiltering>();
         enumMap.put("TimeBased", TimeBased);
         enumMap.put("DistanceBased", DistanceBased);
+        enumMap.put("AccuracyBased", AccuracyBased);
     }
 
     /**

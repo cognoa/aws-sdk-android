@@ -27,9 +27,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  * <p>
  * <code>StartDocumentAnalysis</code> can analyze text in documents that are in
- * JPEG, PNG, and PDF format. The documents are stored in an Amazon S3 bucket.
- * Use <a>DocumentLocation</a> to specify the bucket name and file name of the
- * document.
+ * JPEG, PNG, TIFF, and PDF format. The documents are stored in an Amazon S3
+ * bucket. Use <a>DocumentLocation</a> to specify the bucket name and file name
+ * of the document.
  * </p>
  * <p>
  * <code>StartDocumentAnalysis</code> returns a job identifier (

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -108,6 +108,9 @@ public enum SNSActions implements Action {
 
     /** Action for the Publish operation. */
     Publish("sns:Publish"),
+
+    /** Action for the PublishBatch operation. */
+    PublishBatch("sns:PublishBatch"),
 
     /** Action for the RemovePermission operation. */
     RemovePermission("sns:RemovePermission"),

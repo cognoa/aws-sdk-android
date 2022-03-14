@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -116,6 +116,11 @@ public class StartTaskContactRequestMarshaller implements
                 String clientToken = startTaskContactRequest.getClientToken();
                 jsonWriter.name("ClientToken");
                 jsonWriter.value(clientToken);
+            }
+            if (startTaskContactRequest.getScheduledTime() != null) {
+                java.util.Date scheduledTime = startTaskContactRequest.getScheduledTime();
+                jsonWriter.name("ScheduledTime");
+                jsonWriter.value(scheduledTime);
             }
 
             jsonWriter.endObject();

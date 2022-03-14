@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -93,6 +93,19 @@ class TranscriptionJobJsonUnmarshaller implements
             } else if (name.equals("IdentifiedLanguageScore")) {
                 transcriptionJob.setIdentifiedLanguageScore(FloatJsonUnmarshaller.getInstance()
                         .unmarshall(context));
+            } else if (name.equals("Tags")) {
+                transcriptionJob.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller
+                        .getInstance()
+                        )
+                                .unmarshall(context));
+            } else if (name.equals("Subtitles")) {
+                transcriptionJob.setSubtitles(SubtitlesOutputJsonUnmarshaller.getInstance()
+                        .unmarshall(context));
+            } else if (name.equals("LanguageIdSettings")) {
+                transcriptionJob.setLanguageIdSettings(new MapUnmarshaller<LanguageIdSettings>(
+                        LanguageIdSettingsJsonUnmarshaller.getInstance()
+                        )
+                                .unmarshall(context));
             } else {
                 reader.skipValue();
             }

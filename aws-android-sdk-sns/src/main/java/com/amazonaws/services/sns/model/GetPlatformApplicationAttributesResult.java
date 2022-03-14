@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -28,6 +28,24 @@ public class GetPlatformApplicationAttributesResult implements Serializable {
      * Attributes include the following:
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * <code>AppleCertificateExpiryDate</code> – The expiry date of the SSL
+     * certificate used to configure certificate-based authentication.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ApplePlatformTeamID</code> – The Apple developer account ID used to
+     * configure token-based authentication.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ApplePlatformBundleID</code> – The app identifier used to configure
+     * token-based authentication.
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <code>EventEndpointCreated</code> – Topic ARN to which EndpointCreated
@@ -64,6 +82,24 @@ public class GetPlatformApplicationAttributesResult implements Serializable {
      * <ul>
      * <li>
      * <p>
+     * <code>AppleCertificateExpiryDate</code> – The expiry date of the SSL
+     * certificate used to configure certificate-based authentication.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ApplePlatformTeamID</code> – The Apple developer account ID used to
+     * configure token-based authentication.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ApplePlatformBundleID</code> – The app identifier used to configure
+     * token-based authentication.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>EventEndpointCreated</code> – Topic ARN to which EndpointCreated
      * event notifications should be sent.
      * </p>
@@ -93,6 +129,25 @@ public class GetPlatformApplicationAttributesResult implements Serializable {
      *         Attributes include the following:
      *         </p>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>AppleCertificateExpiryDate</code> – The expiry date of the
+     *         SSL certificate used to configure certificate-based
+     *         authentication.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ApplePlatformTeamID</code> – The Apple developer account ID
+     *         used to configure token-based authentication.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ApplePlatformBundleID</code> – The app identifier used to
+     *         configure token-based authentication.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         <code>EventEndpointCreated</code> – Topic ARN to which
@@ -132,6 +187,24 @@ public class GetPlatformApplicationAttributesResult implements Serializable {
      * <ul>
      * <li>
      * <p>
+     * <code>AppleCertificateExpiryDate</code> – The expiry date of the SSL
+     * certificate used to configure certificate-based authentication.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ApplePlatformTeamID</code> – The Apple developer account ID used to
+     * configure token-based authentication.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ApplePlatformBundleID</code> – The app identifier used to configure
+     * token-based authentication.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>EventEndpointCreated</code> – Topic ARN to which EndpointCreated
      * event notifications should be sent.
      * </p>
@@ -161,6 +234,25 @@ public class GetPlatformApplicationAttributesResult implements Serializable {
      *            Attributes include the following:
      *            </p>
      *            <ul>
+     *            <li>
+     *            <p>
+     *            <code>AppleCertificateExpiryDate</code> – The expiry date of
+     *            the SSL certificate used to configure certificate-based
+     *            authentication.
+     *            </p>
+     *            </li>
+     *            <li>
+     *            <p>
+     *            <code>ApplePlatformTeamID</code> – The Apple developer account
+     *            ID used to configure token-based authentication.
+     *            </p>
+     *            </li>
+     *            <li>
+     *            <p>
+     *            <code>ApplePlatformBundleID</code> – The app identifier used
+     *            to configure token-based authentication.
+     *            </p>
+     *            </li>
      *            <li>
      *            <p>
      *            <code>EventEndpointCreated</code> – Topic ARN to which
@@ -200,6 +292,24 @@ public class GetPlatformApplicationAttributesResult implements Serializable {
      * <ul>
      * <li>
      * <p>
+     * <code>AppleCertificateExpiryDate</code> – The expiry date of the SSL
+     * certificate used to configure certificate-based authentication.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ApplePlatformTeamID</code> – The Apple developer account ID used to
+     * configure token-based authentication.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ApplePlatformBundleID</code> – The app identifier used to configure
+     * token-based authentication.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>EventEndpointCreated</code> – Topic ARN to which EndpointCreated
      * event notifications should be sent.
      * </p>
@@ -232,6 +342,25 @@ public class GetPlatformApplicationAttributesResult implements Serializable {
      *            Attributes include the following:
      *            </p>
      *            <ul>
+     *            <li>
+     *            <p>
+     *            <code>AppleCertificateExpiryDate</code> – The expiry date of
+     *            the SSL certificate used to configure certificate-based
+     *            authentication.
+     *            </p>
+     *            </li>
+     *            <li>
+     *            <p>
+     *            <code>ApplePlatformTeamID</code> – The Apple developer account
+     *            ID used to configure token-based authentication.
+     *            </p>
+     *            </li>
+     *            <li>
+     *            <p>
+     *            <code>ApplePlatformBundleID</code> – The app identifier used
+     *            to configure token-based authentication.
+     *            </p>
+     *            </li>
      *            <li>
      *            <p>
      *            <code>EventEndpointCreated</code> – Topic ARN to which
@@ -273,6 +402,24 @@ public class GetPlatformApplicationAttributesResult implements Serializable {
      * Attributes include the following:
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * <code>AppleCertificateExpiryDate</code> – The expiry date of the SSL
+     * certificate used to configure certificate-based authentication.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ApplePlatformTeamID</code> – The Apple developer account ID used to
+     * configure token-based authentication.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ApplePlatformBundleID</code> – The app identifier used to configure
+     * token-based authentication.
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <code>EventEndpointCreated</code> – Topic ARN to which EndpointCreated

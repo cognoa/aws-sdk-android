@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -24,6 +24,11 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Deletes an Amazon Rekognition Custom Labels project. To delete a project you
  * must first delete all models associated with the project. To delete a model,
  * see <a>DeleteProjectVersion</a>.
+ * </p>
+ * <p>
+ * <code>DeleteProject</code> is an asynchronous operation. To check if the
+ * project is deleted, call <a>DescribeProjects</a>. The project is deleted when
+ * the project no longer appears in the response.
  * </p>
  * <p>
  * This operation requires permissions to perform the

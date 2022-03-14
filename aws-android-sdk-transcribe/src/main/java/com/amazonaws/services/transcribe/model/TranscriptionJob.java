@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -54,13 +54,15 @@ public class TranscriptionJob implements Serializable {
      * <b>Allowed Values: </b>af-ZA, ar-AE, ar-SA, cy-GB, da-DK, de-CH, de-DE,
      * en-AB, en-AU, en-GB, en-IE, en-IN, en-US, en-WL, es-ES, es-US, fa-IR,
      * fr-CA, fr-FR, ga-IE, gd-GB, he-IL, hi-IN, id-ID, it-IT, ja-JP, ko-KR,
-     * ms-MY, nl-NL, pt-BR, pt-PT, ru-RU, ta-IN, te-IN, tr-TR, zh-CN
+     * ms-MY, nl-NL, pt-BR, pt-PT, ru-RU, ta-IN, te-IN, tr-TR, zh-CN, zh-TW,
+     * th-TH, en-ZA, en-NZ
      */
     private String languageCode;
 
     /**
      * <p>
-     * The sample rate, in Hertz, of the audio track in the input media file.
+     * The sample rate, in Hertz (Hz), of the audio track in the input media
+     * file.
      * </p>
      * <p>
      * <b>Constraints:</b><br/>
@@ -94,7 +96,7 @@ public class TranscriptionJob implements Serializable {
 
     /**
      * <p>
-     * A timestamp that shows with the job was started processing.
+     * A timestamp that shows when the job started processing.
      * </p>
      */
     private java.util.Date startTime;
@@ -108,7 +110,7 @@ public class TranscriptionJob implements Serializable {
 
     /**
      * <p>
-     * A timestamp that shows when the job was completed.
+     * A timestamp that shows when the job completed.
      * </p>
      */
     private java.util.Date completionTime;
@@ -143,7 +145,7 @@ public class TranscriptionJob implements Serializable {
      * <p>
      * <code>Invalid sample rate for audio file</code> - The sample rate
      * specified in the <code>MediaSampleRateHertz</code> of the request isn't
-     * valid. The sample rate must be between 8000 and 48000 Hertz.
+     * valid. The sample rate must be between 8,000 and 48,000 Hertz.
      * </p>
      * </li>
      * <li>
@@ -235,6 +237,30 @@ public class TranscriptionJob implements Serializable {
      * </p>
      */
     private Float identifiedLanguageScore;
+
+    /**
+     * <p>
+     * A key:value pair assigned to a given transcription job.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
+
+    /**
+     * <p>
+     * Generate subtitles for your batch transcription job.
+     * </p>
+     */
+    private SubtitlesOutput subtitles;
+
+    /**
+     * <p>
+     * Language-specific settings that can be specified when language
+     * identification is enabled for your transcription job. These settings
+     * include <code>VocabularyName</code>, <code>VocabularyFilterName</code>,
+     * and <code>LanguageModelName</code>.
+     * </p>
+     */
+    private java.util.Map<String, LanguageIdSettings> languageIdSettings;
 
     /**
      * <p>
@@ -399,7 +425,8 @@ public class TranscriptionJob implements Serializable {
      * <b>Allowed Values: </b>af-ZA, ar-AE, ar-SA, cy-GB, da-DK, de-CH, de-DE,
      * en-AB, en-AU, en-GB, en-IE, en-IN, en-US, en-WL, es-ES, es-US, fa-IR,
      * fr-CA, fr-FR, ga-IE, gd-GB, he-IL, hi-IN, id-ID, it-IT, ja-JP, ko-KR,
-     * ms-MY, nl-NL, pt-BR, pt-PT, ru-RU, ta-IN, te-IN, tr-TR, zh-CN
+     * ms-MY, nl-NL, pt-BR, pt-PT, ru-RU, ta-IN, te-IN, tr-TR, zh-CN, zh-TW,
+     * th-TH, en-ZA, en-NZ
      *
      * @return <p>
      *         The language code for the input speech.
@@ -419,7 +446,8 @@ public class TranscriptionJob implements Serializable {
      * <b>Allowed Values: </b>af-ZA, ar-AE, ar-SA, cy-GB, da-DK, de-CH, de-DE,
      * en-AB, en-AU, en-GB, en-IE, en-IN, en-US, en-WL, es-ES, es-US, fa-IR,
      * fr-CA, fr-FR, ga-IE, gd-GB, he-IL, hi-IN, id-ID, it-IT, ja-JP, ko-KR,
-     * ms-MY, nl-NL, pt-BR, pt-PT, ru-RU, ta-IN, te-IN, tr-TR, zh-CN
+     * ms-MY, nl-NL, pt-BR, pt-PT, ru-RU, ta-IN, te-IN, tr-TR, zh-CN, zh-TW,
+     * th-TH, en-ZA, en-NZ
      *
      * @param languageCode <p>
      *            The language code for the input speech.
@@ -442,7 +470,8 @@ public class TranscriptionJob implements Serializable {
      * <b>Allowed Values: </b>af-ZA, ar-AE, ar-SA, cy-GB, da-DK, de-CH, de-DE,
      * en-AB, en-AU, en-GB, en-IE, en-IN, en-US, en-WL, es-ES, es-US, fa-IR,
      * fr-CA, fr-FR, ga-IE, gd-GB, he-IL, hi-IN, id-ID, it-IT, ja-JP, ko-KR,
-     * ms-MY, nl-NL, pt-BR, pt-PT, ru-RU, ta-IN, te-IN, tr-TR, zh-CN
+     * ms-MY, nl-NL, pt-BR, pt-PT, ru-RU, ta-IN, te-IN, tr-TR, zh-CN, zh-TW,
+     * th-TH, en-ZA, en-NZ
      *
      * @param languageCode <p>
      *            The language code for the input speech.
@@ -465,7 +494,8 @@ public class TranscriptionJob implements Serializable {
      * <b>Allowed Values: </b>af-ZA, ar-AE, ar-SA, cy-GB, da-DK, de-CH, de-DE,
      * en-AB, en-AU, en-GB, en-IE, en-IN, en-US, en-WL, es-ES, es-US, fa-IR,
      * fr-CA, fr-FR, ga-IE, gd-GB, he-IL, hi-IN, id-ID, it-IT, ja-JP, ko-KR,
-     * ms-MY, nl-NL, pt-BR, pt-PT, ru-RU, ta-IN, te-IN, tr-TR, zh-CN
+     * ms-MY, nl-NL, pt-BR, pt-PT, ru-RU, ta-IN, te-IN, tr-TR, zh-CN, zh-TW,
+     * th-TH, en-ZA, en-NZ
      *
      * @param languageCode <p>
      *            The language code for the input speech.
@@ -488,7 +518,8 @@ public class TranscriptionJob implements Serializable {
      * <b>Allowed Values: </b>af-ZA, ar-AE, ar-SA, cy-GB, da-DK, de-CH, de-DE,
      * en-AB, en-AU, en-GB, en-IE, en-IN, en-US, en-WL, es-ES, es-US, fa-IR,
      * fr-CA, fr-FR, ga-IE, gd-GB, he-IL, hi-IN, id-ID, it-IT, ja-JP, ko-KR,
-     * ms-MY, nl-NL, pt-BR, pt-PT, ru-RU, ta-IN, te-IN, tr-TR, zh-CN
+     * ms-MY, nl-NL, pt-BR, pt-PT, ru-RU, ta-IN, te-IN, tr-TR, zh-CN, zh-TW,
+     * th-TH, en-ZA, en-NZ
      *
      * @param languageCode <p>
      *            The language code for the input speech.
@@ -504,15 +535,16 @@ public class TranscriptionJob implements Serializable {
 
     /**
      * <p>
-     * The sample rate, in Hertz, of the audio track in the input media file.
+     * The sample rate, in Hertz (Hz), of the audio track in the input media
+     * file.
      * </p>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>8000 - 48000<br/>
      *
      * @return <p>
-     *         The sample rate, in Hertz, of the audio track in the input media
-     *         file.
+     *         The sample rate, in Hertz (Hz), of the audio track in the input
+     *         media file.
      *         </p>
      */
     public Integer getMediaSampleRateHertz() {
@@ -521,15 +553,16 @@ public class TranscriptionJob implements Serializable {
 
     /**
      * <p>
-     * The sample rate, in Hertz, of the audio track in the input media file.
+     * The sample rate, in Hertz (Hz), of the audio track in the input media
+     * file.
      * </p>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>8000 - 48000<br/>
      *
      * @param mediaSampleRateHertz <p>
-     *            The sample rate, in Hertz, of the audio track in the input
-     *            media file.
+     *            The sample rate, in Hertz (Hz), of the audio track in the
+     *            input media file.
      *            </p>
      */
     public void setMediaSampleRateHertz(Integer mediaSampleRateHertz) {
@@ -538,7 +571,8 @@ public class TranscriptionJob implements Serializable {
 
     /**
      * <p>
-     * The sample rate, in Hertz, of the audio track in the input media file.
+     * The sample rate, in Hertz (Hz), of the audio track in the input media
+     * file.
      * </p>
      * <p>
      * Returns a reference to this object so that method calls can be chained
@@ -548,8 +582,8 @@ public class TranscriptionJob implements Serializable {
      * <b>Range: </b>8000 - 48000<br/>
      *
      * @param mediaSampleRateHertz <p>
-     *            The sample rate, in Hertz, of the audio track in the input
-     *            media file.
+     *            The sample rate, in Hertz (Hz), of the audio track in the
+     *            input media file.
      *            </p>
      * @return A reference to this updated object so that method calls can be
      *         chained together.
@@ -751,11 +785,11 @@ public class TranscriptionJob implements Serializable {
 
     /**
      * <p>
-     * A timestamp that shows with the job was started processing.
+     * A timestamp that shows when the job started processing.
      * </p>
      *
      * @return <p>
-     *         A timestamp that shows with the job was started processing.
+     *         A timestamp that shows when the job started processing.
      *         </p>
      */
     public java.util.Date getStartTime() {
@@ -764,11 +798,11 @@ public class TranscriptionJob implements Serializable {
 
     /**
      * <p>
-     * A timestamp that shows with the job was started processing.
+     * A timestamp that shows when the job started processing.
      * </p>
      *
      * @param startTime <p>
-     *            A timestamp that shows with the job was started processing.
+     *            A timestamp that shows when the job started processing.
      *            </p>
      */
     public void setStartTime(java.util.Date startTime) {
@@ -777,14 +811,14 @@ public class TranscriptionJob implements Serializable {
 
     /**
      * <p>
-     * A timestamp that shows with the job was started processing.
+     * A timestamp that shows when the job started processing.
      * </p>
      * <p>
      * Returns a reference to this object so that method calls can be chained
      * together.
      *
      * @param startTime <p>
-     *            A timestamp that shows with the job was started processing.
+     *            A timestamp that shows when the job started processing.
      *            </p>
      * @return A reference to this updated object so that method calls can be
      *         chained together.
@@ -841,11 +875,11 @@ public class TranscriptionJob implements Serializable {
 
     /**
      * <p>
-     * A timestamp that shows when the job was completed.
+     * A timestamp that shows when the job completed.
      * </p>
      *
      * @return <p>
-     *         A timestamp that shows when the job was completed.
+     *         A timestamp that shows when the job completed.
      *         </p>
      */
     public java.util.Date getCompletionTime() {
@@ -854,11 +888,11 @@ public class TranscriptionJob implements Serializable {
 
     /**
      * <p>
-     * A timestamp that shows when the job was completed.
+     * A timestamp that shows when the job completed.
      * </p>
      *
      * @param completionTime <p>
-     *            A timestamp that shows when the job was completed.
+     *            A timestamp that shows when the job completed.
      *            </p>
      */
     public void setCompletionTime(java.util.Date completionTime) {
@@ -867,14 +901,14 @@ public class TranscriptionJob implements Serializable {
 
     /**
      * <p>
-     * A timestamp that shows when the job was completed.
+     * A timestamp that shows when the job completed.
      * </p>
      * <p>
      * Returns a reference to this object so that method calls can be chained
      * together.
      *
      * @param completionTime <p>
-     *            A timestamp that shows when the job was completed.
+     *            A timestamp that shows when the job completed.
      *            </p>
      * @return A reference to this updated object so that method calls can be
      *         chained together.
@@ -914,7 +948,7 @@ public class TranscriptionJob implements Serializable {
      * <p>
      * <code>Invalid sample rate for audio file</code> - The sample rate
      * specified in the <code>MediaSampleRateHertz</code> of the request isn't
-     * valid. The sample rate must be between 8000 and 48000 Hertz.
+     * valid. The sample rate must be between 8,000 and 48,000 Hertz.
      * </p>
      * </li>
      * <li>
@@ -978,7 +1012,7 @@ public class TranscriptionJob implements Serializable {
      *         <p>
      *         <code>Invalid sample rate for audio file</code> - The sample rate
      *         specified in the <code>MediaSampleRateHertz</code> of the request
-     *         isn't valid. The sample rate must be between 8000 and 48000
+     *         isn't valid. The sample rate must be between 8,000 and 48,000
      *         Hertz.
      *         </p>
      *         </li>
@@ -1047,7 +1081,7 @@ public class TranscriptionJob implements Serializable {
      * <p>
      * <code>Invalid sample rate for audio file</code> - The sample rate
      * specified in the <code>MediaSampleRateHertz</code> of the request isn't
-     * valid. The sample rate must be between 8000 and 48000 Hertz.
+     * valid. The sample rate must be between 8,000 and 48,000 Hertz.
      * </p>
      * </li>
      * <li>
@@ -1111,8 +1145,8 @@ public class TranscriptionJob implements Serializable {
      *            <p>
      *            <code>Invalid sample rate for audio file</code> - The sample
      *            rate specified in the <code>MediaSampleRateHertz</code> of the
-     *            request isn't valid. The sample rate must be between 8000 and
-     *            48000 Hertz.
+     *            request isn't valid. The sample rate must be between 8,000 and
+     *            48,000 Hertz.
      *            </p>
      *            </li>
      *            <li>
@@ -1180,7 +1214,7 @@ public class TranscriptionJob implements Serializable {
      * <p>
      * <code>Invalid sample rate for audio file</code> - The sample rate
      * specified in the <code>MediaSampleRateHertz</code> of the request isn't
-     * valid. The sample rate must be between 8000 and 48000 Hertz.
+     * valid. The sample rate must be between 8,000 and 48,000 Hertz.
      * </p>
      * </li>
      * <li>
@@ -1247,8 +1281,8 @@ public class TranscriptionJob implements Serializable {
      *            <p>
      *            <code>Invalid sample rate for audio file</code> - The sample
      *            rate specified in the <code>MediaSampleRateHertz</code> of the
-     *            request isn't valid. The sample rate must be between 8000 and
-     *            48000 Hertz.
+     *            request isn't valid. The sample rate must be between 8,000 and
+     *            48,000 Hertz.
      *            </p>
      *            </li>
      *            <li>
@@ -1715,6 +1749,232 @@ public class TranscriptionJob implements Serializable {
     }
 
     /**
+     * <p>
+     * A key:value pair assigned to a given transcription job.
+     * </p>
+     *
+     * @return <p>
+     *         A key:value pair assigned to a given transcription job.
+     *         </p>
+     */
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * A key:value pair assigned to a given transcription job.
+     * </p>
+     *
+     * @param tags <p>
+     *            A key:value pair assigned to a given transcription job.
+     *            </p>
+     */
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * A key:value pair assigned to a given transcription job.
+     * </p>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained
+     * together.
+     *
+     * @param tags <p>
+     *            A key:value pair assigned to a given transcription job.
+     *            </p>
+     * @return A reference to this updated object so that method calls can be
+     *         chained together.
+     */
+    public TranscriptionJob withTags(Tag... tags) {
+        if (getTags() == null) {
+            this.tags = new java.util.ArrayList<Tag>(tags.length);
+        }
+        for (Tag value : tags) {
+            this.tags.add(value);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A key:value pair assigned to a given transcription job.
+     * </p>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained
+     * together.
+     *
+     * @param tags <p>
+     *            A key:value pair assigned to a given transcription job.
+     *            </p>
+     * @return A reference to this updated object so that method calls can be
+     *         chained together.
+     */
+    public TranscriptionJob withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Generate subtitles for your batch transcription job.
+     * </p>
+     *
+     * @return <p>
+     *         Generate subtitles for your batch transcription job.
+     *         </p>
+     */
+    public SubtitlesOutput getSubtitles() {
+        return subtitles;
+    }
+
+    /**
+     * <p>
+     * Generate subtitles for your batch transcription job.
+     * </p>
+     *
+     * @param subtitles <p>
+     *            Generate subtitles for your batch transcription job.
+     *            </p>
+     */
+    public void setSubtitles(SubtitlesOutput subtitles) {
+        this.subtitles = subtitles;
+    }
+
+    /**
+     * <p>
+     * Generate subtitles for your batch transcription job.
+     * </p>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained
+     * together.
+     *
+     * @param subtitles <p>
+     *            Generate subtitles for your batch transcription job.
+     *            </p>
+     * @return A reference to this updated object so that method calls can be
+     *         chained together.
+     */
+    public TranscriptionJob withSubtitles(SubtitlesOutput subtitles) {
+        this.subtitles = subtitles;
+        return this;
+    }
+
+    /**
+     * <p>
+     * Language-specific settings that can be specified when language
+     * identification is enabled for your transcription job. These settings
+     * include <code>VocabularyName</code>, <code>VocabularyFilterName</code>,
+     * and <code>LanguageModelName</code>.
+     * </p>
+     *
+     * @return <p>
+     *         Language-specific settings that can be specified when language
+     *         identification is enabled for your transcription job. These
+     *         settings include <code>VocabularyName</code>,
+     *         <code>VocabularyFilterName</code>, and
+     *         <code>LanguageModelName</code>.
+     *         </p>
+     */
+    public java.util.Map<String, LanguageIdSettings> getLanguageIdSettings() {
+        return languageIdSettings;
+    }
+
+    /**
+     * <p>
+     * Language-specific settings that can be specified when language
+     * identification is enabled for your transcription job. These settings
+     * include <code>VocabularyName</code>, <code>VocabularyFilterName</code>,
+     * and <code>LanguageModelName</code>.
+     * </p>
+     *
+     * @param languageIdSettings <p>
+     *            Language-specific settings that can be specified when language
+     *            identification is enabled for your transcription job. These
+     *            settings include <code>VocabularyName</code>,
+     *            <code>VocabularyFilterName</code>, and
+     *            <code>LanguageModelName</code>.
+     *            </p>
+     */
+    public void setLanguageIdSettings(java.util.Map<String, LanguageIdSettings> languageIdSettings) {
+        this.languageIdSettings = languageIdSettings;
+    }
+
+    /**
+     * <p>
+     * Language-specific settings that can be specified when language
+     * identification is enabled for your transcription job. These settings
+     * include <code>VocabularyName</code>, <code>VocabularyFilterName</code>,
+     * and <code>LanguageModelName</code>.
+     * </p>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained
+     * together.
+     *
+     * @param languageIdSettings <p>
+     *            Language-specific settings that can be specified when language
+     *            identification is enabled for your transcription job. These
+     *            settings include <code>VocabularyName</code>,
+     *            <code>VocabularyFilterName</code>, and
+     *            <code>LanguageModelName</code>.
+     *            </p>
+     * @return A reference to this updated object so that method calls can be
+     *         chained together.
+     */
+    public TranscriptionJob withLanguageIdSettings(
+            java.util.Map<String, LanguageIdSettings> languageIdSettings) {
+        this.languageIdSettings = languageIdSettings;
+        return this;
+    }
+
+    /**
+     * <p>
+     * Language-specific settings that can be specified when language
+     * identification is enabled for your transcription job. These settings
+     * include <code>VocabularyName</code>, <code>VocabularyFilterName</code>,
+     * and <code>LanguageModelName</code>.
+     * </p>
+     * <p>
+     * The method adds a new key-value pair into LanguageIdSettings parameter,
+     * and returns a reference to this object so that method calls can be
+     * chained together.
+     *
+     * @param key The key of the entry to be added into LanguageIdSettings.
+     * @param value The corresponding value of the entry to be added into
+     *            LanguageIdSettings.
+     * @return A reference to this updated object so that method calls can be
+     *         chained together.
+     */
+    public TranscriptionJob addLanguageIdSettingsEntry(String key, LanguageIdSettings value) {
+        if (null == this.languageIdSettings) {
+            this.languageIdSettings = new java.util.HashMap<String, LanguageIdSettings>();
+        }
+        if (this.languageIdSettings.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString()
+                    + ") are provided.");
+        this.languageIdSettings.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into LanguageIdSettings.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained
+     * together.
+     */
+    public TranscriptionJob clearLanguageIdSettingsEntries() {
+        this.languageIdSettings = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1760,7 +2020,13 @@ public class TranscriptionJob implements Serializable {
         if (getLanguageOptions() != null)
             sb.append("LanguageOptions: " + getLanguageOptions() + ",");
         if (getIdentifiedLanguageScore() != null)
-            sb.append("IdentifiedLanguageScore: " + getIdentifiedLanguageScore());
+            sb.append("IdentifiedLanguageScore: " + getIdentifiedLanguageScore() + ",");
+        if (getTags() != null)
+            sb.append("Tags: " + getTags() + ",");
+        if (getSubtitles() != null)
+            sb.append("Subtitles: " + getSubtitles() + ",");
+        if (getLanguageIdSettings() != null)
+            sb.append("LanguageIdSettings: " + getLanguageIdSettings());
         sb.append("}");
         return sb.toString();
     }
@@ -1806,6 +2072,10 @@ public class TranscriptionJob implements Serializable {
                 * hashCode
                 + ((getIdentifiedLanguageScore() == null) ? 0 : getIdentifiedLanguageScore()
                         .hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getSubtitles() == null) ? 0 : getSubtitles().hashCode());
+        hashCode = prime * hashCode
+                + ((getLanguageIdSettings() == null) ? 0 : getLanguageIdSettings().hashCode());
         return hashCode;
     }
 
@@ -1907,6 +2177,20 @@ public class TranscriptionJob implements Serializable {
             return false;
         if (other.getIdentifiedLanguageScore() != null
                 && other.getIdentifiedLanguageScore().equals(this.getIdentifiedLanguageScore()) == false)
+            return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
+        if (other.getSubtitles() == null ^ this.getSubtitles() == null)
+            return false;
+        if (other.getSubtitles() != null
+                && other.getSubtitles().equals(this.getSubtitles()) == false)
+            return false;
+        if (other.getLanguageIdSettings() == null ^ this.getLanguageIdSettings() == null)
+            return false;
+        if (other.getLanguageIdSettings() != null
+                && other.getLanguageIdSettings().equals(this.getLanguageIdSettings()) == false)
             return false;
         return true;
     }

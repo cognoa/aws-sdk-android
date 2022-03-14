@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -26,7 +26,9 @@ import java.util.Map;
 public enum KnownGenderType {
 
     Male("Male"),
-    Female("Female");
+    Female("Female"),
+    Nonbinary("Nonbinary"),
+    Unlisted("Unlisted");
 
     private String value;
 
@@ -44,6 +46,8 @@ public enum KnownGenderType {
         enumMap = new HashMap<String, KnownGenderType>();
         enumMap.put("Male", Male);
         enumMap.put("Female", Female);
+        enumMap.put("Nonbinary", Nonbinary);
+        enumMap.put("Unlisted", Unlisted);
     }
 
     /**

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -28,6 +28,15 @@ import com.amazonaws.AmazonWebServiceRequest;
  * distance, and get directions. A route calculator sources traffic and road
  * network data from your chosen data provider.
  * </p>
+ * <note>
+ * <p>
+ * If your application is tracking or routing assets you use in your business,
+ * such as delivery vehicles or employees, you may only use HERE as your
+ * geolocation provider. See section 82 of the <a
+ * href="http://aws.amazon.com/service-terms">AWS service terms</a> for more
+ * details.
+ * </p>
+ * </note>
  */
 public class CreateRouteCalculatorRequest extends AmazonWebServiceRequest implements Serializable {
     /**
@@ -120,12 +129,8 @@ public class CreateRouteCalculatorRequest extends AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * Specifies the pricing plan for your route calculator resource.
-     * </p>
-     * <p>
-     * For additional details and restrictions on each pricing plan option, see
-     * <a href="https://aws.amazon.com/location/pricing/">Amazon Location
-     * Service pricing</a>.
+     * No longer used. If included, the only allowed value is
+     * <code>RequestBasedUsage</code>.
      * </p>
      * <p>
      * <b>Constraints:</b><br/>
@@ -179,6 +184,11 @@ public class CreateRouteCalculatorRequest extends AmazonWebServiceRequest implem
      * <p>
      * Can use alphanumeric characters (A–Z, a–z, 0–9), and the following
      * characters: + - = . _ : / @.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot use "aws:" as a prefix for a key.
      * </p>
      * </li>
      * </ul>
@@ -709,12 +719,8 @@ public class CreateRouteCalculatorRequest extends AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * Specifies the pricing plan for your route calculator resource.
-     * </p>
-     * <p>
-     * For additional details and restrictions on each pricing plan option, see
-     * <a href="https://aws.amazon.com/location/pricing/">Amazon Location
-     * Service pricing</a>.
+     * No longer used. If included, the only allowed value is
+     * <code>RequestBasedUsage</code>.
      * </p>
      * <p>
      * <b>Constraints:</b><br/>
@@ -722,13 +728,8 @@ public class CreateRouteCalculatorRequest extends AmazonWebServiceRequest implem
      * MobileAssetManagement
      *
      * @return <p>
-     *         Specifies the pricing plan for your route calculator resource.
-     *         </p>
-     *         <p>
-     *         For additional details and restrictions on each pricing plan
-     *         option, see <a
-     *         href="https://aws.amazon.com/location/pricing/">Amazon Location
-     *         Service pricing</a>.
+     *         No longer used. If included, the only allowed value is
+     *         <code>RequestBasedUsage</code>.
      *         </p>
      * @see PricingPlan
      */
@@ -738,12 +739,8 @@ public class CreateRouteCalculatorRequest extends AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * Specifies the pricing plan for your route calculator resource.
-     * </p>
-     * <p>
-     * For additional details and restrictions on each pricing plan option, see
-     * <a href="https://aws.amazon.com/location/pricing/">Amazon Location
-     * Service pricing</a>.
+     * No longer used. If included, the only allowed value is
+     * <code>RequestBasedUsage</code>.
      * </p>
      * <p>
      * <b>Constraints:</b><br/>
@@ -751,13 +748,8 @@ public class CreateRouteCalculatorRequest extends AmazonWebServiceRequest implem
      * MobileAssetManagement
      *
      * @param pricingPlan <p>
-     *            Specifies the pricing plan for your route calculator resource.
-     *            </p>
-     *            <p>
-     *            For additional details and restrictions on each pricing plan
-     *            option, see <a
-     *            href="https://aws.amazon.com/location/pricing/">Amazon
-     *            Location Service pricing</a>.
+     *            No longer used. If included, the only allowed value is
+     *            <code>RequestBasedUsage</code>.
      *            </p>
      * @see PricingPlan
      */
@@ -767,12 +759,8 @@ public class CreateRouteCalculatorRequest extends AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * Specifies the pricing plan for your route calculator resource.
-     * </p>
-     * <p>
-     * For additional details and restrictions on each pricing plan option, see
-     * <a href="https://aws.amazon.com/location/pricing/">Amazon Location
-     * Service pricing</a>.
+     * No longer used. If included, the only allowed value is
+     * <code>RequestBasedUsage</code>.
      * </p>
      * <p>
      * Returns a reference to this object so that method calls can be chained
@@ -783,13 +771,8 @@ public class CreateRouteCalculatorRequest extends AmazonWebServiceRequest implem
      * MobileAssetManagement
      *
      * @param pricingPlan <p>
-     *            Specifies the pricing plan for your route calculator resource.
-     *            </p>
-     *            <p>
-     *            For additional details and restrictions on each pricing plan
-     *            option, see <a
-     *            href="https://aws.amazon.com/location/pricing/">Amazon
-     *            Location Service pricing</a>.
+     *            No longer used. If included, the only allowed value is
+     *            <code>RequestBasedUsage</code>.
      *            </p>
      * @return A reference to this updated object so that method calls can be
      *         chained together.
@@ -802,12 +785,8 @@ public class CreateRouteCalculatorRequest extends AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * Specifies the pricing plan for your route calculator resource.
-     * </p>
-     * <p>
-     * For additional details and restrictions on each pricing plan option, see
-     * <a href="https://aws.amazon.com/location/pricing/">Amazon Location
-     * Service pricing</a>.
+     * No longer used. If included, the only allowed value is
+     * <code>RequestBasedUsage</code>.
      * </p>
      * <p>
      * <b>Constraints:</b><br/>
@@ -815,13 +794,8 @@ public class CreateRouteCalculatorRequest extends AmazonWebServiceRequest implem
      * MobileAssetManagement
      *
      * @param pricingPlan <p>
-     *            Specifies the pricing plan for your route calculator resource.
-     *            </p>
-     *            <p>
-     *            For additional details and restrictions on each pricing plan
-     *            option, see <a
-     *            href="https://aws.amazon.com/location/pricing/">Amazon
-     *            Location Service pricing</a>.
+     *            No longer used. If included, the only allowed value is
+     *            <code>RequestBasedUsage</code>.
      *            </p>
      * @see PricingPlan
      */
@@ -831,12 +805,8 @@ public class CreateRouteCalculatorRequest extends AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * Specifies the pricing plan for your route calculator resource.
-     * </p>
-     * <p>
-     * For additional details and restrictions on each pricing plan option, see
-     * <a href="https://aws.amazon.com/location/pricing/">Amazon Location
-     * Service pricing</a>.
+     * No longer used. If included, the only allowed value is
+     * <code>RequestBasedUsage</code>.
      * </p>
      * <p>
      * Returns a reference to this object so that method calls can be chained
@@ -847,13 +817,8 @@ public class CreateRouteCalculatorRequest extends AmazonWebServiceRequest implem
      * MobileAssetManagement
      *
      * @param pricingPlan <p>
-     *            Specifies the pricing plan for your route calculator resource.
-     *            </p>
-     *            <p>
-     *            For additional details and restrictions on each pricing plan
-     *            option, see <a
-     *            href="https://aws.amazon.com/location/pricing/">Amazon
-     *            Location Service pricing</a>.
+     *            No longer used. If included, the only allowed value is
+     *            <code>RequestBasedUsage</code>.
      *            </p>
      * @return A reference to this updated object so that method calls can be
      *         chained together.
@@ -911,6 +876,11 @@ public class CreateRouteCalculatorRequest extends AmazonWebServiceRequest implem
      * characters: + - = . _ : / @.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Cannot use "aws:" as a prefix for a key.
+     * </p>
+     * </li>
      * </ul>
      *
      * @return <p>
@@ -957,6 +927,11 @@ public class CreateRouteCalculatorRequest extends AmazonWebServiceRequest implem
      *         <p>
      *         Can use alphanumeric characters (A–Z, a–z, 0–9), and the
      *         following characters: + - = . _ : / @.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot use "aws:" as a prefix for a key.
      *         </p>
      *         </li>
      *         </ul>
@@ -1012,6 +987,11 @@ public class CreateRouteCalculatorRequest extends AmazonWebServiceRequest implem
      * characters: + - = . _ : / @.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Cannot use "aws:" as a prefix for a key.
+     * </p>
+     * </li>
      * </ul>
      *
      * @param tags <p>
@@ -1058,6 +1038,11 @@ public class CreateRouteCalculatorRequest extends AmazonWebServiceRequest implem
      *            <p>
      *            Can use alphanumeric characters (A–Z, a–z, 0–9), and the
      *            following characters: + - = . _ : / @.
+     *            </p>
+     *            </li>
+     *            <li>
+     *            <p>
+     *            Cannot use "aws:" as a prefix for a key.
      *            </p>
      *            </li>
      *            </ul>
@@ -1113,6 +1098,11 @@ public class CreateRouteCalculatorRequest extends AmazonWebServiceRequest implem
      * characters: + - = . _ : / @.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Cannot use "aws:" as a prefix for a key.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained
@@ -1162,6 +1152,11 @@ public class CreateRouteCalculatorRequest extends AmazonWebServiceRequest implem
      *            <p>
      *            Can use alphanumeric characters (A–Z, a–z, 0–9), and the
      *            following characters: + - = . _ : / @.
+     *            </p>
+     *            </li>
+     *            <li>
+     *            <p>
+     *            Cannot use "aws:" as a prefix for a key.
      *            </p>
      *            </li>
      *            </ul>
@@ -1218,6 +1213,11 @@ public class CreateRouteCalculatorRequest extends AmazonWebServiceRequest implem
      * <p>
      * Can use alphanumeric characters (A–Z, a–z, 0–9), and the following
      * characters: + - = . _ : / @.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot use "aws:" as a prefix for a key.
      * </p>
      * </li>
      * </ul>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -103,6 +103,17 @@ class MedicalTranscriptionJobJsonMarshaller {
             String type = medicalTranscriptionJob.getType();
             jsonWriter.name("Type");
             jsonWriter.value(type);
+        }
+        if (medicalTranscriptionJob.getTags() != null) {
+            java.util.List<Tag> tags = medicalTranscriptionJob.getTags();
+            jsonWriter.name("Tags");
+            jsonWriter.beginArray();
+            for (Tag tagsItem : tags) {
+                if (tagsItem != null) {
+                    TagJsonMarshaller.getInstance().marshall(tagsItem, jsonWriter);
+                }
+            }
+            jsonWriter.endArray();
         }
         jsonWriter.endObject();
     }

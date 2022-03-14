@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -31,6 +31,11 @@ class SearchPlaceIndexForPositionSummaryJsonMarshaller {
             String dataSource = searchPlaceIndexForPositionSummary.getDataSource();
             jsonWriter.name("DataSource");
             jsonWriter.value(dataSource);
+        }
+        if (searchPlaceIndexForPositionSummary.getLanguage() != null) {
+            String language = searchPlaceIndexForPositionSummary.getLanguage();
+            jsonWriter.name("Language");
+            jsonWriter.value(language);
         }
         if (searchPlaceIndexForPositionSummary.getMaxResults() != null) {
             Integer maxResults = searchPlaceIndexForPositionSummary.getMaxResults();

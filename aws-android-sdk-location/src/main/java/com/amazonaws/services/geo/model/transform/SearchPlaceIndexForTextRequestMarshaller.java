@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -99,6 +99,11 @@ public class SearchPlaceIndexForTextRequestMarshaller implements
                     }
                 }
                 jsonWriter.endArray();
+            }
+            if (searchPlaceIndexForTextRequest.getLanguage() != null) {
+                String language = searchPlaceIndexForTextRequest.getLanguage();
+                jsonWriter.name("Language");
+                jsonWriter.value(language);
             }
             if (searchPlaceIndexForTextRequest.getMaxResults() != null) {
                 Integer maxResults = searchPlaceIndexForTextRequest.getMaxResults();

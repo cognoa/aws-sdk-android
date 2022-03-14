@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -28,7 +28,9 @@ public class SearchPlaceIndexForPositionResult implements Serializable {
 
     /**
      * <p>
-     * Contains a summary of the request.
+     * Contains a summary of the request. Echoes the input values for
+     * <code>Position</code>, <code>Language</code>, <code>MaxResults</code>,
+     * and the <code>DataSource</code> of the place index.
      * </p>
      */
     private SearchPlaceIndexForPositionSummary summary;
@@ -121,11 +123,16 @@ public class SearchPlaceIndexForPositionResult implements Serializable {
 
     /**
      * <p>
-     * Contains a summary of the request.
+     * Contains a summary of the request. Echoes the input values for
+     * <code>Position</code>, <code>Language</code>, <code>MaxResults</code>,
+     * and the <code>DataSource</code> of the place index.
      * </p>
      *
      * @return <p>
-     *         Contains a summary of the request.
+     *         Contains a summary of the request. Echoes the input values for
+     *         <code>Position</code>, <code>Language</code>,
+     *         <code>MaxResults</code>, and the <code>DataSource</code> of the
+     *         place index.
      *         </p>
      */
     public SearchPlaceIndexForPositionSummary getSummary() {
@@ -134,11 +141,16 @@ public class SearchPlaceIndexForPositionResult implements Serializable {
 
     /**
      * <p>
-     * Contains a summary of the request.
+     * Contains a summary of the request. Echoes the input values for
+     * <code>Position</code>, <code>Language</code>, <code>MaxResults</code>,
+     * and the <code>DataSource</code> of the place index.
      * </p>
      *
      * @param summary <p>
-     *            Contains a summary of the request.
+     *            Contains a summary of the request. Echoes the input values for
+     *            <code>Position</code>, <code>Language</code>,
+     *            <code>MaxResults</code>, and the <code>DataSource</code> of
+     *            the place index.
      *            </p>
      */
     public void setSummary(SearchPlaceIndexForPositionSummary summary) {
@@ -147,14 +159,19 @@ public class SearchPlaceIndexForPositionResult implements Serializable {
 
     /**
      * <p>
-     * Contains a summary of the request.
+     * Contains a summary of the request. Echoes the input values for
+     * <code>Position</code>, <code>Language</code>, <code>MaxResults</code>,
+     * and the <code>DataSource</code> of the place index.
      * </p>
      * <p>
      * Returns a reference to this object so that method calls can be chained
      * together.
      *
      * @param summary <p>
-     *            Contains a summary of the request.
+     *            Contains a summary of the request. Echoes the input values for
+     *            <code>Position</code>, <code>Language</code>,
+     *            <code>MaxResults</code>, and the <code>DataSource</code> of
+     *            the place index.
      *            </p>
      * @return A reference to this updated object so that method calls can be
      *         chained together.

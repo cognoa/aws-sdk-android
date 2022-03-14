@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -51,7 +51,8 @@ public class CreateVocabularyFilterRequest extends AmazonWebServiceRequest imple
      * <b>Allowed Values: </b>af-ZA, ar-AE, ar-SA, cy-GB, da-DK, de-CH, de-DE,
      * en-AB, en-AU, en-GB, en-IE, en-IN, en-US, en-WL, es-ES, es-US, fa-IR,
      * fr-CA, fr-FR, ga-IE, gd-GB, he-IL, hi-IN, id-ID, it-IT, ja-JP, ko-KR,
-     * ms-MY, nl-NL, pt-BR, pt-PT, ru-RU, ta-IN, te-IN, tr-TR, zh-CN
+     * ms-MY, nl-NL, pt-BR, pt-PT, ru-RU, ta-IN, te-IN, tr-TR, zh-CN, zh-TW,
+     * th-TH, en-ZA, en-NZ
      */
     private String languageCode;
 
@@ -59,8 +60,8 @@ public class CreateVocabularyFilterRequest extends AmazonWebServiceRequest imple
      * <p>
      * The words to use in the vocabulary filter. Only use characters from the
      * character set defined for custom vocabularies. For a list of character
-     * sets, see <a href=
-     * "https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary.html#charsets"
+     * sets, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html"
      * >Character Sets for Custom Vocabularies</a>.
      * </p>
      * <p>
@@ -74,8 +75,8 @@ public class CreateVocabularyFilterRequest extends AmazonWebServiceRequest imple
      * <p>
      * The Amazon S3 location of a text file used as input to create the
      * vocabulary filter. Only use characters from the character set defined for
-     * custom vocabularies. For a list of character sets, see <a href=
-     * "https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary.html#charsets"
+     * custom vocabularies. For a list of character sets, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html"
      * >Character Sets for Custom Vocabularies</a>.
      * </p>
      * <p>
@@ -92,6 +93,15 @@ public class CreateVocabularyFilterRequest extends AmazonWebServiceRequest imple
      * <b>Pattern: </b>(s3://|http(s*)://).+<br/>
      */
     private String vocabularyFilterFileUri;
+
+    /**
+     * <p>
+     * Adds one or more tags, each in the form of a key:value pair, to a new
+     * Amazon Transcribe vocabulary filter at the time you create this new
+     * vocabulary filter.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -179,7 +189,8 @@ public class CreateVocabularyFilterRequest extends AmazonWebServiceRequest imple
      * <b>Allowed Values: </b>af-ZA, ar-AE, ar-SA, cy-GB, da-DK, de-CH, de-DE,
      * en-AB, en-AU, en-GB, en-IE, en-IN, en-US, en-WL, es-ES, es-US, fa-IR,
      * fr-CA, fr-FR, ga-IE, gd-GB, he-IL, hi-IN, id-ID, it-IT, ja-JP, ko-KR,
-     * ms-MY, nl-NL, pt-BR, pt-PT, ru-RU, ta-IN, te-IN, tr-TR, zh-CN
+     * ms-MY, nl-NL, pt-BR, pt-PT, ru-RU, ta-IN, te-IN, tr-TR, zh-CN, zh-TW,
+     * th-TH, en-ZA, en-NZ
      *
      * @return <p>
      *         The language code of the words in the vocabulary filter. All
@@ -204,7 +215,8 @@ public class CreateVocabularyFilterRequest extends AmazonWebServiceRequest imple
      * <b>Allowed Values: </b>af-ZA, ar-AE, ar-SA, cy-GB, da-DK, de-CH, de-DE,
      * en-AB, en-AU, en-GB, en-IE, en-IN, en-US, en-WL, es-ES, es-US, fa-IR,
      * fr-CA, fr-FR, ga-IE, gd-GB, he-IL, hi-IN, id-ID, it-IT, ja-JP, ko-KR,
-     * ms-MY, nl-NL, pt-BR, pt-PT, ru-RU, ta-IN, te-IN, tr-TR, zh-CN
+     * ms-MY, nl-NL, pt-BR, pt-PT, ru-RU, ta-IN, te-IN, tr-TR, zh-CN, zh-TW,
+     * th-TH, en-ZA, en-NZ
      *
      * @param languageCode <p>
      *            The language code of the words in the vocabulary filter. All
@@ -232,7 +244,8 @@ public class CreateVocabularyFilterRequest extends AmazonWebServiceRequest imple
      * <b>Allowed Values: </b>af-ZA, ar-AE, ar-SA, cy-GB, da-DK, de-CH, de-DE,
      * en-AB, en-AU, en-GB, en-IE, en-IN, en-US, en-WL, es-ES, es-US, fa-IR,
      * fr-CA, fr-FR, ga-IE, gd-GB, he-IL, hi-IN, id-ID, it-IT, ja-JP, ko-KR,
-     * ms-MY, nl-NL, pt-BR, pt-PT, ru-RU, ta-IN, te-IN, tr-TR, zh-CN
+     * ms-MY, nl-NL, pt-BR, pt-PT, ru-RU, ta-IN, te-IN, tr-TR, zh-CN, zh-TW,
+     * th-TH, en-ZA, en-NZ
      *
      * @param languageCode <p>
      *            The language code of the words in the vocabulary filter. All
@@ -260,7 +273,8 @@ public class CreateVocabularyFilterRequest extends AmazonWebServiceRequest imple
      * <b>Allowed Values: </b>af-ZA, ar-AE, ar-SA, cy-GB, da-DK, de-CH, de-DE,
      * en-AB, en-AU, en-GB, en-IE, en-IN, en-US, en-WL, es-ES, es-US, fa-IR,
      * fr-CA, fr-FR, ga-IE, gd-GB, he-IL, hi-IN, id-ID, it-IT, ja-JP, ko-KR,
-     * ms-MY, nl-NL, pt-BR, pt-PT, ru-RU, ta-IN, te-IN, tr-TR, zh-CN
+     * ms-MY, nl-NL, pt-BR, pt-PT, ru-RU, ta-IN, te-IN, tr-TR, zh-CN, zh-TW,
+     * th-TH, en-ZA, en-NZ
      *
      * @param languageCode <p>
      *            The language code of the words in the vocabulary filter. All
@@ -288,7 +302,8 @@ public class CreateVocabularyFilterRequest extends AmazonWebServiceRequest imple
      * <b>Allowed Values: </b>af-ZA, ar-AE, ar-SA, cy-GB, da-DK, de-CH, de-DE,
      * en-AB, en-AU, en-GB, en-IE, en-IN, en-US, en-WL, es-ES, es-US, fa-IR,
      * fr-CA, fr-FR, ga-IE, gd-GB, he-IL, hi-IN, id-ID, it-IT, ja-JP, ko-KR,
-     * ms-MY, nl-NL, pt-BR, pt-PT, ru-RU, ta-IN, te-IN, tr-TR, zh-CN
+     * ms-MY, nl-NL, pt-BR, pt-PT, ru-RU, ta-IN, te-IN, tr-TR, zh-CN, zh-TW,
+     * th-TH, en-ZA, en-NZ
      *
      * @param languageCode <p>
      *            The language code of the words in the vocabulary filter. All
@@ -309,8 +324,8 @@ public class CreateVocabularyFilterRequest extends AmazonWebServiceRequest imple
      * <p>
      * The words to use in the vocabulary filter. Only use characters from the
      * character set defined for custom vocabularies. For a list of character
-     * sets, see <a href=
-     * "https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary.html#charsets"
+     * sets, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html"
      * >Character Sets for Custom Vocabularies</a>.
      * </p>
      * <p>
@@ -322,7 +337,7 @@ public class CreateVocabularyFilterRequest extends AmazonWebServiceRequest imple
      *         The words to use in the vocabulary filter. Only use characters
      *         from the character set defined for custom vocabularies. For a
      *         list of character sets, see <a href=
-     *         "https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary.html#charsets"
+     *         "https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html"
      *         >Character Sets for Custom Vocabularies</a>.
      *         </p>
      *         <p>
@@ -339,8 +354,8 @@ public class CreateVocabularyFilterRequest extends AmazonWebServiceRequest imple
      * <p>
      * The words to use in the vocabulary filter. Only use characters from the
      * character set defined for custom vocabularies. For a list of character
-     * sets, see <a href=
-     * "https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary.html#charsets"
+     * sets, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html"
      * >Character Sets for Custom Vocabularies</a>.
      * </p>
      * <p>
@@ -352,7 +367,7 @@ public class CreateVocabularyFilterRequest extends AmazonWebServiceRequest imple
      *            The words to use in the vocabulary filter. Only use characters
      *            from the character set defined for custom vocabularies. For a
      *            list of character sets, see <a href=
-     *            "https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary.html#charsets"
+     *            "https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html"
      *            >Character Sets for Custom Vocabularies</a>.
      *            </p>
      *            <p>
@@ -374,8 +389,8 @@ public class CreateVocabularyFilterRequest extends AmazonWebServiceRequest imple
      * <p>
      * The words to use in the vocabulary filter. Only use characters from the
      * character set defined for custom vocabularies. For a list of character
-     * sets, see <a href=
-     * "https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary.html#charsets"
+     * sets, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html"
      * >Character Sets for Custom Vocabularies</a>.
      * </p>
      * <p>
@@ -390,7 +405,7 @@ public class CreateVocabularyFilterRequest extends AmazonWebServiceRequest imple
      *            The words to use in the vocabulary filter. Only use characters
      *            from the character set defined for custom vocabularies. For a
      *            list of character sets, see <a href=
-     *            "https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary.html#charsets"
+     *            "https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html"
      *            >Character Sets for Custom Vocabularies</a>.
      *            </p>
      *            <p>
@@ -415,8 +430,8 @@ public class CreateVocabularyFilterRequest extends AmazonWebServiceRequest imple
      * <p>
      * The words to use in the vocabulary filter. Only use characters from the
      * character set defined for custom vocabularies. For a list of character
-     * sets, see <a href=
-     * "https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary.html#charsets"
+     * sets, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html"
      * >Character Sets for Custom Vocabularies</a>.
      * </p>
      * <p>
@@ -431,7 +446,7 @@ public class CreateVocabularyFilterRequest extends AmazonWebServiceRequest imple
      *            The words to use in the vocabulary filter. Only use characters
      *            from the character set defined for custom vocabularies. For a
      *            list of character sets, see <a href=
-     *            "https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary.html#charsets"
+     *            "https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html"
      *            >Character Sets for Custom Vocabularies</a>.
      *            </p>
      *            <p>
@@ -451,8 +466,8 @@ public class CreateVocabularyFilterRequest extends AmazonWebServiceRequest imple
      * <p>
      * The Amazon S3 location of a text file used as input to create the
      * vocabulary filter. Only use characters from the character set defined for
-     * custom vocabularies. For a list of character sets, see <a href=
-     * "https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary.html#charsets"
+     * custom vocabularies. For a list of character sets, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html"
      * >Character Sets for Custom Vocabularies</a>.
      * </p>
      * <p>
@@ -473,7 +488,7 @@ public class CreateVocabularyFilterRequest extends AmazonWebServiceRequest imple
      *         vocabulary filter. Only use characters from the character set
      *         defined for custom vocabularies. For a list of character sets,
      *         see <a href=
-     *         "https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary.html#charsets"
+     *         "https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html"
      *         >Character Sets for Custom Vocabularies</a>.
      *         </p>
      *         <p>
@@ -493,8 +508,8 @@ public class CreateVocabularyFilterRequest extends AmazonWebServiceRequest imple
      * <p>
      * The Amazon S3 location of a text file used as input to create the
      * vocabulary filter. Only use characters from the character set defined for
-     * custom vocabularies. For a list of character sets, see <a href=
-     * "https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary.html#charsets"
+     * custom vocabularies. For a list of character sets, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html"
      * >Character Sets for Custom Vocabularies</a>.
      * </p>
      * <p>
@@ -515,7 +530,7 @@ public class CreateVocabularyFilterRequest extends AmazonWebServiceRequest imple
      *            the vocabulary filter. Only use characters from the character
      *            set defined for custom vocabularies. For a list of character
      *            sets, see <a href=
-     *            "https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary.html#charsets"
+     *            "https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html"
      *            >Character Sets for Custom Vocabularies</a>.
      *            </p>
      *            <p>
@@ -536,8 +551,8 @@ public class CreateVocabularyFilterRequest extends AmazonWebServiceRequest imple
      * <p>
      * The Amazon S3 location of a text file used as input to create the
      * vocabulary filter. Only use characters from the character set defined for
-     * custom vocabularies. For a list of character sets, see <a href=
-     * "https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary.html#charsets"
+     * custom vocabularies. For a list of character sets, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html"
      * >Character Sets for Custom Vocabularies</a>.
      * </p>
      * <p>
@@ -561,7 +576,7 @@ public class CreateVocabularyFilterRequest extends AmazonWebServiceRequest imple
      *            the vocabulary filter. Only use characters from the character
      *            set defined for custom vocabularies. For a list of character
      *            sets, see <a href=
-     *            "https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary.html#charsets"
+     *            "https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html"
      *            >Character Sets for Custom Vocabularies</a>.
      *            </p>
      *            <p>
@@ -578,6 +593,96 @@ public class CreateVocabularyFilterRequest extends AmazonWebServiceRequest imple
      */
     public CreateVocabularyFilterRequest withVocabularyFilterFileUri(String vocabularyFilterFileUri) {
         this.vocabularyFilterFileUri = vocabularyFilterFileUri;
+        return this;
+    }
+
+    /**
+     * <p>
+     * Adds one or more tags, each in the form of a key:value pair, to a new
+     * Amazon Transcribe vocabulary filter at the time you create this new
+     * vocabulary filter.
+     * </p>
+     *
+     * @return <p>
+     *         Adds one or more tags, each in the form of a key:value pair, to a
+     *         new Amazon Transcribe vocabulary filter at the time you create
+     *         this new vocabulary filter.
+     *         </p>
+     */
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * Adds one or more tags, each in the form of a key:value pair, to a new
+     * Amazon Transcribe vocabulary filter at the time you create this new
+     * vocabulary filter.
+     * </p>
+     *
+     * @param tags <p>
+     *            Adds one or more tags, each in the form of a key:value pair,
+     *            to a new Amazon Transcribe vocabulary filter at the time you
+     *            create this new vocabulary filter.
+     *            </p>
+     */
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * Adds one or more tags, each in the form of a key:value pair, to a new
+     * Amazon Transcribe vocabulary filter at the time you create this new
+     * vocabulary filter.
+     * </p>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained
+     * together.
+     *
+     * @param tags <p>
+     *            Adds one or more tags, each in the form of a key:value pair,
+     *            to a new Amazon Transcribe vocabulary filter at the time you
+     *            create this new vocabulary filter.
+     *            </p>
+     * @return A reference to this updated object so that method calls can be
+     *         chained together.
+     */
+    public CreateVocabularyFilterRequest withTags(Tag... tags) {
+        if (getTags() == null) {
+            this.tags = new java.util.ArrayList<Tag>(tags.length);
+        }
+        for (Tag value : tags) {
+            this.tags.add(value);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Adds one or more tags, each in the form of a key:value pair, to a new
+     * Amazon Transcribe vocabulary filter at the time you create this new
+     * vocabulary filter.
+     * </p>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained
+     * together.
+     *
+     * @param tags <p>
+     *            Adds one or more tags, each in the form of a key:value pair,
+     *            to a new Amazon Transcribe vocabulary filter at the time you
+     *            create this new vocabulary filter.
+     *            </p>
+     * @return A reference to this updated object so that method calls can be
+     *         chained together.
+     */
+    public CreateVocabularyFilterRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
         return this;
     }
 
@@ -599,7 +704,9 @@ public class CreateVocabularyFilterRequest extends AmazonWebServiceRequest imple
         if (getWords() != null)
             sb.append("Words: " + getWords() + ",");
         if (getVocabularyFilterFileUri() != null)
-            sb.append("VocabularyFilterFileUri: " + getVocabularyFilterFileUri());
+            sb.append("VocabularyFilterFileUri: " + getVocabularyFilterFileUri() + ",");
+        if (getTags() != null)
+            sb.append("Tags: " + getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -618,6 +725,7 @@ public class CreateVocabularyFilterRequest extends AmazonWebServiceRequest imple
                 * hashCode
                 + ((getVocabularyFilterFileUri() == null) ? 0 : getVocabularyFilterFileUri()
                         .hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 
@@ -650,6 +758,10 @@ public class CreateVocabularyFilterRequest extends AmazonWebServiceRequest imple
             return false;
         if (other.getVocabularyFilterFileUri() != null
                 && other.getVocabularyFilterFileUri().equals(this.getVocabularyFilterFileUri()) == false)
+            return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         return true;
     }

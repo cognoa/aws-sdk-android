@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -27,8 +27,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  * <p>
  * <code>RecognizeCelebrities</code> returns the 64 largest faces in the image.
- * It lists recognized celebrities in the <code>CelebrityFaces</code> array and
- * unrecognized faces in the <code>UnrecognizedFaces</code> array.
+ * It lists the recognized celebrities in the <code>CelebrityFaces</code> array
+ * and any unrecognized faces in the <code>UnrecognizedFaces</code> array.
  * <code>RecognizeCelebrities</code> doesn't return celebrities whose faces
  * aren't among the largest 64 faces in the image.
  * </p>

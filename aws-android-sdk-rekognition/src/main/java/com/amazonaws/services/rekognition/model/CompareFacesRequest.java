@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -50,7 +50,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * In response, the operation returns an array of face matches ordered by
  * similarity score in descending order. For each face match, the response
  * provides a bounding box of the face, facial landmarks, pose details (pitch,
- * role, and yaw), quality (brightness and sharpness), and confidence value
+ * roll, and yaw), quality (brightness and sharpness), and confidence value
  * (indicating the level of confidence that the bounding box contains a face).
  * The response also provides a similarity score, which indicates how closely
  * the faces match.
