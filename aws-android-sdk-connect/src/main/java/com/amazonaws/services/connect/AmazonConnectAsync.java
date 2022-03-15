@@ -7525,65 +7525,6 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
-     * Updates the hours of operation.
-     * </p>
-     * 
-     * @param updateHoursOfOperationRequest
-     * @return A Java Future object containing the response from the
-     *         UpdateHoursOfOperation service method, as returned by Amazon
-     *         Connect.
-     * @throws DuplicateResourceException
-     * @throws InvalidRequestException
-     * @throws InvalidParameterException
-     * @throws ResourceNotFoundException
-     * @throws ThrottlingException
-     * @throws InternalServiceException
-     * @throws AmazonClientException If any internal errors are encountered
-     *             inside the client while attempting to make the request or
-     *             handle the response. For example if a network connection is
-     *             not available.
-     * @throws AmazonServiceException If an error response is returned by Amazon
-     *             Connect indicating either a problem with the data in the
-     *             request, or a server side issue.
-     */
-    Future<Void> updateHoursOfOperationAsync(
-            UpdateHoursOfOperationRequest updateHoursOfOperationRequest)
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Updates the hours of operation.
-     * </p>
-     * 
-     * @param updateHoursOfOperationRequest
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *            life-cycle of the request. Users could provide the
-     *            implementation of the four callback methods in this interface
-     *            to process the operation result or handle the exception.
-     * @return A Java Future object containing the response from the
-     *         UpdateHoursOfOperation service method, as returned by Amazon
-     *         Connect.
-     * @throws DuplicateResourceException
-     * @throws InvalidRequestException
-     * @throws InvalidParameterException
-     * @throws ResourceNotFoundException
-     * @throws ThrottlingException
-     * @throws InternalServiceException
-     * @throws AmazonClientException If any internal errors are encountered
-     *             inside the client while attempting to make the request or
-     *             handle the response. For example if a network connection is
-     *             not available.
-     * @throws AmazonServiceException If an error response is returned by Amazon
-     *             Connect indicating either a problem with the data in the
-     *             request, or a server side issue.
-     */
-    Future<Void> updateHoursOfOperationAsync(
-            UpdateHoursOfOperationRequest updateHoursOfOperationRequest,
-            AsyncHandler<UpdateHoursOfOperationRequest, Void> asyncHandler)
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
      * This API is in preview release for Amazon Connect and is subject to
      * change.
      * </p>

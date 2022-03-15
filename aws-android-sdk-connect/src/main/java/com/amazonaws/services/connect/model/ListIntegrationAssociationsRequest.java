@@ -39,15 +39,6 @@ public class ListIntegrationAssociationsRequest extends AmazonWebServiceRequest 
     private String instanceId;
 
     /**
-     * <p/>
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>EVENT, VOICE_ID, PINPOINT_APP, WISDOM_ASSISTANT,
-     * WISDOM_KNOWLEDGE_BASE
-     */
-    private String integrationType;
-
-    /**
      * <p>
      * The integration type.
      * </p>
@@ -134,88 +125,6 @@ public class ListIntegrationAssociationsRequest extends AmazonWebServiceRequest 
      */
     public ListIntegrationAssociationsRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
-        return this;
-    }
-
-    /**
-     * <p/>
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>EVENT, VOICE_ID, PINPOINT_APP, WISDOM_ASSISTANT,
-     * WISDOM_KNOWLEDGE_BASE
-     *
-     * @return <p/>
-     * @see IntegrationType
-     */
-    public String getIntegrationType() {
-        return integrationType;
-    }
-
-    /**
-     * <p/>
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>EVENT, VOICE_ID, PINPOINT_APP, WISDOM_ASSISTANT,
-     * WISDOM_KNOWLEDGE_BASE
-     *
-     * @param integrationType <p/>
-     * @see IntegrationType
-     */
-    public void setIntegrationType(String integrationType) {
-        this.integrationType = integrationType;
-    }
-
-    /**
-     * <p/>
-     * <p>
-     * Returns a reference to this object so that method calls can be chained
-     * together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>EVENT, VOICE_ID, PINPOINT_APP, WISDOM_ASSISTANT,
-     * WISDOM_KNOWLEDGE_BASE
-     *
-     * @param integrationType <p/>
-     * @return A reference to this updated object so that method calls can be
-     *         chained together.
-     * @see IntegrationType
-     */
-    public ListIntegrationAssociationsRequest withIntegrationType(String integrationType) {
-        this.integrationType = integrationType;
-        return this;
-    }
-
-    /**
-     * <p/>
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>EVENT, VOICE_ID, PINPOINT_APP, WISDOM_ASSISTANT,
-     * WISDOM_KNOWLEDGE_BASE
-     *
-     * @param integrationType <p/>
-     * @see IntegrationType
-     */
-    public void setIntegrationType(IntegrationType integrationType) {
-        this.integrationType = integrationType.toString();
-    }
-
-    /**
-     * <p/>
-     * <p>
-     * Returns a reference to this object so that method calls can be chained
-     * together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>EVENT, VOICE_ID, PINPOINT_APP, WISDOM_ASSISTANT,
-     * WISDOM_KNOWLEDGE_BASE
-     *
-     * @param integrationType <p/>
-     * @return A reference to this updated object so that method calls can be
-     *         chained together.
-     * @see IntegrationType
-     */
-    public ListIntegrationAssociationsRequest withIntegrationType(IntegrationType integrationType) {
-        this.integrationType = integrationType.toString();
         return this;
     }
 
