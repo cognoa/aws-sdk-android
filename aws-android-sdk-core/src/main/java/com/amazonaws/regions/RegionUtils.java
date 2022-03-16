@@ -32,6 +32,13 @@ import java.util.List;
 
 /**
  * Utilities for working with regions.
+ *
+ * Cognoa Mock Implementation Fork History:
+ * - 2/14/20: Original fork from AWS SDK 2.16.8. Portions not used by Cognoa have been removed. All others are stubbed. Uses Cognoa's Logging Module.
+ * - 10/13/20: Compared with AWS SDK 2.19.0 and found nothing to modify.
+ * - 7/2/21: Compared with AWS SDK 2.26.0 and found nothing to modify.
+ * - 11/2/21: Compared with AWS SDK 2.35.0 and restored Amazon's logging module, but commented out.
+ * - 3/15/22: Updated to AWS SDK 2.42.0 + 1 and merged back into main core module.
  */
 public class RegionUtils {
 

@@ -31,6 +31,7 @@ package com.amazonaws.auth;
  * - 10/13/20: Compared with AWS SDK 2.19.0 and found no differences.
  * - 7/2/21: Compared with AWS SDK 2.26.0 and found no differences.
  * - 11/1/21: Compared with AWS SDK 2.35.0 and found no differences.
+ * - 3/15/22: Deprecated and merged with main core module.
  */
 public class BasicAWSCredentials {
 
