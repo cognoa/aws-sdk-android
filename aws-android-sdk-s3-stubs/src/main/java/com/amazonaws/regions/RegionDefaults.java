@@ -29,6 +29,7 @@ import java.util.Map;
  * -- https://github.com/aws-amplify/aws-sdk-android/commit/be4970201b6fe26dcd988b954b40984980072b8b#diff-58d6fb1be5e9b034c4e711740d57e2775a9cd2ab37edf07bd59b04c1d6f27a01
  * - 7/2/21: Compared with AWS SDK 2.26.0 and took the new STS region updates.
  * - 11/2/21: Compared with AWS SDK 2.35.0 and found no changes.
+ * - 3/15/22: Deprecated and merged with main core module.
  */
 class RegionDefaults {
     public static List<Region> getRegions() {

@@ -31,6 +31,7 @@ import com.amazonaws.retry.RetryPolicy;
  * - 6/18/21: Restored 3 getters for Kotlin compiler to map the properties to getters/setters.
  * - 7/7/21: Compared with AWS SDK 2.26.0 and just updated some usage notes.
  * - 11/3/21: Compared with AWS SDK 2.35.0 and just updated some usage notes.
+ * - 3/15/22: Deprecated and merged with main core module.
  */
 public class ClientConfiguration {
 

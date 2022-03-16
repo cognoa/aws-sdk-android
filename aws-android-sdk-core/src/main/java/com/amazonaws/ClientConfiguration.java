@@ -26,6 +26,14 @@ import javax.net.ssl.TrustManager;
 /**
  * Client configuration options such as proxy settings, user agent string, max
  * retry attempts, etc.
+ *
+ * Cognoa Mock Implementation Fork History:
+ * - 2/14/20: Original fork from AWS SDK 2.16.8. Portions not used by Cognoa have been removed. All others are stubbed.
+ * - 10/13/20: Compared with AWS SDK 2.19.0 and found nothing to modify.
+ * - 6/18/21: Restored 3 getters for Kotlin compiler to map the properties to getters/setters.
+ * - 7/7/21: Compared with AWS SDK 2.26.0 and just updated some usage notes.
+ * - 11/3/21: Compared with AWS SDK 2.35.0 and just updated some usage notes.
+ * - 3/15/22: Updated to AWS SDK 2.42.0 + 1 and merged back into main core module.
  */
 public class ClientConfiguration {
 
@@ -175,6 +183,7 @@ public class ClientConfiguration {
 
     /**
      * Constructor.
+     * - Used by Cognoa in NewUploadManager.kt
      */
     public ClientConfiguration() {
     }
@@ -623,6 +632,8 @@ public class ClientConfiguration {
      * the RetryPolicy should honor maxErrorRetry set by
      * {@link #setMaxErrorRetry(int)}.
      *
+     * - Used by Cognoa in NewUploadManager.kt
+     *
      * @param retryPolicy The retry policy upon failed requests.
      */
     public void setRetryPolicy(RetryPolicy retryPolicy) {
@@ -661,6 +672,8 @@ public class ClientConfiguration {
     /**
      * Sets the maximum number of retry attempts for failed retryable requests
      * (ex: 5xx error responses from services).
+     *
+     * - Used by Cognoa in NewUploadManager.kt
      *
      * @param maxErrorRetry The maximum number of retry attempts for failed
      *            retryable requests. This value should not be negative.
@@ -707,6 +720,8 @@ public class ClientConfiguration {
      * times out and is closed. A value of 0 means infinity, and isn't
      * recommended.
      *
+     * - Used by Cognoa in NewUploadManager.kt
+     *
      * @param socketTimeout The amount of time to wait (in milliseconds) for
      *            data to be transfered over an established, open connection
      *            before the connection is times out and is closed.
@@ -748,6 +763,8 @@ public class ClientConfiguration {
      * Sets the amount of time to wait (in milliseconds) when initially
      * establishing a connection before giving up and timing out. A value of 0
      * means infinity, and is not recommended.
+     *
+     * - Used by Cognoa in NewUploadManager.kt
      *
      * @param connectionTimeout The amount of time to wait (in milliseconds)
      *            when initially establishing a connection before giving up and

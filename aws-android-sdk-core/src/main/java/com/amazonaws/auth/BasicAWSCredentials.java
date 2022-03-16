@@ -22,6 +22,13 @@ package com.amazonaws.auth;
  * It is not recommended to use this class. Instead, use short term credentials
  * from Cognito with the AWSMobileClient.
  * @see <a href="https://aws-amplify.github.io/aws-sdk-android/docs/reference/com/amazonaws/mobile/client/AWSMobileClient.html">AWSMobileClient</a>
+ *
+ * Cognoa Mock Implementation Fork History:
+ * - 2/14/20: Original fork from AWS SDK 2.16.8 which elimiated the base class. Portions not used by Cognoa have been removed. All others are stubbed.
+ * - 10/13/20: Compared with AWS SDK 2.19.0 and found no differences.
+ * - 7/2/21: Compared with AWS SDK 2.26.0 and found no differences.
+ * - 11/1/21: Compared with AWS SDK 2.35.0 and found no differences.
+ * - 3/15/22: Updated to AWS SDK 2.42.0 + 1 and merged back into main core module.
  */
 public class BasicAWSCredentials implements AWSCredentials {
 
@@ -31,6 +38,11 @@ public class BasicAWSCredentials implements AWSCredentials {
     /**
      * Constructs a new BasicAWSCredentials object, with the specified AWS
      * access key and AWS secret key.
+     *
+     * - Used by Cognoa in the following classes:
+     * -- NewUploadManagerTests.java
+     * -- NewVideoScenariosViewModel.kt
+     * -- S3Utils.java
      *
      * @param accessKey The AWS access key.
      * @param secretKey The AWS secret access key.
@@ -50,6 +62,8 @@ public class BasicAWSCredentials implements AWSCredentials {
     /*
      * (non-Javadoc)
      * @see com.amazonaws.auth.AWSCredentials#getAWSAccessKeyId()
+     *
+     * - Used by Cognoa in S3UtilsTest.java
      */
     @Override
     public String getAWSAccessKeyId() {
@@ -59,6 +73,8 @@ public class BasicAWSCredentials implements AWSCredentials {
     /*
      * (non-Javadoc)
      * @see com.amazonaws.auth.AWSCredentials#getAWSSecretKey()
+     *
+     * - Used by Cognoa in S3UtilsTest.java
      */
     @Override
     public String getAWSSecretKey() {
