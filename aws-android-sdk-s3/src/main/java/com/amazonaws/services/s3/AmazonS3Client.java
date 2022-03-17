@@ -159,12 +159,21 @@ import java.util.regex.Matcher;
  * For more information about Amazon S3, please see <a
  * href="http://aws.amazon.com/s3"> http://aws.amazon.com/s3</a>
  * </p>
+ *
+ * Cognoa Mock Implementation Fork History:
+ * - 2/14/20: Original fork from AWS SDK 2.16.8. Portions not used by Cognoa have been removed. All others are stubbed.
+ * - 10/13/20: Compared with AWS SDK 2.19.0 and found nothing to modify.
+ * - 5/6/21: Added setS3ClientOptions() method from AWS SDK 2.19.0.
+ * - 7/7/21: Compared with AWS SDK 2.26.0 and there's enough differences that things would only be pulled in if the build fails.
+ * - 11/3/21: Compared with AWS SDK 2.35.0 and there's still enough differences that things will only be pulled in if the build fails.
+ * - 3/16/22: Updated to AWS SDK 2.42.0 + 1 and merged back into main S3 module.
  */
 @SuppressWarnings("deprecation")
 public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
     public static final String S3_SERVICE_NAME = "s3";
 
+    private static final String S3_SIGNER = "S3SignerType";
     private static final String S3_V4_SIGNER = "AWSS3V4SignerType";
 
     /** Shared logger for client events */
@@ -197,7 +206,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /** S3 specific client configuration options */
     protected S3ClientOptions clientOptions = new S3ClientOptions();
 
-    /** Provider for AWS credentials. */
+    /** Provider for AWS credentials which will provide credentials to authenticate requests with AWS services. */
     private final AWSCredentialsProvider awsCredentialsProvider;
 
     /**

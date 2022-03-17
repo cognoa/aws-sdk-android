@@ -42,6 +42,7 @@ import java.util.concurrent.TimeoutException;
  * Fork History:
  *  - 7/2/21: Original fork from AWS SDK 2.26.0.
  *  - 11/2/21: Compared with AWS SDK 2.35.0 and restored Amazon's logging module, but commented out.
+ *  - 3/15/22: Deprecated and merged with main S3 module.
  */
 public class TransferRecord {
     // private static final Log LOGGER = LogFactory.getLog(TransferRecord.class);

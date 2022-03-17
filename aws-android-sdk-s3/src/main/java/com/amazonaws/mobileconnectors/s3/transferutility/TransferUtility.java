@@ -103,6 +103,13 @@ import static com.amazonaws.services.s3.internal.Constants.MB;
  * // Deletes the transfer.
  * transferUtility.delete(id);
  * </pre>
+ *
+ * Cognoa Mock Implementation Fork History:
+ * - 2/14/20: Original fork from AWS SDK 2.16.8. Portions not used by Cognoa have been removed. All others are stubbed. Moreover, the interface AmazonS3 is cut out in favor of using the AmazonS3Client implementation of it directly.
+ * - 10/13/20: Compared with AWS SDK 2.19.0 and found nothing to modify.
+ * - 7/2/21: Compared with AWS SDK 2.26.0 and pulled in the changes from Cognoa's fork.
+ * - 11/2/21: Compared with AWS SDK 2.35.0 and restored Amazon's logging module, but commented out. Also added some notes on areas that might need to be restored for future product enhancements.
+ * - 3/15/22: Updated to AWS SDK 2.42.0 + 1 and merged back into main S3 module.
  */
 public class TransferUtility {
 
@@ -128,6 +135,11 @@ public class TransferUtility {
      * An Android Networking utility that gives network specific information.
      */
     final ConnectivityManager connManager;
+
+    /**
+     * Mock upload record Id used by Cognoa
+     */
+    private int nextMockUploadRecordId = 0;
 
     /**
      * Constants that indicate the type of the transfer operation.
@@ -163,6 +175,11 @@ public class TransferUtility {
     private final AmazonS3 s3;
     private final String defaultBucket;
     private final TransferUtilityOptions transferUtilityOptions;
+
+    // cognoamod_begin
+    // Hold on to a TransferObserver to be used when finding uploads in progress
+    private TransferObserver lastTransfer;
+    // cognoamod_end
 
     /**
      * Builder class for TransferUtility
@@ -567,8 +584,12 @@ public class TransferUtility {
         if (file == null || file.isDirectory() || !file.exists()) {
             throw new IllegalArgumentException("Invalid file: " + file);
         }
+
         int recordId;
-        if (shouldUploadInMultipart(file)) {
+        if ("true".equals(metadata.getUserMetaDataOf("mock-upload"))) {
+            // Mocked by Cognoa to just increment upward... Used this way to control listener callbacks.
+            recordId = nextMockUploadRecordId++;
+        } else if (shouldUploadInMultipart(file)) {
             LOGGER.info("File will use multi-part upload: " + file);
             recordId = createMultipartUploadRecords(bucket, key, file, metadata, cannedAcl);
         } else {
@@ -581,6 +602,9 @@ public class TransferUtility {
         // Creating the observer before the job is submitted because the listener needs to be registered
         // with TransferStatusUpdater when the job is being submitted.
         TransferObserver transferObserver = new TransferObserver(recordId, dbUtil, bucket, key, file, listener);
+        // cognoamod_begin
+        lastTransfer = transferObserver;
+        // cognoamod_end
         submitTransferJob(TRANSFER_ADD, recordId);
         return transferObserver;
     }
@@ -667,18 +691,29 @@ public class TransferUtility {
      */
     public List<TransferObserver> getTransfersWithType(TransferType type) {
         final List<TransferObserver> transferObservers = new ArrayList<TransferObserver>();
-        Cursor c = null;
-        try {
-            c = dbUtil.queryAllTransfersWithType(type);
-            while (c.moveToNext()) {
-                final int id = c.getInt(c.getColumnIndexOrThrow(TransferTable.COLUMN_ID));
-                final TransferObserver to = new TransferObserver(id, dbUtil);
-                to.updateFromDB(c);
-                transferObservers.add(to);
+
+        // cognoamod_begin
+        if (nextMockUploadRecordId > 0) {
+            // We have mock uploads to serve back
+            // TODO: Make this work with more than one mock upload.
+            if (lastTransfer != null) {
+                transferObservers.add(lastTransfer);
             }
-        } finally {
-            if (c != null) {
-                c.close();
+            // cognoamod_end
+        } else {
+            Cursor c = null;
+            try {
+                c = dbUtil.queryAllTransfersWithType(type);
+                while (c.moveToNext()) {
+                    final int id = c.getInt(c.getColumnIndexOrThrow(TransferTable.COLUMN_ID));
+                    final TransferObserver to = new TransferObserver(id, dbUtil);
+                    to.updateFromDB(c);
+                    transferObservers.add(to);
+                }
+            } finally {
+                if (c != null) {
+                    c.close();
+                }
             }
         }
         return transferObservers;
@@ -865,6 +900,12 @@ public class TransferUtility {
      *         does not represent a paused transfer
      */
     public TransferObserver resume(int id) {
+        // cognoamod_begin
+        if (nextMockUploadRecordId > 0) {
+            // We have mock uploads to update state for
+            TransferStatusUpdater.mockTransferStateChange(id, TransferState.IN_PROGRESS);
+        }
+        // cognoamod_end
         submitTransferJob(TRANSFER_RESUME, id);
         return getTransferById(id);
     }

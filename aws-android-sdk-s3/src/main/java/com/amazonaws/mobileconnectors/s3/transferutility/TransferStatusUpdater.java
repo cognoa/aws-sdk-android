@@ -39,6 +39,13 @@ import java.util.concurrent.CopyOnWriteArrayList;
 /**
  * A class that tracks active transfers. It has a static map that holds weak
  * references of {@link TransferListener}.
+ *
+ * Cognoa Mock Implementation Fork History:
+ * - 2/14/20: Original fork from AWS SDK 2.16.8. Portions not used by Cognoa have been removed. All others are stubbed. Uses Cognoa's Logging Module. Injects methods to mock listener behavior.
+ * - 10/13/20: Compared with AWS SDK 2.19.0 and found nothing to modify.
+ * - 7/2/21: Compared with AWS SDK 2.26.0 and added back in anything using TransferRecords as that's exposed in Cognoa's fork.
+ * - 11/2/21: Compared with AWS SDK 2.35.0 and restored Amazon's logging module, but commented out.
+ * - 3/15/22: Updated to AWS SDK 2.42.0 + 1 and merged back into main S3 module.
  */
 class TransferStatusUpdater {
     private static final Log LOGGER = LogFactory.getLog(TransferStatusUpdater.class);
@@ -176,6 +183,17 @@ class TransferStatusUpdater {
     }
 
     /**
+     * Mocks a state update as desired.
+     * Used for testing by Cognoa.
+     *
+     * @param id id of the transfer to update
+     * @param newState new state
+     */
+    public static void mockTransferStateChange(final int id, final TransferState newState) {
+        transferStatusUpdater.updateState(id, newState);
+    }
+
+    /**
      * Updates the state of an active transfer. If the transfer isn't tracked,
      * i.e. not active, it won't do anything. It writes the status of the
      * transfer, including current state, bytes transfer, bytes total, etc into
@@ -247,6 +265,21 @@ class TransferStatusUpdater {
     }
 
     /**
+     * Mocks a progress update as desired.
+     * Used for testing by Cognoa.
+     *
+     * @param id id of the transfer
+     * @param bytesCurrent current transferred bytes
+     * @param bytesTotal total bytes
+     */
+    public static void mockProgressChange(final int id,
+                                          final long bytesCurrent,
+                                          final long bytesTotal,
+                                          final boolean notifyListener) {
+        transferStatusUpdater.updateProgress(id, bytesCurrent, bytesTotal, notifyListener);
+    }
+
+    /**
      * Updates the transfer progress of a transfer. It will trigger
      * {@link TransferListener#onProgressChanged(int, long, long)} of associated
      * LISTENERS if the update exceeds either time threshold.
@@ -291,6 +324,17 @@ class TransferStatusUpdater {
                 });
             }
         }
+    }
+
+    /**
+     * Mocks a progress update as desired.
+     * Used for testing by Cognoa.
+     *
+     * @param id id of the transfer
+     * @param e an exception object
+     */
+    public static void mockErrorCondition(final int id, final Exception e) {
+        transferStatusUpdater.throwError(id, e);
     }
 
     /**

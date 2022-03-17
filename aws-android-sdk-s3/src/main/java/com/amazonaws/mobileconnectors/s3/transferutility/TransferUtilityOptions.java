@@ -36,6 +36,12 @@ import java.io.Serializable;
  *     .build();
  * </pre>
  *
+ * Cognoa Mock Implementation Fork History:
+ * - 2/14/20: Original fork from AWS SDK 2.16.8. Retained original as there didn't appear to be any harm in it.
+ * - 10/13/20: Compared with AWS SDK 2.19.0 and found nothing to modify.
+ * - 7/2/21: Compared with AWS SDK 2.26.0 and found no changes.
+ * - 11/2/21: Compared with AWS SDK 2.35.0 and found no changes.
+ * - 3/16/22: Updated to AWS SDK 2.42.0 + 1 and merged back into main S3 module.
  */
 public class TransferUtilityOptions implements Serializable {
 

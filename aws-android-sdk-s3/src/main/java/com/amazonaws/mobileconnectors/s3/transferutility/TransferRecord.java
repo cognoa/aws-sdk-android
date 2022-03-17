@@ -38,6 +38,11 @@ import java.util.concurrent.TimeoutException;
 /**
  * TransferRecord is used to store all the information of a transfer and
  * start/stop the a thread for the transfer task.
+ *
+ * Cognoa Mock Implementation Fork History:
+ * - 7/2/21: Original fork from AWS SDK 2.26.0. Portions not used by Cognoa have been removed. Log statements were converted to use Cognoa's Clog module for logs. All others are stubbed.
+ * - 11/2/21: Compared with AWS SDK 2.35.0 and restored Amazon's logging module, but commented out.
+ * - 3/15/22: Updated to AWS SDK 2.42.0 + 1 and merged back into main S3 module.
  */
 public class TransferRecord {
     private static final Log LOGGER = LogFactory.getLog(TransferRecord.class);
@@ -364,7 +369,9 @@ public class TransferRecord {
             return true;
         }
 
-        if (transferUtilityOptions != null && transferUtilityOptions.getTransferNetworkConnectionType() != null && !transferUtilityOptions.getTransferNetworkConnectionType().isConnected(connManager)) {
+        if (transferUtilityOptions != null &&
+                transferUtilityOptions.getTransferNetworkConnectionType() != null &&
+                !transferUtilityOptions.getTransferNetworkConnectionType().isConnected(connManager)) {
             // the network that is configured in the TransferUtilityOptions is not available.
             // we will set the state to WAITING_FOR_NETWORK. The transfer will be started
             // when a future notification is received for the desired network.

@@ -44,6 +44,7 @@ import java.io.Serializable;
  * - 10/13/20: Compared with AWS SDK 2.19.0 and found nothing to modify.
  * - 7/2/21: Compared with AWS SDK 2.26.0 and found no changes.
  * - 11/2/21: Compared with AWS SDK 2.35.0 and found no changes.
+ * - 3/16/22: Deprecated and merged with main S3 module.
  */
 public class TransferUtilityOptions implements Serializable {
 

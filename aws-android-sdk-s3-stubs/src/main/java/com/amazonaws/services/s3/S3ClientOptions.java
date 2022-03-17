@@ -24,6 +24,7 @@ package com.amazonaws.services.s3;
  * - 5/6/21: Original fork from AWS SDK 2.19.0.
  * - 7/2/21: Compared with AWS SDK 2.26.0 and just took in some formatting differences.
  * - 11/3/21: Compared with AWS SDK 2.35.0 and found no changes.
+ * - 3/16/22: Deprecated and merged with main S3 module.
  */
 public class S3ClientOptions {
 

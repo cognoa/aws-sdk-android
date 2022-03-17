@@ -16,6 +16,12 @@ package com.amazonaws.services.s3;
 
 /**
  * S3 client configuration options such as the request access style.
+ *
+ * Cognoa Mock Implementation Fork History:
+ * - 5/6/21: Original fork from AWS SDK 2.19.0. Retained original as there didn't appear to be any harm in it.
+ * - 7/2/21: Compared with AWS SDK 2.26.0 and just took in some formatting differences.
+ * - 11/3/21: Compared with AWS SDK 2.35.0 and found no changes.
+ * - 3/16/22: Updated to AWS SDK 2.42.0 + 1 and merged back into main S3 module.
  */
 public class S3ClientOptions {
 
