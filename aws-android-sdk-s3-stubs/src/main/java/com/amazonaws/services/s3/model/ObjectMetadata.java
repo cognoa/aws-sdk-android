@@ -34,6 +34,7 @@ import java.util.TreeMap;
  * - 10/13/20: Compared with AWS SDK 2.19.0 and found nothing to modify.
  * - 7/2/21: Compared with AWS SDK 2.26.0 and found nothing to modify.
  * - 11/2/21: Compared with AWS SDK 2.35.0 and found nothing to modify, but it might be good to restore missing methods with consideration for future feature development.
+ * - 3/16/22: Deprecated and merged with main S3 module.
  */
 public class ObjectMetadata implements Cloneable, Serializable
 {

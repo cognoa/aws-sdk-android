@@ -32,6 +32,13 @@ import java.util.List;
 
 /**
  * A Broadcast receiver to receive network connection change events.
+ *
+ * Cognoa Mock Implementation Fork History:
+ * - 2/14/20: Original fork from AWS SDK 2.16.8. Portions not used by Cognoa have been removed. All others are stubbed.
+ * - 10/13/20: Compared with AWS SDK 2.19.0 and found nothing to modify.
+ * - 7/2/21: Compared with AWS SDK 2.26.0 and removed blocks of commented out code now that we have our own fork of the SDK.
+ * - 11/1/21: Compared with AWS SDK 2.35.0 and found nothing to modify other than a few notes.
+ * - 3/15/22: Updated to AWS SDK 2.42.0 + 1 and merged back into main S3 module.
  */
 @SuppressWarnings("checkstyle:finalclass")
 public class TransferNetworkLossHandler extends BroadcastReceiver {
@@ -75,6 +82,8 @@ public class TransferNetworkLossHandler extends BroadcastReceiver {
 
     /**
      * Return the singleton instance of the receiver.
+     * - Used by Cognoa in thee following classes:
+     * -- NewUploadManager.kt
      *
      * @param context the application context
      * @return handler object
@@ -104,6 +113,7 @@ public class TransferNetworkLossHandler extends BroadcastReceiver {
         return transferNetworkLossHandler;
     }
 
+    // TODO: Figure out what to tweak when we wish to mock something here for handling network loss in a test.
     @Override
     public void onReceive(Context context, Intent intent) {
         if (ConnectivityManager.CONNECTIVITY_ACTION.equals(intent.getAction())) {

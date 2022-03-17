@@ -26,10 +26,19 @@ import java.util.Map;
 
 /**
  * Represents the type of connection a transfer is allowed to use
+ *
+ * Cognoa Mock Implementation Fork History:
+ * - 2/14/20: Original fork from AWS SDK 2.16.8 which removed types not being used and a related getter method. Portions not used by Cognoa have been removed. All others are stubbed.
+ * - 10/13/20: Compared with AWS SDK 2.19.0 and found nothing to modify.
+ * - 7/2/21: Compared with AWS SDK 2.26.0 and restored the isConnected() method used by the TransferRecord class.
+ * - 11/1/21: Compared with AWS SDK 2.35.0 and restored non-logging portions removed on 2/14/20 in anticipation of supporting the different types.
+ * - 3/15/22: Updated to AWS SDK 2.42.0 + 1 and merged back into main S3 module.
  */
 public enum TransferNetworkConnectionType {
     /**
      * Any connection
+     * - Used by Cognoa in the following classes:
+     * -- NewUploadManager.kt
      */
     @SerializedName("ANY")
     ANY() {

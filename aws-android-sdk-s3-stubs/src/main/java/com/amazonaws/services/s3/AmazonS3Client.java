@@ -56,6 +56,7 @@ import java.util.Map;
  * build fails.
  * - 11/3/21: Compared with AWS SDK 2.35.0 and there's still enough differences that things will only be pulled in if the
  * build fails.
+ * - 3/16/22: Deprecated and merged with main S3 module.
  */
 @SuppressWarnings("deprecation")
 public class AmazonS3Client {

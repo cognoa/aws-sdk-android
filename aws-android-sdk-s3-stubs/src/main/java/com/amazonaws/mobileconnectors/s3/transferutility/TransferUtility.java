@@ -94,6 +94,7 @@ import java.util.List;
  * - 10/13/20: Compared with AWS SDK 2.19.0 and found nothing to modify.
  * - 7/2/21: Compared with AWS SDK 2.26.0 and pulled in the changes from Cognoa's fork.
  * - 11/2/21: Compared with AWS SDK 2.35.0 and restored Amazon's logging module, but commented out. Also added some notes on areas that might need to be restored for future product enhancements.
+ * - 3/15/22: Deprecated and merged with main S3 module.
  */
 public class TransferUtility {
 

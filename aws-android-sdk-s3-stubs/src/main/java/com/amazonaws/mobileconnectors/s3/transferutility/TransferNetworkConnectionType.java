@@ -36,6 +36,7 @@ import java.util.Map;
  * - 10/13/20: Compared with AWS SDK 2.19.0 and found nothing to modify.
  * - 7/2/21: Compared with AWS SDK 2.26.0 and restored the isConnected() method used by the TransferRecord class.
  * - 11/1/21: Compared with AWS SDK 2.35.0 and restored non-logging portions removed on 2/14/20 in anticipation of supporting the different types.
+ * - 3/15/22: Deprecated and merged with main S3 module.
  */
 public enum TransferNetworkConnectionType {
     /**

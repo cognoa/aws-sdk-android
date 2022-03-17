@@ -44,6 +44,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
  * - 7/2/21: Compared with AWS SDK 2.26.0 and added back in anything using TransferRecords as that's exposed in
  * Cognoa's fork.
  * - 11/2/21: Compared with AWS SDK 2.35.0 and restored Amazon's logging module, but commented out.
+ * - 3/15/22: Deprecated and merged with main S3 module.
  */
 public class TransferStatusUpdater {
     // private static final Log LOGGER = LogFactory.getLog(TransferStatusUpdater.class);

@@ -32,6 +32,7 @@ import android.net.ConnectivityManager;
  * - 7/2/21: Compared with AWS SDK 2.26.0 and removed blocks of commented out code now that we have our own fork of
  * the SDK.
  * - 11/1/21: Compared with AWS SDK 2.35.0 and found nothing to modify other than a few notes.
+ * - 3/15/22: Deprecated and merged with main S3 module.
  */
 @SuppressWarnings("checkstyle:finalclass")
 public class TransferNetworkLossHandler extends BroadcastReceiver {
