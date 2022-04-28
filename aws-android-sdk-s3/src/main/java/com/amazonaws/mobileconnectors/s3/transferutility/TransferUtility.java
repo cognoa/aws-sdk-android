@@ -1048,7 +1048,15 @@ public class TransferUtility {
     }
 
     public synchronized TransferRecord getTransferRecord(int id) {
-        return updater.getTransfer(id);
+        TransferRecord transfer = updater.getTransfer(id);
+        if (transfer == null) {
+            transfer = dbUtil.getTransferById(id);
+            if (transfer == null) {
+                LOGGER.error("Cannot find transfer with id: " + id);
+                return null;
+            }
+        }
+        return transfer;
     }
 
 }
